@@ -124,7 +124,14 @@ public class CalendarStuff {
    * @return          int    -1/0/+1 if first date is less than/equal to/greater than second
    */
    public static int compareDate( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      return 0;
+      if (year1 < year2 || (year1 == year2 && month1 < month2) || (year1 == year2 && month1 == month2 && day1 < day2)){
+		  return -1;
+	  }else if(dateEquals( month1, day1,  year1,  month2,  day2,  year2 ) == true){
+		  return 0;
+	  }else{
+		  return 1;
+	  }
+	   
    }
 
   /**
@@ -145,10 +152,24 @@ public class CalendarStuff {
    * @param    month long   containing month number, starting with "1" for "January"
    * @return         String containing the string value of the month (no spaces)
    */
-   public static String toMonthString( int month ) {
+   public static String toMonthString( int month ) { 
+	  String monthName = "";
       switch( month - 1 ) {
+		  case 0 : monthName = "January"; break;
+		  case 1 : monthName = "February"; break;
+		  case 2 : monthName = "March"; break;
+		  case 3 : monthName = "April"; break;
+		  case 4 : monthName = "May"; break;
+		  case 5 : monthName = "June"; break;
+		  case 6 : monthName = "July"; break;
+	      case 7 : monthName = "August"; break;
+		  case 8 : monthName = "September"; break;
+		  case 9 : monthName = "October"; break;
+		  case 10 : monthName = "November"; break;
+		  case 11 : monthName = "December"; break;
          default: throw new IllegalArgumentException( "Illegal month value given to 'toMonthString()'." );
       }
+	   return monthName;
    }
 
   /**
@@ -157,9 +178,18 @@ public class CalendarStuff {
    * @return       String containing the string value of the day (no spaces)
    */
    public static String toDayOfWeekString( int day ) {
-      switch( day - 1 ) {
-         default       : throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
+       String dayName = "";
+	   switch( day - 1 ) {
+		  case 0 : dayName = "Sunday"; break; 
+		  case 1 : dayName = "Monday"; break; 
+		  case 2 : dayName = "Tuesday"; break; 
+		  case 3 : dayName = "Wednesday"; break;
+		  case 4 : dayName = "Thursday"; break;
+		  case 5 : dayName = "Friday"; break;
+		  case 6 : dayName = "Saturday"; break; 
+         default: throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
       }
+	   return dayName; 
    }
 
   /**
