@@ -71,7 +71,7 @@ public class CalendarStuff {
    * @return         boolean which is true if the parameter is a leap year
    */
    public static boolean isLeapYear( long year ) {
-      if(year % 4 == 0 && year % 400 == 0 || year % 100 != 0){
+      if(year % 4 == 0 && (year % 400 == 0 || year % 100 != 0)){
 		   return true; 
 	  }else{
 		   return false;   
@@ -87,7 +87,11 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static long daysInMonth( long month, long year ) {
-      return 33;
+	   if (month == 2 && isLeapYear(year) == true){
+		   return 29;
+	   }else{
+		   return days[(int) month - 1];
+	   }
    }
 
   /**
@@ -101,7 +105,12 @@ public class CalendarStuff {
    * @return          boolean which is true if the two dates are exactly the same
    */
    public static boolean dateEquals( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      return true;
+	  if (year1 != year2 || month1 != month2 || day1 != day2){
+		  return false; 
+	  }else{
+		  return true;
+	  }
+     
    }
 
   /**
