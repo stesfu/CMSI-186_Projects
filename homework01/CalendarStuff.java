@@ -21,7 +21,8 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-01-02  B.J. Johnson  Initial writing and release
  */
-public class CalendarStuffEmpty {
+
+public class CalendarStuff {
 
   /**
    * A listing of the days of the week, assigning numbers; Note that the week arbitrarily starts on Sunday
@@ -59,7 +60,7 @@ public class CalendarStuffEmpty {
   /**
    * The constructor for the class
    */
-   public CalendarStuffEmpty() {
+   public CalendarStuff() {
       System.out.println( "Constructor called..." );
    }
 
@@ -70,7 +71,11 @@ public class CalendarStuffEmpty {
    * @return         boolean which is true if the parameter is a leap year
    */
    public static boolean isLeapYear( long year ) {
-      return true;
+      if(year % 4 == 0 && year % 400 == 0 || year % 100 != 0){
+		   return true; 
+	  }else{
+		   return false;   
+	   }
    }
 
   /**
