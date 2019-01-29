@@ -144,7 +144,12 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static boolean isValidDate( long month, long day, long year ) {
-      return true;
+      if(month > 12 || month < 1 || day < 1 || ( (long) daysInMonth(month, year)) < day){
+		  return false;
+	  }else{
+		  return true; 
+	  }
+	   
    }
 
   /**
