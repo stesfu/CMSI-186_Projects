@@ -50,7 +50,7 @@ public class CalendarStuff {
    private static final int OCTOBER    = SEPTEMBER + 1;
    private static final int NOVEMBER   = OCTOBER   + 1;
    private static final int DECEMBER   = NOVEMBER  + 1;
-
+	
   /**
    * An array containing the number of days in each month
    *  NOTE: this excludes leap years, so those will be handled as special cases
@@ -209,6 +209,67 @@ public class CalendarStuff {
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
       long dayCount = 0;
+	  long daysBetweenYears = 0;
+	  long daysBetweenMonths = 0;
+	  long largerYear = year2;
+	  long smallerYear = year1;
+	  long largerMonth = month2;
+	  long smallerMonth = month1; 
+	  long leapYearCount = 0;
+	  long daysDifference = Math.abs(day2 - day1);
+	   
+	   if(year2 < year1){
+		   largerYear = year1;
+		   smallerYear = year2;
+	   }
+	   
+	   if(month2 < month1){
+		  largerMonth = month1;
+	      smallerMonth = month2;
+	   }
+	   
+	   for(long i = smallerYear; i < largerYear + 1; i++ ){
+		   if(isLeapYear(i) == true){ //need to add the condition that specifies bounds for the leap year date 2/29/ly to 12/31/ly
+			   leapYearCount += 1;
+		   }
+	   }
+	   
+	   
+	   if(year1 == year2){
+		   daysBetweenYears = 0; 
+	   }else{
+		   daysBetweenYears = ((365 * (largerYear - smallerYear)) + leapYearCount); 
+	   }
+	   
+	   for(int i = ((int) smallerMonth - 1); i < ((int) largerMonth - 1); i++){
+		   daysBetweenMonths += ((long) days[i]);
+	   }
+	   
+	   if (month1 == month2){
+		   daysBetweenMonths = 0;
+	   }
+	   
+	   if((day1 > day2 && month1 == month2) || (day1 > day2 && month1 < month2) ){ 
+		   daysBetweenMonths = daysBetweenMonths - daysDifference;
+	   }else{
+		   daysBetweenMonths += daysDifference;
+	   }
+	   
+	   
+	   if( month2 != month1){ //largerMonth == month2 &&
+		   dayCount = Math.abs(daysBetweenYears - daysBetweenMonths);
+	   }
+	   
+	   	else if(month1 == month2 && year1 == year2){
+		   dayCount = daysDifference;
+	   }
+	   
+	   else if(month1 == month2){
+		   dayCount = daysBetweenYears + daysBetweenMonths;
+	   }
+	   
+
+						  
       return dayCount;
    }
 
