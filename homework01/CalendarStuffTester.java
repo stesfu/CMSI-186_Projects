@@ -31,14 +31,14 @@ public class CalendarStuffTester {
    * @return void
    */
    public static void main ( String [] args ) {
-      test_isLeapYear();         // 11 tests
-      test_daysInMonth();        // 13 tests
-      test_isValidDate();        //  8 tests
-      test_dateEquals();         //  5 tests
-      test_compareDate();        //  7 tests
+//      test_isLeapYear();         // 11 tests
+//      test_daysInMonth();        // 13 tests
+//      test_isValidDate();        //  8 tests
+//      test_dateEquals();         //  5 tests
+//      test_compareDate();        //  7 tests
       test_daysBetween();        // 12 tests
-      test_toDayOfWeekString();  //  9 tests
-      test_toMonthString();      // 14 tests
+//      test_toDayOfWeekString();  //  9 tests
+//      test_toMonthString();      // 14 tests
    }
 
   /**
@@ -313,6 +313,11 @@ public class CalendarStuffTester {
      System.out.print( "   Counting 0001 day  between 03-16-2005 and 03-15-2005 : " );
      try { System.out.println(    1 == CalendarStuff.daysBetween(  3, 16, 2005,  3, 15, 2005 ) ? "one day   " : "bad count" ); }
      catch( Exception e ) { System.out.println( false ); }
+	   
+	   
+	 System.out.println( CalendarStuff.daysBetween(  3, 15, 2006,  8,  5, 2007 ) );
+	   
+	 System.out.println( CalendarStuff.daysBetween(  3, 15, 2005,  8,  5, 2008 ) );
 
    }
 
