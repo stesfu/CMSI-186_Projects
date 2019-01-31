@@ -214,6 +214,7 @@ public class CalendarStuff {
 	  long largerYear = year2;
 	  long smallerYear = year1;
 	  long largerMonth = month2;
+	  long bigDay = day2;
 	  long smallerMonth = month1; 
 	  long leapYearCount = 0;
 	  long daysDifference = Math.abs(day2 - day1);
@@ -226,10 +227,11 @@ public class CalendarStuff {
 	   if(month2 < month1){
 		  largerMonth = month1;
 	      smallerMonth = month2;
+		  bigDay = day1;
 	   }
 	   
-	   for(long i = smallerYear; i < largerYear + 1; i++ ){
-		   if(isLeapYear(i) == true){ //need to add the condition that specifies bounds for the leap year date 2/29/ly to 12/31/ly
+	   for(long l = smallerYear; l < largerYear + 1; l++ ){
+		   if(isLeapYear(l) == true && (largerMonth > 2 || (largerMonth == 2 && bigDay == 29 ))){ 
 			   leapYearCount += 1;
 		   }
 	   }
@@ -250,7 +252,7 @@ public class CalendarStuff {
 	   }
 	   
 	   if((day1 > day2 && month1 == month2) || (day1 > day2 && month1 < month2) ){ 
-		   daysBetweenMonths = daysBetweenMonths - daysDifference;
+		   daysBetweenMonths -=  daysDifference;
 	   }else{
 		   daysBetweenMonths += daysDifference;
 	   }
@@ -264,10 +266,11 @@ public class CalendarStuff {
 		   dayCount = daysDifference;
 	   }
 	   
-	   else if(month1 == month2){
+	   if(month1 == month2 || (day1 > day2 && month2 > month1)){ 
 		   dayCount = daysBetweenYears + daysBetweenMonths;
 	   }
 	   
+	   dayCount = Math.abs(dayCount);
 
 						  
       return dayCount;
