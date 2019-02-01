@@ -11,7 +11,7 @@ public class CountTheDays{
 		long  year2 = Long.parseLong( args[5] );
 		
 		if (CalendarStuff.isValidDate(month1, day1, year1) == true && CalendarStuff.isValidDate(month2, day2, year2) == true){
-			System.out.println("\n There are " + CalendarStuff.daysBetween( month1, day1, year1, month2, day2, year2 ) + " days in between your dates \n");
+			System.out.println("\n There are " + CalendarStuff.daysBetween( month1, day1, year1, month2, day2, year2 ) + " day(s) in between your dates \n");
 		}else {
 			System.out.println("\n Invalid input, please try again \n");
 		}
