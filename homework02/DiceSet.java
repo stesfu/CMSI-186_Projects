@@ -28,7 +28,10 @@
  *  @version 1.0.0  2017-02-09  B.J. Johnson  Initial writing and release
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class DiceSet {
-
+  public static void main( String[] args ) {
+       DiceSet ds99 = new DiceSet( 3,6 );
+       System.out.println (ds99.sum());
+  }
   /**
    * private instance data
    */
@@ -52,6 +55,8 @@ public class DiceSet {
       for(int i=0; i < count; i++){
         ds[i] = new Die(sides);
       }
+        this.count = count;
+        this.sides = sides;
    }
 
   /**
@@ -60,7 +65,7 @@ public class DiceSet {
    public int sum() {
 	  int sum = 0;
       for (int i=0; i < count; i++ ){
-		  sum += ds[i].getValue();
+		     sum = sum + getIndividual(i);
 	  }
 	   return sum;
    }
@@ -96,7 +101,7 @@ public class DiceSet {
    * @trhows IllegalArgumentException if the index is out of range
    */
    public int getIndividual( int dieIndex ) {
-      return -999;
+      return ds[dieIndex].getValue();
    }
 
   /**
@@ -104,6 +109,9 @@ public class DiceSet {
    */
    public String toString() {
       String result = "";
+      for (int i=0; i < count; i++ ){
+        result = result + ds[i] ;
+     }
       return result;
    }
 
@@ -111,7 +119,7 @@ public class DiceSet {
    * @return Class-wide version of the preceding instance method
    */
    public static String toString( DiceSet ds ) {
-      return "";
+      return ds.toString();
    }
 
   /**
@@ -123,8 +131,6 @@ public class DiceSet {
   /**
    * A little test main to check things out
    */
-   public static void main( String[] args ) {
-      // You do this part!
-   }
+
 
 }
