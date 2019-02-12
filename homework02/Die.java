@@ -41,8 +41,8 @@ public class Die {
    private int sides;
    private int pips;
    private final int MINIMUM_SIDES = 4;
-   
-	
+
+
    // public constructor:
   /**
    * constructor
@@ -51,7 +51,9 @@ public class Die {
    * Note: parameter must be checked for validity; invalid value must throw "IllegalArgumentException"
    */
    public Die( int nSides ) {
-	   sides = nSides; 
+
+	   sides = nSides;
+     this.pips = pips;
    }
 
   /**
@@ -59,9 +61,9 @@ public class Die {
    * @return  integer value of the result of the roll, randomly selected
    */
    public int roll() {
-	   
+
 	  pips = (int) (Math.random() * ((sides - 1) +1)) + 1;
-	   
+
 	  return pips;
    }
 
@@ -81,11 +83,12 @@ public class Die {
    * @return      The new number of sides, in case anyone is looking //do you want me to return summ?
    * @throws      IllegalArgumentException
    */
-   public void setSides( int sides ) {
+   public int setSides( int sides ) { //says to return number void must be int
+     if(sides < MINIMUM_SIDES){
+       throw new IllegalArgumentException();
+     }
 	   sides = sides;
-	   if(sides < MINIMUM_SIDES){
-		   throw new IllegalArgumentException();
-	   }
+     return sides;
    }
 
   /**
@@ -101,7 +104,7 @@ public class Die {
    * @return String representation of this Die
    */
    public static String toString( Die d ) {
-      return "[" + d.toString() +"]";
+      return  d.toString();
    }
 
   /**
@@ -109,8 +112,8 @@ public class Die {
    */
    public static void main( String[] args ) { //Do you want us to run through all the tests here?
       System.out.println( "Hello world from the Die class..." );
-	  int sides = Integer.parseInt( args[0] );
-	   
+// 	  int sides = Integer.parseInt( args[0] ); goes in highRoll
+
    }
 
 }
