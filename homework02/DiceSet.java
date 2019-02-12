@@ -49,6 +49,9 @@ public class DiceSet {
 		  throw new IllegalArgumentException();
 	  }
       ds = new Die[ count ];
+      for(int i=0; i < count; i++){
+        ds[i] = new Die(sides);
+      }
    }
 
   /**
@@ -77,10 +80,10 @@ public class DiceSet {
    * Randomly rolls a single die of the dice in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
    * @return the integer value of the newly rolled die
-   * @trhows IllegalArgumentException if the index is out of range
+   * @thows IllegalArgumentException if the index is out of range
    */
    public int rollIndividual( int dieIndex ) {
-	   if (ds[dieIndex] == -1){
+	   if (dieIndex < 0 || dieIndex > ds.length ){
 		   throw new IllegalArgumentException();
 	   }
 	   int randomOne = ds[dieIndex].roll();
