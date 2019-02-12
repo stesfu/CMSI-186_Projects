@@ -41,7 +41,8 @@ public class Die {
    private int sides;
    private int pips;
    private final int MINIMUM_SIDES = 4;
-
+   
+	
    // public constructor:
   /**
    * constructor
@@ -50,6 +51,7 @@ public class Die {
    * Note: parameter must be checked for validity; invalid value must throw "IllegalArgumentException"
    */
    public Die( int nSides ) {
+	   sides = nSides; 
    }
 
   /**
@@ -57,7 +59,10 @@ public class Die {
    * @return  integer value of the result of the roll, randomly selected
    */
    public int roll() {
-      return 0;
+	   
+	  pips = (int) (Math.random() * ((sides - 1) +1)) + 1;
+	   
+	  return pips;
    }
 
   /**
@@ -68,15 +73,19 @@ public class Die {
    * @return the pip count of THIS die instance
    */
    public int getValue() {
-      return 0;
+      return pips; //or this.pips?
    }
 
   /**
    * @param  int  the number of sides to set/reset for this Die instance
-   * @return      The new number of sides, in case anyone is looking
+   * @return      The new number of sides, in case anyone is looking //do you want me to return summ?
    * @throws      IllegalArgumentException
    */
    public void setSides( int sides ) {
+	   sides = sides;
+	   if(sides < MINIMUM_SIDES){
+		   throw new IllegalArgumentException();
+	   }
    }
 
   /**
@@ -84,7 +93,7 @@ public class Die {
    * @return String representation of this Die
    */
    public String toString() {
-      return "";
+      return "[" + pips + "]";
    }
 
   /**
@@ -92,14 +101,16 @@ public class Die {
    * @return String representation of this Die
    */
    public static String toString( Die d ) {
-      return "";
+      return "[" + d.toString() +"]";
    }
 
   /**
    * A little test main to check things out
    */
-   public static void main( String[] args ) {
+   public static void main( String[] args ) { //Do you want us to run through all the tests here?
       System.out.println( "Hello world from the Die class..." );
+	  int sides = Integer.parseInt( args[0] );
+	   
    }
 
 }
