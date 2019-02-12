@@ -45,6 +45,9 @@ public class DiceSet {
    * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
    */
    public DiceSet( int count, int sides ) {
+	  if (count < 1 || sides < 4 ){
+		  throw new IllegalArgumentException();
+	  }
       ds = new Die[ count ];
    }
 
@@ -52,7 +55,11 @@ public class DiceSet {
    * @return the sum of all the dice values in the set
    */
    public int sum() {
-      return 0;
+	  int sum = 0;
+      for (int i=0; i < count; i++ ){
+		  sum += ds[i].getValue();
+	  }
+	   return sum;
    }
 
   /**
@@ -61,6 +68,9 @@ public class DiceSet {
    *  the values of the dice in the set
    */
    public void roll() {
+	   for (int i=0; i < count; i++ ){
+		  ds[i].roll();
+	  }
    }
 
   /**
@@ -70,7 +80,11 @@ public class DiceSet {
    * @trhows IllegalArgumentException if the index is out of range
    */
    public int rollIndividual( int dieIndex ) {
-      return 0;
+	   if (ds[dieIndex] == -1){
+		   throw new IllegalArgumentException();
+	   }
+	   int randomOne = ds[dieIndex].roll();
+      return randomOne;
    }
 
   /**
