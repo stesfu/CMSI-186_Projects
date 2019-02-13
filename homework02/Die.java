@@ -51,7 +51,6 @@ public class Die {
    * Note: parameter must be checked for validity; invalid value must throw "IllegalArgumentException"
    */
    public Die( int nSides ) {
-
 	   sides = nSides;
      this.pips = pips;
    }
@@ -61,9 +60,7 @@ public class Die {
    * @return  integer value of the result of the roll, randomly selected
    */
    public int roll() {
-
 	  pips = (int) (Math.random() * ((sides - 1) +1)) + 1;
-
 	  return pips;
    }
 
@@ -109,9 +106,8 @@ public class Die {
   /**
    * A little test main to check things out
    */
-   public static void main( String[] args ) { 
+   public static void main( String[] args ) {
       System.out.println( "Hello world from the Die class..." );
-
    }
 
 }
