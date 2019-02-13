@@ -83,12 +83,11 @@ public class Die {
    * @return      The new number of sides, in case anyone is looking //do you want me to return summ?
    * @throws      IllegalArgumentException
    */
-   public int setSides( int sides ) { //says to return number void must be int
+   public void setSides( int sides ) { //says to return number void must be int
      if(sides < MINIMUM_SIDES){
        throw new IllegalArgumentException();
      }
 	   sides = sides;
-     return sides;
    }
 
   /**
@@ -110,9 +109,8 @@ public class Die {
   /**
    * A little test main to check things out
    */
-   public static void main( String[] args ) { //Do you want us to run through all the tests here?
+   public static void main( String[] args ) { 
       System.out.println( "Hello world from the Die class..." );
-// 	  int sides = Integer.parseInt( args[0] ); goes in highRoll
 
    }
 
