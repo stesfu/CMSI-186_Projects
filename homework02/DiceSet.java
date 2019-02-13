@@ -49,7 +49,7 @@ public class DiceSet {
    */
    public DiceSet( int count, int sides ) {
 	  if (count < 1 || sides < 4 ){
-		  throw new IllegalArgumentException();
+		  throw new IllegalArgumentException("Invalid Input");
 	  }
       ds = new Die[ count ];
       for(int i=0; i < count; i++){
@@ -89,7 +89,7 @@ public class DiceSet {
    */
    public int rollIndividual( int dieIndex ) {
 	   if (dieIndex < 0 || dieIndex > ds.length ){
-		   throw new IllegalArgumentException();
+		   throw new IllegalArgumentException("Invalid Input");
 	   }
 	   int randomOne = ds[dieIndex].roll();
       return randomOne;
@@ -125,8 +125,14 @@ public class DiceSet {
   /**
    * @return  tru iff this set is identical to the set passed as an argument
    */
-   public boolean isIdentical( DiceSet ds ) {
-      return true;
+   public boolean isIdentical( DiceSet compareDs ) {
+
+		if(ds.equals(compareDs.ds)){
+			return true;
+		}else{
+			return false;
+		}
+
    }
   /**
    * A little test main to check things out
