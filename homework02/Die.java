@@ -52,7 +52,7 @@ public class Die {
    */
    public Die( int nSides ) {
 	   sides = nSides;
-     this.pips = pips;
+       this.pips = pips;
    }
 
   /**
@@ -60,8 +60,8 @@ public class Die {
    * @return  integer value of the result of the roll, randomly selected
    */
    public int roll() {
-	  pips = (int) (Math.random() * ((sides - 1) +1)) + 1;
-	  return pips;
+       pips = (int) (Math.random() * ((sides - 1) +1)) + 1;
+	   return pips;
    }
 
   /**
@@ -72,7 +72,7 @@ public class Die {
    * @return the pip count of THIS die instance
    */
    public int getValue() {
-      return pips; //or this.pips?
+       return pips; //or this.pips?
    }
 
   /**
@@ -81,10 +81,10 @@ public class Die {
    * @throws      IllegalArgumentException
    */
    public void setSides( int sides ) { //says to return number void must be int
-     if(sides < MINIMUM_SIDES){
-       throw new IllegalArgumentException();
-     }
-	   sides = sides;
+       if(sides < MINIMUM_SIDES){
+           throw new IllegalArgumentException();
+        }
+	    sides = sides;
    }
 
   /**
@@ -92,7 +92,7 @@ public class Die {
    * @return String representation of this Die
    */
    public String toString() {
-      return "[" + pips + "]";
+       return "[" + pips + "]";
    }
 
   /**
@@ -100,14 +100,14 @@ public class Die {
    * @return String representation of this Die
    */
    public static String toString( Die d ) {
-      return  d.toString();
+       return  d.toString();
    }
 
   /**
    * A little test main to check things out
    */
    public static void main( String[] args ) {
-      System.out.println( "Hello world from the Die class..." );
+       System.out.println( "Hello world from the Die class..." );
    }
 
 }
