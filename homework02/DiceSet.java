@@ -28,10 +28,6 @@
  *  @version 1.0.0  2017-02-09  B.J. Johnson  Initial writing and release
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class DiceSet {
-  public static void main( String[] args ) {
-       DiceSet ds99 = new DiceSet( 3,6 );
-       System.out.println (ds99.sum());
-  }
   /**
    * private instance data
    */
@@ -51,12 +47,12 @@ public class DiceSet {
 	  if (count < 1 || sides < 4 ){
 		  throw new IllegalArgumentException("Invalid Input");
 	  }
-      ds = new Die[ count ];
-      for(int i=0; i < count; i++){
-        ds[i] = new Die(sides);
-      }
-        this.count = count;
-        this.sides = sides;
+    ds = new Die[ count ];
+    for(int i=0; i < count; i++){
+      ds[i] = new Die(sides);
+    }
+    this.count = count;
+    this.sides = sides;
    }
 
   /**
@@ -92,7 +88,7 @@ public class DiceSet {
 		   throw new IllegalArgumentException("Invalid Input");
 	   }
 	   int randomOne = ds[dieIndex].roll();
-      return randomOne;
+    return randomOne;
    }
 
   /**
@@ -111,7 +107,7 @@ public class DiceSet {
       String result = "";
       for (int i=0; i < count; i++ ){
         result = result + ds[i] ;
-     }
+      }
       return result;
    }
 
@@ -126,13 +122,11 @@ public class DiceSet {
    * @return  tru iff this set is identical to the set passed as an argument
    */
    public boolean isIdentical( DiceSet compareDs ) {
-
 		if(ds.equals(compareDs.ds)){
 			return true;
 		}else{
 			return false;
 		}
-
    }
   /**
    * A little test main to check things out
