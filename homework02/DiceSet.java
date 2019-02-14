@@ -86,7 +86,7 @@ public class DiceSet {
   * @thows IllegalArgumentException if the index is out of range
   */
  public int rollIndividual(int dieIndex) {
-  if (dieIndex < 0 || dieIndex > ds.length) {
+  if (dieIndex < 0 || dieIndex >= ds.length) {
    throw new IllegalArgumentException("Invalid Input");
   }
   int randomOne = ds[dieIndex].roll();
