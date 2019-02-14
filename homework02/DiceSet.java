@@ -1,8 +1,10 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  DiceSet.java
  *  Purpose       :  Provides a class describing a set of dice
- *  Author        :  B.J. Johnson
- *  Date          :  2017-02-09
+ *  @author       :  B.J. Johnson (prototype)
+ *  Date          :  2017-02-06 (prototype)
+ *  @author       :  Salem Tesfu
+ *  Date          :  2019-02-13
  *  Description   :  This class provides everything needed (pretty much) to describe a set of dice.  The
  *                   idea here is to have an implementing class that uses the Die.java class.  Includes
  *                   the following:
@@ -28,109 +30,109 @@
  *  @version 1.0.0  2017-02-09  B.J. Johnson  Initial writing and release
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class DiceSet {
-  /**
-   * private instance data
-   */
-   private int count;
-   private int sides;
-   private Die[] ds = null;
+ /**
+  * private instance data
+  */
+ private int count;
+ private int sides;
+ private Die[] ds = null;
 
-   // public constructor:
-  /**
-   * constructor
-   * @param  count int value containing total dice count
-   * @param  sides int value containing the number of pips on each die
-   * @throws IllegalArgumentException if one or both arguments don't make sense
-   * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
-   */
-   public DiceSet( int count, int sides ) {
-	  if (count < 1 || sides < 4 ){
-		  throw new IllegalArgumentException("Invalid Input");
-	  }
-    ds = new Die[ count ];
-    for(int i=0; i < count; i++){
-      ds[i] = new Die(sides);
-    }
-    this.count = count;
-    this.sides = sides;
-   }
+ // public constructor:
+ /**
+  * constructor
+  * @param  count int value containing total dice count
+  * @param  sides int value containing the number of pips on each die
+  * @throws IllegalArgumentException if one or both arguments don't make sense
+  * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
+  */
+ public DiceSet(int count, int sides) {
+  if (count < 1 || sides < 4) {
+   throw new IllegalArgumentException("Invalid Input");
+  }
+  ds = new Die[count];
+  for (int i = 0; i < count; i++) {
+   ds[i] = new Die(sides);
+  }
+  this.count = count;
+  this.sides = sides;
+ }
 
-  /**
-   * @return the sum of all the dice values in the set
-   */
-   public int sum() {
-	  int sum = 0;
-      for (int i=0; i < count; i++ ){
-		     sum = sum + getIndividual(i);
-	  }
-	   return sum;
-   }
+ /**
+  * @return the sum of all the dice values in the set
+  */
+ public int sum() {
+  int sum = 0;
+  for (int i = 0; i < count; i++) {
+   sum = sum + getIndividual(i);
+  }
+  return sum;
+ }
 
-  /**
-   * Randomly rolls all of the dice in this set
-   *  NOTE: you will need to use one of the "toString()" methods to obtain
-   *  the values of the dice in the set
-   */
-   public void roll() {
-	   for (int i=0; i < count; i++ ){
-		  ds[i].roll();
-	  }
-   }
+ /**
+  * Randomly rolls all of the dice in this set
+  *  NOTE: you will need to use one of the "toString()" methods to obtain
+  *  the values of the dice in the set
+  */
+ public void roll() {
+  for (int i = 0; i < count; i++) {
+   ds[i].roll();
+  }
+ }
 
-  /**
-   * Randomly rolls a single die of the dice in this set indexed by 'dieIndex'
-   * @param  dieIndex int of which die to roll
-   * @return the integer value of the newly rolled die
-   * @thows IllegalArgumentException if the index is out of range
-   */
-   public int rollIndividual( int dieIndex ) {
-	   if (dieIndex < 0 || dieIndex > ds.length ){
-		   throw new IllegalArgumentException("Invalid Input");
-	   }
-	   int randomOne = ds[dieIndex].roll();
-    return randomOne;
-   }
+ /**
+  * Randomly rolls a single die of the dice in this set indexed by 'dieIndex'
+  * @param  dieIndex int of which die to roll
+  * @return the integer value of the newly rolled die
+  * @thows IllegalArgumentException if the index is out of range
+  */
+ public int rollIndividual(int dieIndex) {
+  if (dieIndex < 0 || dieIndex > ds.length) {
+   throw new IllegalArgumentException("Invalid Input");
+  }
+  int randomOne = ds[dieIndex].roll();
+  return randomOne;
+ }
 
-  /**
-   * Gets the value of the die in this set indexed by 'dieIndex'
-   * @param  dieIndex int of which die to roll
-   * @trhows IllegalArgumentException if the index is out of range
-   */
-   public int getIndividual( int dieIndex ) {
-      return ds[dieIndex].getValue();
-   }
+ /**
+  * Gets the value of the die in this set indexed by 'dieIndex'
+  * @param  dieIndex int of which die to roll
+  * @trhows IllegalArgumentException if the index is out of range
+  */
+ public int getIndividual(int dieIndex) {
+  return ds[dieIndex].getValue();
+ }
 
-  /**
-   * @return Public Instance method that returns a String representation of the DiceSet instance
-   */
-   public String toString() {
-      String result = "";
-      for (int i=0; i < count; i++ ){
-        result = result + ds[i] ;
-      }
-      return result;
-   }
+ /**
+  * @return Public Instance method that returns a String representation of the DiceSet instance
+  */
+ public String toString() {
+  String result = "";
+  for (int i = 0; i < count; i++) {
+   result = result + ds[i];
+  }
+  return result;
+ }
 
-  /**
-   * @return Class-wide version of the preceding instance method
-   */
-   public static String toString( DiceSet ds ) {
-      return ds.toString();
-   }
+ /**
+  * @return Class-wide version of the preceding instance method
+  */
+ public static String toString(DiceSet ds) {
+  return ds.toString();
+ }
 
-  /**
-   * @return  tru iff this set is identical to the set passed as an argument
-   */
-   public boolean isIdentical( DiceSet compareDs ) {
-		if(ds.equals(compareDs.ds)){
-			return true;
-		}else{
-			return false;
-		}
-   }
-  /**
-   * A little test main to check things out
-   */
+ /**
+  * @return  tru iff this set is identical to the set passed as an argument
+  */
+ public boolean isIdentical(DiceSet compareDs) {
+  if (ds.equals(compareDs.ds)) {
+   return true;
+  } else {
+   return false;
+  }
+ }
+ /**
+  * A little test main to check things out
+  */
 
 
 }
