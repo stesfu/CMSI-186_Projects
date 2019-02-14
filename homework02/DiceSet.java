@@ -99,6 +99,9 @@ public class DiceSet {
   * @trhows IllegalArgumentException if the index is out of range
   */
  public int getIndividual(int dieIndex) {
+  if (dieIndex < 0 || dieIndex >= ds.length) {
+  throw new IllegalArgumentException("Invalid Input");
+  }
   return ds[dieIndex].getValue();
  }
 
