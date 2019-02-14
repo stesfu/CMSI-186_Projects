@@ -86,12 +86,12 @@ public class Die {
   * @return      The new number of sides, in case anyone is looking //do you want me to return summ?
   * @throws      IllegalArgumentException
   */
- public int setSides(int sides) { //says to return number void must be int
+ public void setSides(int sides) { 
   if (sides < MINIMUM_SIDES) {
    throw new IllegalArgumentException();
+  }else{
+   sides = sides;
   }
-  sides = sides;
-  return sides;
  }
 
  /**
