@@ -1,3 +1,9 @@
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  File name     :  HighRoll.java
+ *  Purpose       :  Allows user to play a dice rolling game
+ *  @author       :  Salem Tesfu
+ *  Date          :  2019-02-13
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -26,7 +32,7 @@ public class HighRoll{
          try {
             inputLine = input.readLine();
             if( 0 == inputLine.length() ) {
-               System.out.println("enter some text!:");
+               System.out.println("Enter some text!:");
             }else if('1' == inputLine.charAt(0) ){
                gameSet.roll();
                System.out.println( "The dice are rolled! \n" + gameSet.toString());
