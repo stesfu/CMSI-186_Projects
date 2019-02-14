@@ -53,8 +53,12 @@ public class Die {
   * Note: parameter must be checked for validity; invalid value must throw "IllegalArgumentException"
   */
  public Die(int nSides) {
-  sides = nSides;
-  this.pips = pips;
+  if (nSides < MINIMUM_SIDES) {
+   throw new IllegalArgumentException();
+  }else{
+   sides = nSides;
+   this.pips = pips;
+  }
  }
 
  /**
