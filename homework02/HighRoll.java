@@ -16,7 +16,7 @@ public class HighRoll{
      }
 
      DiceSet gameSet = new DiceSet(gameCount, gameSides);
-	   
+
      System.out.println("\n Welcome to the the game of HighRoll. Follow the menu to play!\n [1] ROLL ALL THE DIE \n [2] ROLL A SINGLE DIE \n [3] CALCULATE THE SCORE FOR THIS SET \n [4] SAVE THIS SCORE AS A HIGH SCHORE \n [5] DISPLAY THE HIGH SCORE \n [6] ENTER 'Q' TO QUIT THE PROGRAM");
 
       BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
