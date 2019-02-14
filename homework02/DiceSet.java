@@ -127,12 +127,14 @@ public class DiceSet {
   * @return  tru iff this set is identical to the set passed as an argument
   */
  public boolean isIdentical(DiceSet compareDs) {
-  if (ds.equals(compareDs.ds)) {
-   return true;
-  } else {
-   return false;
-  }
- }
+	 boolean truthValue = false;
+	 for(int i=0; i < ds.length; i++){
+		 for(int j=0; j < compareDs.ds.length; j++){
+			 if (ds[i] == compareDs.ds[j]){
+				 truthValue = true;
+			 }
+		 }
+	 } return (truthValue);
  /**
   * A little test main to check things out
   */
