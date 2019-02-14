@@ -1,8 +1,10 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  Die.java
  *  Purpose       :  Provides a class describing a single die that can be rolled
- *  @author       :  B.J. Johnson
- *  Date          :  2017-02-06
+ *  @author       :  B.J. Johnson (prototype)
+ *  Date          :  2017-02-06 (prototype)
+ *  @author       :  Salem Tesfu
+ *  Date          :  2019-02-13
  *  Description   :  This class provides the data fields and methods to describe a single game die.  A
  *                   die can have "N" sides.  Sides are randomly assigned sequential pip values, from 1
  *                   to N, with no repeating numbers.  A "normal" die would thus has six sides, with the
@@ -26,7 +28,7 @@
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision Histor
+ *  Revision History
  *  ---------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
@@ -35,79 +37,82 @@
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class Die {
 
-  /**
-   * private instance data
-   */
-   private int sides;
-   private int pips;
-   private final int MINIMUM_SIDES = 4;
+ /**
+  * private instance data
+  */
+ private int sides;
+ private int pips;
+ private final int MINIMUM_SIDES = 4;
 
 
-   // public constructor:
-  /**
-   * constructor
-   * @param nSides int value containing the number of sides to build on THIS Die
-   * @throws       IllegalArgumentException
-   * Note: parameter must be checked for validity; invalid value must throw "IllegalArgumentException"
-   */
-   public Die( int nSides ) {
-	   sides = nSides;
-       this.pips = pips;
-   }
+ // public constructor:
+ /**
+  * constructor
+  * @param nSides int value containing the number of sides to build on THIS Die
+  * @throws       IllegalArgumentException
+  * Note: parameter must be checked for validity; invalid value must throw "IllegalArgumentException"
+  */
+ public Die(int nSides) {
+  sides = nSides;
+  this.pips = pips;
+ }
 
-  /**
-   * Roll THIS die and return the result
-   * @return  integer value of the result of the roll, randomly selected
-   */
-   public int roll() {
-       pips = (int) (Math.random() * ((sides - 1) +1)) + 1;
-	   return pips;
-   }
+ /**
+  * Roll THIS die and return the result
+  * @return  integer value of the result of the roll, randomly selected
+  */
+ public int roll() {
+  pips = (int)(Math.random() * ((sides - 1) + 1)) + 1;
+  return pips;
+ }
 
-  /**
-   * Get the value of THIS die to return to the caller; note that the way
-   *  the count is determined is left as a design decision to the programmer
-   *  For example, what about a four-sided die - which face is considered its
-   *  "value"?
-   * @return the pip count of THIS die instance
-   */
-   public int getValue() {
-       return pips; //or this.pips?
-   }
+ /**
+  * Get the value of THIS die to return to the caller; note that the way
+  *  the count is determined is left as a design decision to the programmer
+  *  For example, what about a four-sided die - which face is considered its
+  *  "value"?
+  * @return the pip count of THIS die instance
+  */
+ public int getValue() {
+  return pips;
+ }
 
-  /**
-   * @param  int  the number of sides to set/reset for this Die instance
-   * @return      The new number of sides, in case anyone is looking //do you want me to return summ?
-   * @throws      IllegalArgumentException
-   */
-   public void setSides( int sides ) { //says to return number void must be int
-       if(sides < MINIMUM_SIDES){
-           throw new IllegalArgumentException();
-        }
-	    sides = sides;
-   }
+ /**
+  * @param  int  the number of sides to set/reset for this Die instance
+  * @return      The new number of sides, in case anyone is looking //do you want me to return summ?
+  * @throws      IllegalArgumentException
+  */
+ public int setSides(int sides) { //says to return number void must be int
+  if (sides < MINIMUM_SIDES) {
+   throw new IllegalArgumentException();
+  }
+  sides = sides;
+  return sides;
+ }
 
-  /**
-   * Public Instance method that returns a String representation of THIS die instance
-   * @return String representation of this Die
-   */
-   public String toString() {
-       return "[" + pips + "]";
-   }
+ /**
+  * Public Instance method that returns a String representation of THIS die instance
+  * @return String representation of this Die
+  */
+ public String toString() {
+  return "[" + pips + "]";
+ }
 
-  /**
-   * Class-wide method that returns a String representation of THIS die instance
-   * @return String representation of this Die
-   */
-   public static String toString( Die d ) {
-       return  d.toString();
-   }
+ /**
+  * Class-wide method that returns a String representation of THIS die instance
+  * @return String representation of this Die
+  */
+ public static String toString(Die d) {
+  return d.toString();
+ }
 
-  /**
-   * A little test main to check things out
-   */
-   public static void main( String[] args ) {
-       System.out.println( "Hello world from the Die class..." );
-   }
+ /**
+  * A little test main to check things out
+  */
+ public static void main(String[] args) { //Do you want us to run through all the tests here?
+  System.out.println("Hello world from the Die class...");
+  int sides = Integer.parseInt(args[0]);
+
+ }
 
 }
