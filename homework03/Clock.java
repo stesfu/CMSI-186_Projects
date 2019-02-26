@@ -2,7 +2,7 @@
  *  File name     :  Clock.java
  *  Purpose       :  Provides a class defining methods for the ClockSolver class
  *  @author       :  B.J. Johnson (protype)
- *  Date written  :  2017-02-28 (prototype) 
+ *  Date written  :  2017-02-28 (prototype)
  *  @author       :  Salem Tesfu
  *  Date written  :  2019-02-14
  *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
@@ -23,17 +23,29 @@ public class Clock {
   /**
    *  Class field definintions go here
    */
+   double elapsedTimeSeconds = 0.0;
+   double minutes = 0.0;
+   double hours = 0.0;
+   double seconds = 0.0;
+   double timeSlice = 60;
+   double hourHandAngle = 0.0;
+   double minuteHandAngle = 0.0;
+   double handAngle = 0.0;
    private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
    private static final double INVALID_ARGUMENT_VALUE = -1.0;
    private static final double MAXIMUM_DEGREE_VALUE = 360.0;
    private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
    private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
 
+
   /**
    *  Constructor goes here
    */
-   public ClockEmpty() {
-
+   public Clock() {
+    // this.timeSlice = timeSlice;
+    // this.hours = hours;
+    // this.minutes = minutes;
+    // this.seconds = seconds;
    }
 
   /**
@@ -43,7 +55,11 @@ public class Clock {
    *  @return double-precision value of the current clock tick
    */
    public double tick() {
-      return 0.0;
+      elapsedTimeSeconds += timeSlice;
+      getHourHandAngle();
+      getMinuteHandAngle();
+      getHandAngle();
+      return elapsedTimeSeconds;
    }
 
   /**
@@ -53,7 +69,11 @@ public class Clock {
    *  @throws  NumberFormatException
    */
    public double validateAngleArg( String argValue ) throws NumberFormatException {
-      return 0.0;
+      double angle = Double.parseDouble( argValue );
+      if (angle < 0 || angle > MAXIMUM_DEGREE_VALUE){
+          throw new NumberFormatException("Your angle is out of range");
+      }
+      return angle;
    }
 
   /**
@@ -68,15 +88,22 @@ public class Clock {
    *         to take a VERY LONG TIME to complete!
    */
    public double validateTimeSliceArg( String argValue ) {
-      return 0.0;
-   }
+       double timeSlice = Double.parseDouble( argValue );
+       if (timeSlice < 0 || timeSlice > 1800){
+           throw new NumberFormatException("Your angle is out of range");
+       }else if(timeSlice == 0 || argValue == ""){
+           timeSlice = 60;
+       }
+       return timeSlice;
+      }
 
   /**
    *  Method to calculate and return the current position of the hour hand
    *  @return double-precision value of the hour hand location
    */
    public double getHourHandAngle() {
-      return 0.0;
+      double hourHandAngle = HOUR_HAND_DEGREES_PER_SECOND * elapsedTimeSeconds;
+      return hourHandAngle;
    }
 
   /**
@@ -84,7 +111,8 @@ public class Clock {
    *  @return double-precision value of the minute hand location
    */
    public double getMinuteHandAngle() {
-      return 0.0;
+      double minuteHandAngle = MINUTE_HAND_DEGREES_PER_SECOND * elapsedTimeSeconds;
+      return minuteHandAngle;
    }
 
   /**
@@ -92,7 +120,8 @@ public class Clock {
    *  @return double-precision value of the angle between the two hands
    */
    public double getHandAngle() {
-      return 0.0;
+      double handAngle = Math.abs(hourHandAngle - minuteHandAngle);
+      return handAngle;
    }
 
   /**
@@ -101,7 +130,7 @@ public class Clock {
    *  @return double-precision value the total seconds private variable
    */
    public double getTotalSeconds() {
-      return 0.0;
+      return this.elapsedTimeSeconds;
    }
 
   /**
@@ -109,7 +138,12 @@ public class Clock {
    *  @return String value of the current clock
    */
    public String toString() {
-      return "Clock string, dangit!";
+      double roughHours = elapsedTimeSeconds /3600;
+      double hours = Math.floor(roughHours);
+      double roughMinutes = ((roughHours - hours) * 3600) /60;
+      double minutes = Math.floor(roughMinutes);
+      double seconds = ((roughMinutes - minutes) * 60);
+      return hours +":" + minutes + ":" + seconds; // does sting
    }
 
   /**
@@ -124,7 +158,7 @@ public class Clock {
       System.out.println( "\nCLOCK CLASS TESTER PROGRAM\n" +
                           "--------------------------\n" );
       System.out.println( "  Creating a new clock: " );
-      ClockEmpty clock = new ClockEmpty();
+      Clock clock = new Clock();
       System.out.println( "    New clock created: " + clock.toString() );
       System.out.println( "    Testing validateAngleArg()....");
       System.out.print( "      sending '  0 degrees', expecting double value   0.0" );
@@ -132,4 +166,3 @@ public class Clock {
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
    }
 }
-
