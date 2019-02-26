@@ -32,7 +32,7 @@ public class ClockSolver {
    *  Constructor
    *  This just calls the superclass constructor, which is "Object"
    */
-   public ClockSolverEmpty() {
+   public ClockSolver() {
       super();
    }
 
@@ -41,10 +41,13 @@ public class ClockSolver {
    *   this sets up the variables for the simulation
    */
    public void handleInitialArguments( String args[] ) {
-     // args[0] specifies the angle for which you are looking
-     //  your simulation will find all the angles in the 12-hour day at which those angles occur
-     // args[1] if present will specify a time slice value; if not present, defaults to 60 seconds
-     // you may want to consider using args[2] for an "angle window"
+    // args[0] specifies the angle for which you are looking
+    //  your simulation will find all the angles in the 12-hour day at which those angles occur
+    double angle = Double.parseDouble( args[0] );
+    // args[1] if present will specify a time slice value; if not present, defaults to 60 seconds
+    double timeSlice = Double.parseDouble( args[1] );
+    // you may want to consider using args[2] for an "angle window"
+    double angleWindow = Double.parseDouble( args[2] );
 
       System.out.println( "\n   Hello world, from the ClockSolver program!!\n\n" ) ;
       if( 0 == args.length ) {
@@ -52,7 +55,9 @@ public class ClockSolver {
                              "   Usage: java ClockSolver <angle> [timeSlice]\n" +
                              "   Please try again..........." );
          System.exit( 1 );
-      }
+     }else if(angle < 0){
+         System.out.println("Invalid angle");
+     }
       Clock clock = new Clock();
    }
 
@@ -65,8 +70,8 @@ public class ClockSolver {
    *                args[1] is the time slice; this is optional and defaults to 60 seconds
    */
    public static void main( String args[] ) {
-      ClockSolverEmpty cse = new ClockSolverEmpty();
-      ClockEmpty clock    = new ClockEmpty();
+      ClockSolver cse = new ClockSolver();
+      Clock clock    = new Clock();
       double[] timeValues = new double[3];
       cse.handleInitialArguments( args );
       while( true ) {
