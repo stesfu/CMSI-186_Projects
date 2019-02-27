@@ -56,14 +56,21 @@ public class ClockSolver {
                              "   Please try again..........." );
          System.exit( 1 );
      }
+	  
 	  Clock.validateAngleArg(args[0]);
-	   
+	  
 	  if(2 <= args.length){
 		  Clock.validateTimeSliceArg(args[1]);
+		   if(Clock.validateTimeSliceArg(args[1]) == -1.0){
+		        throw new NumberFormatException("Invalid input");
+	       } 
 	  }
 	  if(3 <= args.length){
 		  EPSILON_VALUE = Double.parseDouble(args[2]);
 	  }
+	  if(Clock.validateAngleArg(args[0]) == -1.0){
+		   throw new NumberFormatException("Invalid input");
+	  } 
 //      Clock clock = new Clock();
    }
 
@@ -78,11 +85,11 @@ public class ClockSolver {
    public static void main( String args[] ) {
       ClockSolver cs = new ClockSolver();
       Clock clock    = new Clock();
-      double[] timeValues = new double[3];
+//      double[] timeValues = new double[3];
       cs.handleInitialArguments( args );
-      while( clock.getTotalSeconds() < 43200) { 
+      while( clock.getTotalSeconds() <= 43200) { 
          if(Math.abs(clock.angle - clock.getHandAngle()) <= cs.EPSILON_VALUE){
-			 System.out.println("Found Angle: " +clock.angle+ " at " + "Time: " + clock.toString());
+			 System.out.println(" Found Angle: " +clock.angle+ " at " + "Time: " + clock.toString());
 		 }
 		 clock.tick();
       }
