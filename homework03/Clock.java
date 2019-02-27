@@ -75,7 +75,8 @@ public class Clock {
    public static double validateAngleArg( String argValue ) throws NumberFormatException {
       angle = Double.parseDouble( argValue );
       if (angle < 0 || angle > MAXIMUM_DEGREE_VALUE){
-          throw new NumberFormatException("Your angle is out of range");
+		  angle = -1.0;
+//          throw new NumberFormatException("Your angle is out of range");
       }
       return angle;
    }
@@ -92,9 +93,11 @@ public class Clock {
    *         to take a VERY LONG TIME to complete!
    */
    public static double validateTimeSliceArg( String argValue ) {
-       timeSlice = Double.parseDouble( argValue );
-       if (timeSlice < 0 || timeSlice > 1800){
-		     return -1.0;
+       Double timeSliceInput = Double.parseDouble( argValue );
+       timeSlice = timeSliceInput;
+	   if (timeSlice <= 0 || timeSlice > 1800){
+		     timeSlice = -1.0; 
+//		     return -1.0;
 //           throw new NumberFormatException("Your angle is out of range");
        }
        return timeSlice;
@@ -171,11 +174,21 @@ public class Clock {
       System.out.println( "  Creating a new clock: " );
       Clock clock = new Clock();
       System.out.println( "    New clock created: " + clock.toString() );
-      System.out.println( "    Testing validateAngleArg()....");
-      System.out.print( "      sending '  0 degrees', expecting double value   0.0" );
-      try { System.out.println( (0.0 == clock.validateAngleArg( "0.0" )) ? " - got 0.0" : " - no joy" );
-		    System.out.println( (45.0 == clock.validateAngleArg( "45.0" )) ? " Correct " : " Incorrect " );
-		    System.out.println( (-1.0 == clock.validateAngleArg( "-45.0" )) ? " Correct " : " Incorrect " );
+      try { 
+		    System.out.println( "    Testing validateAngleArg()... ");
+		    System.out.println( (-1.0 == clock.validateAngleArg( "-250" )) ? " Pass " : " Fail " );
+		    System.out.println( (-1.0 == clock.validateAngleArg( "-0.1111111" )) ? " Pass " : " Fail " );
+		    System.out.println( (-1.0 == clock.validateAngleArg( "361.0" )) ? " Pass " : " Fail " );
+		    System.out.println( (360.0 == clock.validateAngleArg( "360.0" )) ? " Pass " : " Fail " );
+		    System.out.println( (1.0 == clock.validateAngleArg( "1.0" )) ? " Pass " : " Fail " );
+		    System.out.println( (45.0 == clock.validateAngleArg( "45.0" )) ? " Pass " : " Fail " );
+		    System.out.println( "    Testing validateTimeSliceArg()....");
+		    System.out.println( (-1.0 == clock.validateTimeSliceArg( "0.0" )) ? " Pass " : " Fail " );
+		    System.out.println( (-1.0 == clock.validateTimeSliceArg( "-60.0" )) ? " Pass " : " Fail " );
+		    System.out.println( (-1.0 == clock.validateTimeSliceArg( "1801" )) ? " Pass " : " Fail " );
+		    System.out.println( (1800 == clock.validateTimeSliceArg( "1800" )) ? " Pass " : " Fail " );
+		    System.out.println( (60.0 == clock.validateTimeSliceArg( "60.0" )) ? " Pass " : " Fail " );
+		    System.out.println( (.001 == clock.validateTimeSliceArg( ".001" )) ? " Pass " : " Fail " );
 		  }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
    }
