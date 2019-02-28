@@ -149,6 +149,9 @@ public class Clock {
 
   double roughHours = elapsedTimeSeconds / 3600;
   hours = Math.floor(roughHours);
+  if(angle == 0 && hours == 0){
+   hours = 12;
+  }
   double roughMinutes = ((roughHours - hours) * 3600) / 60;
   minutes = Math.floor(roughMinutes);
   seconds = ((roughMinutes - minutes) * 60);
