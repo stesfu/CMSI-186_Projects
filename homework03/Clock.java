@@ -154,7 +154,7 @@ public class Clock {
   minutes = Math.floor(roughMinutes);
   seconds = ((roughMinutes - minutes) * 60);
   
-  if(angle == 0 && hours == 0){
+  if(hours == 0){
    hours = 12;
   }
 
