@@ -88,7 +88,7 @@ public class ClockSolver {
   //      double[] timeValues = new double[3];
   cs.handleInitialArguments(args);
   while (clock.getTotalSeconds() <= 43200) {
-   if (Math.abs(clock.angle - clock.getHandAngle()) <= cs.EPSILON_VALUE) {
+   if (Math.abs(clock.angle - clock.getHandAngle()) <= cs.EPSILON_VALUE || (Math.abs((360 - clock.handAngle) - clock.angle) <= cs.EPSILON_VALUE)) {
     System.out.println(" Found Angle: " + clock.angle + " at " + "Time: " + clock.toString());
    }
    clock.tick();
