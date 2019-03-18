@@ -1,10 +1,11 @@
-
+import java.text.DecimalFormat;
 
 public class Timer {
     double timeSlice = 1.0; 
     double elapsedTimeSeconds = 0.0; 
     double hours = 0.0;
     double seconds = 0.0;
+    double minutes = 0.0;
 
     public Timer(){
 
