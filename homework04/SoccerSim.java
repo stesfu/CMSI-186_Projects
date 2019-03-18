@@ -2,8 +2,9 @@ import java.text.DecimalFormat;
 
 public class SoccerSim{
     double fieldSize = 500.0;
-    int ballCount = 0;
-    double timeSlice = 1.0; 
+    public static double timeSlice = 1.0; 
+    boolean collision = true;
+    Ball [] balls;
    
 
     public SoccerSim(){
@@ -22,23 +23,73 @@ public class SoccerSim{
 
     }
 
-    public static double validateArgs(){
+    public static double validateBallArgs(){
         System.out.println("yeet");
         return 0.0;
     }
 
+    public static double validateTimeSlice(){
+        return 0.0;
+    } 
+
+    public void setBalls(Ball [] balls){
+        this.balls = balls;
+    }
+
+    public void ballReport() {
+        for(int i=0; i < balls.length; i++){
+            balls[i].move(timeSlice);
+            balls[i].updateVel(); 
+        }
+        
+    }
+
+    public String toString(){
+        String result = ""; 
+        for (int i = 0; i < balls.length; i++ ){
+            result += " Ball " + i + " " + balls[i];
+            result += "\n";
+        }
+        return result;
+    }
+
+    public boolean isInBounds(){
+        return true; 
+
+    }
+
+
+
     public static void main(String args[]){
-        SoccerSim sim = new SoccerSim();
 
         System.out.println("\n   Welcome to SoccerSim!\n\n");
         //idk maybe do a main here
-        sim.ballCount = (int) (args.length / 4); 
-        Ball [] balls = new Ball[sim.ballCount];
+        int ballCount = (args.length / 4); 
+        Ball [] balls = new Ball[ballCount];
         int j = 0;
         for(int i = 0; i < args.length; i += 4){
-            balls[j] = newBall(args[0], args[i+1], args[i+2], args[i+3]);
+            Double locX = Double.parseDouble(args[i]);
+            Double locY = Double.parseDouble(args[i+1]);
+            Double velX = Double.parseDouble(args[i+2]);
+            Double velY = Double.parseDouble(args[i+3]);
+            balls[j] = new Ball(locX, locY, velX, velY);
             j++; 
         }
+
+        SoccerSim sim = new SoccerSim();
+        sim.setBalls(balls);
+
+        System.out.println(sim);
+        int times = 4;
+        for (int i=0; i < times; i++){
+            sim.ballReport();
+            System.out.println(sim);
+        }
     }
+
+ 
+
+ 
+
 
 }
