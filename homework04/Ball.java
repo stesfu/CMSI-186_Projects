@@ -15,43 +15,48 @@ public class Ball {
         this.velY = velY; 
     }
 
-    public void move(){
-
+    public void move(double timeSlice){
+        locX = velX * timeSlice;
+        locY = velY * timeSlice; 
     }
 
-    public double updateVel(){
-
-        return 0.0;
+    public void updateVel(){
+        velX = velX * 0.99; 
+        velY = velY * 0.99;
     }
 
     public boolean isInMotion(){
-        return true;
+        
+        if (velX == 0 && velY == 0 ){
+            return false;
+
+        }else{
+            return true;
+
+        }
+       
     }
 
-    public double [] getLoc(){ //put the x and y location into an array
-        double[] location = new double[2];
-        location[0] = locX;
-        location[1] = locY;
-        return location;
-    }
+    // public double [] getLoc(){ //put the x and y location into an array
+    //     double[] location = new double[2];
+    //     location[0] = locX;
+    //     location[1] = locY;
+    //     return location;
+    // }
 
-    public double getSpeed(){
-        return 0;
+    // public double getSpeed(){
+    //     return 0;
 
-    }
+    // }
 
     public String toString(){
-        return ("yeEt");
-
-    }
-
-    public boolean isInBounds(){
-        return true; 
-
+        String ballString = "X-Location: " + locX + " Y-Location: " + locY + " X-Velocity: " + velX + " Y-Velocity: " + velY;
+        return ballString;
     }
 
     public static void main(String args[]){
-        //Reference clock for set up
+        Ball b1 = new Ball(1,2,3,4);
+        System.out.println(b1);
 
     }
 
