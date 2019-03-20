@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-//What's not working: Pole Collisions, Out of Bounds, timeSlice validation
+//What's not working: Pole Collisions, Out of Bounds
 
 public class SoccerSim{
     double timeSlice = 1.0; 
@@ -58,12 +58,22 @@ public class SoccerSim{
 
         if((args.length % 4) == 0){ //validating timeSlice??
             timeSlice = 1.0;
+            for(int i = 0; i < args.length; i += 4){ //was args.length
+                Double locX = Double.parseDouble(args[i]);
+                Double locY = Double.parseDouble(args[i+1]);
+                Double velX = Double.parseDouble(args[i+2]);
+                Double velY = Double.parseDouble(args[i+3]);
+                balls.add(new Ball(locX, locY, velX, velY));
+            }
         }else{
-            double tempTimeSlice = Double.parseDouble(args[args.length - 1]);
-            if(tempTimeSlice > 0 || tempTimeSlice <= 1800){
-                timeSlice = tempTimeSlice;
-            }else{
-                System.out.println("Invalid timeSlice");
+            double timeSliceInput = Double.parseDouble(args[args.length - 1]);
+            timeSlice = Ball.validateTimeSlice(timeSliceInput);
+            for(int i = 0; i < args.length - 1; i += 4){ //was args.length
+                Double locX = Double.parseDouble(args[i]);
+                Double locY = Double.parseDouble(args[i+1]);
+                Double velX = Double.parseDouble(args[i+2]);
+                Double velY = Double.parseDouble(args[i+3]);
+                balls.add(new Ball(locX, locY, velX, velY));
             }
         }
 
@@ -72,13 +82,13 @@ public class SoccerSim{
         System.out.println("\n" + "There is a pole at ( 25,10 )" + "\n");
         //idk maybe do a main here
         //int ballCount = (args.length / 4); 
-        for(int i = 0; i < args.length; i += 4){
-            Double locX = Double.parseDouble(args[i]);
-            Double locY = Double.parseDouble(args[i+1]);
-            Double velX = Double.parseDouble(args[i+2]);
-            Double velY = Double.parseDouble(args[i+3]);
-            balls.add(new Ball(locX, locY, velX, velY));
-        }
+        // for(int i = 0; i < args.length; i += 4){ //original parsing
+        //     Double locX = Double.parseDouble(args[i]);
+        //     Double locY = Double.parseDouble(args[i+1]);
+        //     Double velX = Double.parseDouble(args[i+2]);
+        //     Double velY = Double.parseDouble(args[i+3]);
+        //     balls.add(new Ball(locX, locY, velX, velY));
+        // }
 
 
 
@@ -90,9 +100,13 @@ public class SoccerSim{
         return 0.0;
     }
 
-    public static double validateTimeSlice(){
-        return 0.0;
-    } 
+    // public static double validateTimeSlice(){
+    //     double tempTimeSlice = Double.parseDouble(args[args.length - 1]);
+    //         if(tempTimeSlice > 0 || tempTimeSlice <= 1800){
+    //             timeSlice = tempTimeSlice;
+    //         }
+    //     return 0.0;
+    // } 
 
     // public void setBalls(Ball [] balls){
     //     this.balls = balls;
@@ -105,7 +119,7 @@ public class SoccerSim{
     public void moveAll(double timeslice) {
         for(int i=0; i < balls.size(); i++){
             balls.get(i).updateVel();
-            balls.get(i).move(timeslice); 
+            balls.get(i).move(timeslice); //this.timeSlice? but that doesnt compile
         }
         this.time += this.timeSlice;
         
