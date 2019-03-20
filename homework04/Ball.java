@@ -5,7 +5,7 @@ public class Ball {
     double locY = 0.0;
     double velX = 0.0;
     double velY = 0.0;
-    double fieldSize = 30.0;
+    double fieldSize = 500.0;
     double BALL_RADIUS = 4.45;
     double BALL_DISTANCE = 2 * (BALL_RADIUS);   
 
@@ -26,7 +26,7 @@ public class Ball {
         this.velY = this.velY * 0.99;
     }
 
-    public void outOfBoundsVelocity(){
+    public void stopVelocity(){
         this.velX = 0.0;
         this.velY = 0.0;
     }
