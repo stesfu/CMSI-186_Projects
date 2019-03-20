@@ -16,6 +16,16 @@ public class Ball {
         this.velY = velY; 
     }
 
+    public static double validateTimeSlice(Double timeSlice) throws NumberFormatException{
+        double tempTimeSlice = timeSlice;
+            if(tempTimeSlice <= 0 || tempTimeSlice > 1800){
+                throw new NumberFormatException("Your timeSlice is out of range");
+            }else{
+                timeSlice = tempTimeSlice; //switched 
+            }
+        return tempTimeSlice;
+    } 
+
     public void move(double timeSlice){
         this.locX += this.velX * timeSlice;
         this.locY += this.velY * timeSlice; 
