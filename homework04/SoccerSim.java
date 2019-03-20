@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-//What's not working: Pole Collisions, Out of Bounds
+//What's not working: Pole Collisions, Out of Bounds (some cases works for: 10 20 20 20 40 40 20 20 but not 10 10 10 10 20 20 20 20)
 
 public class SoccerSim{
     double timeSlice = 1.0; 
@@ -49,6 +49,7 @@ public class SoccerSim{
    
 
     public void handleInitialArguments(String args[]){
+        int argumentChecker = 0;
         if (0 == args.length || (4 > args.length)) {
          System.out.println("   Sorry you must enter at least 4 arguments\n" +
           "   Usage: java SoccerSim <ball 1 xpos> <ball 1 ypos> < ball 1 xvel> <ball 1 yvel>  <ball 2 xpos> (repeat for as many balls as you want) [timeSlice] \n" +
@@ -56,25 +57,24 @@ public class SoccerSim{
          System.exit(1); 
         } 
 
-        if((args.length % 4) == 0){ //validating timeSlice??
+        if((args.length % 4) == 0){ 
             timeSlice = 1.0;
-            for(int i = 0; i < args.length; i += 4){ //was args.length
-                Double locX = Double.parseDouble(args[i]);
-                Double locY = Double.parseDouble(args[i+1]);
-                Double velX = Double.parseDouble(args[i+2]);
-                Double velY = Double.parseDouble(args[i+3]);
-                balls.add(new Ball(locX, locY, velX, velY));
-            }
-        }else{
+           argumentChecker = args.length;
+        } if((args.length % 4) == 1){ 
             double timeSliceInput = Double.parseDouble(args[args.length - 1]);
             timeSlice = Ball.validateTimeSlice(timeSliceInput);
-            for(int i = 0; i < args.length - 1; i += 4){ //was args.length
-                Double locX = Double.parseDouble(args[i]);
-                Double locY = Double.parseDouble(args[i+1]);
-                Double velX = Double.parseDouble(args[i+2]);
-                Double velY = Double.parseDouble(args[i+3]);
-                balls.add(new Ball(locX, locY, velX, velY));
-            }
+            argumentChecker = (args.length - 1);
+        }if((args.length % 4) > 1){ //QUESTION do i need to make it less than zero
+            throw new NumberFormatException("Invalid Input");
+        }
+        
+
+        for(int i = 0; i < argumentChecker; i += 4){ //was args.length
+            Double locX = Double.parseDouble(args[i]);
+            Double locY = Double.parseDouble(args[i+1]);
+            Double velX = Double.parseDouble(args[i+2]);
+            Double velY = Double.parseDouble(args[i+3]);
+            balls.add(new Ball(locX, locY, velX, velY));
         }
 
         
