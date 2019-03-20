@@ -5,6 +5,7 @@ public class Ball {
     double locY = 0.0;
     double velX = 0.0;
     double velY = 0.0;
+    double fieldSize = 30.0;
     double BALL_RADIUS = 4.45;
     double BALL_DISTANCE = 2 * (BALL_RADIUS);   
 
@@ -16,25 +17,36 @@ public class Ball {
     }
 
     public void move(double timeSlice){
-        locX = velX * timeSlice;
-        locY = velY * timeSlice; 
+        this.locX += this.velX * timeSlice;
+        this.locY += this.velY * timeSlice; 
     }
 
     public void updateVel(){
-        velX = velX * 0.99; 
-        velY = velY * 0.99;
+        this.velX = this.velX * 0.99; 
+        this.velY = this.velY * 0.99;
+    }
+
+    public void outOfBoundsVelocity(){
+        this.velX = 0.0;
+        this.velY = 0.0;
     }
 
     public boolean isInMotion(){
-        
-        if (velX == 0 && velY == 0 ){
-            return false;
-
-        }else{
-            return true;
-
+        boolean ballsMoving = true;
+        if(Math.abs(this.velX) <= 0.083 && Math.abs(this.velY) <= 0.083){
+            ballsMoving = false;
         }
-       
+        return ballsMoving;
+
+    }
+
+    public boolean isInBounds(){
+        boolean inBounds = true;
+        if(Math.abs(this.locX) >= fieldSize || Math.abs(this.locY) >= fieldSize){
+            inBounds = false;
+        }
+        return inBounds; 
+
     }
 
     // public double [] getLoc(){ //put the x and y location into an array
@@ -50,7 +62,7 @@ public class Ball {
     // }
 
     public String toString(){
-        String ballString = "X-Location: " + locX + " Y-Location: " + locY + " X-Velocity: " + velX + " Y-Velocity: " + velY;
+        String ballString = "X-Location: " + this.locX + " Y-Location: " + this.locY + " X-Velocity: " + this.velX + " Y-Velocity: " + this.velY;
         return ballString;
     }
 
