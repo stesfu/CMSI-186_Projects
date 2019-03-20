@@ -1,6 +1,8 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+//What's not working: Pole Collisions, Out of Bounds, timeSlice validation
+
 public class SoccerSim{
     double timeSlice = 1.0; 
     double BALL_RADIUS = 4.45;
@@ -47,12 +49,25 @@ public class SoccerSim{
    
 
     public void handleInitialArguments(String args[]){
-        if (0 == args.length) {
-         System.out.println("   Sorry you must enter at least one argument\n" +
+        if (0 == args.length || (4 > args.length)) {
+         System.out.println("   Sorry you must enter at least 4 arguments\n" +
           "   Usage: java SoccerSim <ball 1 xpos> <ball 1 ypos> < ball 1 xvel> <ball 1 yvel>  <ball 2 xpos> (repeat for as many balls as you want) [timeSlice] \n" +
           "   Please try again..........."); //y same thing then the timeSlice
          System.exit(1); 
         } 
+
+        if((args.length % 4) == 0){ //validating timeSlice??
+            timeSlice = 1.0;
+        }else{
+            double tempTimeSlice = Double.parseDouble(args[args.length - 1]);
+            if(tempTimeSlice > 0 || tempTimeSlice <= 1800){
+                timeSlice = tempTimeSlice;
+            }else{
+                System.out.println("Invalid timeSlice");
+            }
+        }
+
+        
         System.out.println("\n   Welcome to SoccerSim!\n\n");
         System.out.println("\n" + "There is a pole at ( 25,10 )" + "\n");
         //idk maybe do a main here
@@ -168,7 +183,7 @@ public class SoccerSim{
         return ballCollide;
     }
 
-    public boolean poleCollision(){
+    public boolean poleCollision(){ 
         boolean poleCollide = false;
         for (int i = 0; i < balls.size() - 1; i++ ){
             double xElement = Math.abs(balls.get(i).locX - 25);
