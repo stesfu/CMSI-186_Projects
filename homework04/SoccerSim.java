@@ -99,6 +99,25 @@ public class SoccerSim{
                     }
                 }
             }
+        
+         // if(balls.size() != 1){ //Here's how I tried to implement balls colliding that arent right next to each other but it complicated my code
+            //     for (int i = 0; i < balls.size() -1 ; i++ ){
+            //         //if (i+1 < balls.size()){
+            //             for(int j = 1; j < balls.size() - 1; j++){
+            //                 double xElement = Math.abs(balls.get(i).locX - (balls.get(j).locX));
+            //                 double yElement = Math.abs(balls.get(i).locY - (balls.get(j).locY));
+            //                 double distance = Math.hypot(xElement, yElement); 
+            //                 if(distance <= (2 * BALL_RADIUS) ){
+            //                     ballCollide = true;
+            //                     collideItems += "\n" + "Time: " + this.toStringTime() + "\n" + "Ball at " + (balls.get(i).toString() + "\n" + "Ball at " +  balls.get(j).toString()) + "\n";
+    
+            //                 }
+    
+            //             }
+            //         //}
+            //     }
+    
+            // }
      
         for (int i = 0; i < balls.size(); i++ ){
             // System.out.println("BALLS X LOCATION: " + Double.toString(balls.get(i).locX));
