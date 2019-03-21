@@ -1,5 +1,3 @@
-
-
 public class Ball {
     double locX = 0.0;
     double locY = 0.0;
@@ -21,7 +19,7 @@ public class Ball {
             if(tempTimeSlice <= 0 || tempTimeSlice > 1800){
                 throw new NumberFormatException("Your timeSlice is out of range");
             }else{
-                timeSlice = tempTimeSlice; //switched 
+                timeSlice = tempTimeSlice; 
             }
         return tempTimeSlice;
     } 
@@ -34,11 +32,6 @@ public class Ball {
         this.velY = this.velY * 0.99;
     }
 
-    // public void updateVel(){
-    //     this.velX = this.velX * 0.99; 
-    //     this.velY = this.velY * 0.99;
-    // }
-
     public void stopVelocity(){
         this.velX = 0.0;
         this.velY = 0.0;
@@ -50,7 +43,6 @@ public class Ball {
             ballsMoving = false;
         }
         return ballsMoving;
-
     }
 
     public boolean isInBounds(){
@@ -59,20 +51,7 @@ public class Ball {
             inBounds = false;
         }
         return inBounds; 
-
     }
-
-    // public double [] getLoc(){ //put the x and y location into an array
-    //     double[] location = new double[2];
-    //     location[0] = locX;
-    //     location[1] = locY;
-    //     return location;
-    // }
-
-    // public double getSpeed(){
-    //     return 0;
-
-    // }
 
     public String toString(){
         String ballString = "X-Location: " + this.locX + " Y-Location: " + this.locY + " X-Velocity: " + this.velX + " Y-Velocity: " + this.velY;
@@ -84,5 +63,4 @@ public class Ball {
         System.out.println(b1);
 
     }
-
 }
