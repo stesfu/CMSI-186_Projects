@@ -1,0 +1,2366 @@
+.                                       
+.                                       
+======================================  
+... Testing Ball class ...              
+======================================  
+X-Location: 1.0 Y-Location: 2.0 X-Velocity: 3.0 Y-Velocity: 4.0
+.                                       
+.                                       
+.                                       
+.                                       
+======================================  
+... Testing  class ...                
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim no args...        
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+   Sorry you must enter at least 4 arguments
+   Usage: java SoccerSim <ball 1 xpos> <ball 1 ypos> < ball 1 xvel> <ball 1 yvel>  <ball 2 xpos> (repeat for as many balls as you want) [timeSlice] 
+   Please try again...........
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim one arg...        
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+   Sorry you must enter at least 4 arguments
+   Usage: java SoccerSim <ball 1 xpos> <ball 1 ypos> < ball 1 xvel> <ball 1 yvel>  <ball 2 xpos> (repeat for as many balls as you want) [timeSlice] 
+   Please try again...........
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim two args...       
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+   Sorry you must enter at least 4 arguments
+   Usage: java SoccerSim <ball 1 xpos> <ball 1 ypos> < ball 1 xvel> <ball 1 yvel>  <ball 2 xpos> (repeat for as many balls as you want) [timeSlice] 
+   Please try again...........
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim three args...     
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+   Sorry you must enter at least 4 arguments
+   Usage: java SoccerSim <ball 1 xpos> <ball 1 ypos> < ball 1 xvel> <ball 1 yvel>  <ball 2 xpos> (repeat for as many balls as you want) [timeSlice] 
+   Please try again...........
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim six args...       
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim out of bounds...  
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+   Sorry you must enter at least 4 arguments
+   Usage: java SoccerSim <ball 1 xpos> <ball 1 ypos> < ball 1 xvel> <ball 1 yvel>  <ball 2 xpos> (repeat for as many balls as you want) [timeSlice] 
+   Please try again...........
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim negative time slice...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice too large...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice value of zero...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should come to rest...
+...   Should stop at about 4:42           
+======================================  
+
+   Welcome to SoccerSim!
+
+
+
+There is a pole at ( 25,10 )
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 10.0 Y-Location: 10.0 X-Velocity: 1.0 Y-Velocity: 1.0
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 10.0 Y-Location: 10.0 X-Velocity: 1.0 Y-Velocity: 1.0
+
+Time: 00:00:01.00
+ Ball 0 X-Location: 11.0 Y-Location: 11.0 X-Velocity: 0.99 Y-Velocity: 0.99
+
+Time: 00:00:02.00
+ Ball 0 X-Location: 11.99 Y-Location: 11.99 X-Velocity: 0.9801 Y-Velocity: 0.9801
+
+Time: 00:00:03.00
+ Ball 0 X-Location: 12.9701 Y-Location: 12.9701 X-Velocity: 0.9702989999999999 Y-Velocity: 0.9702989999999999
+
+Time: 00:00:04.00
+ Ball 0 X-Location: 13.940399000000001 Y-Location: 13.940399000000001 X-Velocity: 0.96059601 Y-Velocity: 0.96059601
+
+Time: 00:00:05.00
+ Ball 0 X-Location: 14.90099501 Y-Location: 14.90099501 X-Velocity: 0.9509900498999999 Y-Velocity: 0.9509900498999999
+
+Time: 00:00:06.00
+ Ball 0 X-Location: 15.8519850599 Y-Location: 15.8519850599 X-Velocity: 0.9414801494009999 Y-Velocity: 0.9414801494009999
+
+Time: 00:00:07.00
+ Ball 0 X-Location: 16.793465209301 Y-Location: 16.793465209301 X-Velocity: 0.9320653479069899 Y-Velocity: 0.9320653479069899
+
+Time: 00:00:08.00
+ Ball 0 X-Location: 17.72553055720799 Y-Location: 17.72553055720799 X-Velocity: 0.92274469442792 Y-Velocity: 0.92274469442792
+
+Time: 00:00:09.00
+ Ball 0 X-Location: 18.64827525163591 Y-Location: 18.64827525163591 X-Velocity: 0.9135172474836407 Y-Velocity: 0.9135172474836407
+
+Time: 00:00:10.00
+ Ball 0 X-Location: 19.561792499119548 Y-Location: 19.561792499119548 X-Velocity: 0.9043820750088043 Y-Velocity: 0.9043820750088043
+
+Time: 00:00:11.00
+ Ball 0 X-Location: 20.466174574128353 Y-Location: 20.466174574128353 X-Velocity: 0.8953382542587163 Y-Velocity: 0.8953382542587163
+
+Time: 00:00:12.00
+ Ball 0 X-Location: 21.36151282838707 Y-Location: 21.36151282838707 X-Velocity: 0.8863848717161291 Y-Velocity: 0.8863848717161291
+
+Time: 00:00:13.00
+ Ball 0 X-Location: 22.2478977001032 Y-Location: 22.2478977001032 X-Velocity: 0.8775210229989678 Y-Velocity: 0.8775210229989678
+
+Time: 00:00:14.00
+ Ball 0 X-Location: 23.125418723102165 Y-Location: 23.125418723102165 X-Velocity: 0.8687458127689781 Y-Velocity: 0.8687458127689781
+
+Time: 00:00:15.00
+ Ball 0 X-Location: 23.994164535871143 Y-Location: 23.994164535871143 X-Velocity: 0.8600583546412883 Y-Velocity: 0.8600583546412883
+
+Time: 00:00:16.00
+ Ball 0 X-Location: 24.854222890512432 Y-Location: 24.854222890512432 X-Velocity: 0.8514577710948754 Y-Velocity: 0.8514577710948754
+
+Time: 00:00:17.00
+ Ball 0 X-Location: 25.705680661607307 Y-Location: 25.705680661607307 X-Velocity: 0.8429431933839266 Y-Velocity: 0.8429431933839266
+
+Time: 00:00:18.00
+ Ball 0 X-Location: 26.548623854991234 Y-Location: 26.548623854991234 X-Velocity: 0.8345137614500874 Y-Velocity: 0.8345137614500874
+
+Time: 00:00:19.00
+ Ball 0 X-Location: 27.38313761644132 Y-Location: 27.38313761644132 X-Velocity: 0.8261686238355865 Y-Velocity: 0.8261686238355865
+
+Time: 00:00:20.00
+ Ball 0 X-Location: 28.209306240276906 Y-Location: 28.209306240276906 X-Velocity: 0.8179069375972307 Y-Velocity: 0.8179069375972307
+
+Time: 00:00:21.00
+ Ball 0 X-Location: 29.027213177874135 Y-Location: 29.027213177874135 X-Velocity: 0.8097278682212583 Y-Velocity: 0.8097278682212583
+
+Time: 00:00:22.00
+ Ball 0 X-Location: 29.836941046095394 Y-Location: 29.836941046095394 X-Velocity: 0.8016305895390458 Y-Velocity: 0.8016305895390458
+
+Time: 00:00:23.00
+ Ball 0 X-Location: 30.638571635634438 Y-Location: 30.638571635634438 X-Velocity: 0.7936142836436553 Y-Velocity: 0.7936142836436553
+
+Time: 00:00:24.00
+ Ball 0 X-Location: 31.432185919278094 Y-Location: 31.432185919278094 X-Velocity: 0.7856781408072188 Y-Velocity: 0.7856781408072188
+
+Time: 00:00:25.00
+ Ball 0 X-Location: 32.21786406008531 Y-Location: 32.21786406008531 X-Velocity: 0.7778213593991465 Y-Velocity: 0.7778213593991465
+
+Time: 00:00:26.00
+ Ball 0 X-Location: 32.99568541948446 Y-Location: 32.99568541948446 X-Velocity: 0.7700431458051551 Y-Velocity: 0.7700431458051551
+
+Time: 00:00:27.00
+ Ball 0 X-Location: 33.76572856528961 Y-Location: 33.76572856528961 X-Velocity: 0.7623427143471035 Y-Velocity: 0.7623427143471035
+
+Time: 00:00:28.00
+ Ball 0 X-Location: 34.52807127963672 Y-Location: 34.52807127963672 X-Velocity: 0.7547192872036325 Y-Velocity: 0.7547192872036325
+
+Time: 00:00:29.00
+ Ball 0 X-Location: 35.282790566840355 Y-Location: 35.282790566840355 X-Velocity: 0.7471720943315961 Y-Velocity: 0.7471720943315961
+
+Time: 00:00:30.00
+ Ball 0 X-Location: 36.02996266117195 Y-Location: 36.02996266117195 X-Velocity: 0.7397003733882802 Y-Velocity: 0.7397003733882802
+
+Time: 00:00:31.00
+ Ball 0 X-Location: 36.76966303456023 Y-Location: 36.76966303456023 X-Velocity: 0.7323033696543974 Y-Velocity: 0.7323033696543974
+
+Time: 00:00:32.00
+ Ball 0 X-Location: 37.50196640421463 Y-Location: 37.50196640421463 X-Velocity: 0.7249803359578534 Y-Velocity: 0.7249803359578534
+
+Time: 00:00:33.00
+ Ball 0 X-Location: 38.22694674017248 Y-Location: 38.22694674017248 X-Velocity: 0.7177305325982748 Y-Velocity: 0.7177305325982748
+
+Time: 00:00:34.00
+ Ball 0 X-Location: 38.944677272770754 Y-Location: 38.944677272770754 X-Velocity: 0.7105532272722921 Y-Velocity: 0.7105532272722921
+
+Time: 00:00:35.00
+ Ball 0 X-Location: 39.65523050004305 Y-Location: 39.65523050004305 X-Velocity: 0.7034476949995692 Y-Velocity: 0.7034476949995692
+
+Time: 00:00:36.00
+ Ball 0 X-Location: 40.358678195042614 Y-Location: 40.358678195042614 X-Velocity: 0.6964132180495735 Y-Velocity: 0.6964132180495735
+
+Time: 00:00:37.00
+ Ball 0 X-Location: 41.055091413092185 Y-Location: 41.055091413092185 X-Velocity: 0.6894490858690777 Y-Velocity: 0.6894490858690777
+
+Time: 00:00:38.00
+ Ball 0 X-Location: 41.744540498961264 Y-Location: 41.744540498961264 X-Velocity: 0.682554595010387 Y-Velocity: 0.682554595010387
+
+Time: 00:00:39.00
+ Ball 0 X-Location: 42.42709509397165 Y-Location: 42.42709509397165 X-Velocity: 0.6757290490602831 Y-Velocity: 0.6757290490602831
+
+Time: 00:00:40.00
+ Ball 0 X-Location: 43.10282414303193 Y-Location: 43.10282414303193 X-Velocity: 0.6689717585696803 Y-Velocity: 0.6689717585696803
+
+Time: 00:00:41.00
+ Ball 0 X-Location: 43.771795901601614 Y-Location: 43.771795901601614 X-Velocity: 0.6622820409839835 Y-Velocity: 0.6622820409839835
+
+Time: 00:00:42.00
+ Ball 0 X-Location: 44.434077942585596 Y-Location: 44.434077942585596 X-Velocity: 0.6556592205741436 Y-Velocity: 0.6556592205741436
+
+Time: 00:00:43.00
+ Ball 0 X-Location: 45.08973716315974 Y-Location: 45.08973716315974 X-Velocity: 0.6491026283684022 Y-Velocity: 0.6491026283684022
+
+Time: 00:00:44.00
+ Ball 0 X-Location: 45.73883979152814 Y-Location: 45.73883979152814 X-Velocity: 0.6426116020847181 Y-Velocity: 0.6426116020847181
+
+Time: 00:00:45.00
+ Ball 0 X-Location: 46.38145139361286 Y-Location: 46.38145139361286 X-Velocity: 0.6361854860638709 Y-Velocity: 0.6361854860638709
+
+Time: 00:00:46.00
+ Ball 0 X-Location: 47.017636879676736 Y-Location: 47.017636879676736 X-Velocity: 0.6298236312032323 Y-Velocity: 0.6298236312032323
+
+Time: 00:00:47.00
+ Ball 0 X-Location: 47.64746051087997 Y-Location: 47.64746051087997 X-Velocity: 0.6235253948912 Y-Velocity: 0.6235253948912
+
+Time: 00:00:48.00
+ Ball 0 X-Location: 48.27098590577117 Y-Location: 48.27098590577117 X-Velocity: 0.617290140942288 Y-Velocity: 0.617290140942288
+
+Time: 00:00:49.00
+ Ball 0 X-Location: 48.88827604671346 Y-Location: 48.88827604671346 X-Velocity: 0.6111172395328651 Y-Velocity: 0.6111172395328651
+
+Time: 00:00:50.00
+ Ball 0 X-Location: 49.499393286246324 Y-Location: 49.499393286246324 X-Velocity: 0.6050060671375365 Y-Velocity: 0.6050060671375365
+
+Time: 00:00:51.00
+ Ball 0 X-Location: 50.10439935338386 Y-Location: 50.10439935338386 X-Velocity: 0.5989560064661611 Y-Velocity: 0.5989560064661611
+
+Time: 00:00:52.00
+ Ball 0 X-Location: 50.70335535985002 Y-Location: 50.70335535985002 X-Velocity: 0.5929664464014994 Y-Velocity: 0.5929664464014994
+
+Time: 00:00:53.00
+ Ball 0 X-Location: 51.29632180625152 Y-Location: 51.29632180625152 X-Velocity: 0.5870367819374844 Y-Velocity: 0.5870367819374844
+
+Time: 00:00:54.00
+ Ball 0 X-Location: 51.883358588189004 Y-Location: 51.883358588189004 X-Velocity: 0.5811664141181095 Y-Velocity: 0.5811664141181095
+
+Time: 00:00:55.00
+ Ball 0 X-Location: 52.46452500230711 Y-Location: 52.46452500230711 X-Velocity: 0.5753547499769285 Y-Velocity: 0.5753547499769285
+
+Time: 00:00:56.00
+ Ball 0 X-Location: 53.039879752284044 Y-Location: 53.039879752284044 X-Velocity: 0.5696012024771592 Y-Velocity: 0.5696012024771592
+
+Time: 00:00:57.00
+ Ball 0 X-Location: 53.6094809547612 Y-Location: 53.6094809547612 X-Velocity: 0.5639051904523876 Y-Velocity: 0.5639051904523876
+
+Time: 00:00:58.00
+ Ball 0 X-Location: 54.17338614521359 Y-Location: 54.17338614521359 X-Velocity: 0.5582661385478638 Y-Velocity: 0.5582661385478638
+
+Time: 00:00:59.00
+ Ball 0 X-Location: 54.731652283761456 Y-Location: 54.731652283761456 X-Velocity: 0.5526834771623851 Y-Velocity: 0.5526834771623851
+
+Time: 00:01:00.00
+ Ball 0 X-Location: 55.28433576092384 Y-Location: 55.28433576092384 X-Velocity: 0.5471566423907612 Y-Velocity: 0.5471566423907612
+
+Time: 00:01:01.00
+ Ball 0 X-Location: 55.8314924033146 Y-Location: 55.8314924033146 X-Velocity: 0.5416850759668536 Y-Velocity: 0.5416850759668536
+
+Time: 00:01:02.00
+ Ball 0 X-Location: 56.37317747928145 Y-Location: 56.37317747928145 X-Velocity: 0.536268225207185 Y-Velocity: 0.536268225207185
+
+Time: 00:01:03.00
+ Ball 0 X-Location: 56.90944570448864 Y-Location: 56.90944570448864 X-Velocity: 0.5309055429551132 Y-Velocity: 0.5309055429551132
+
+Time: 00:01:04.00
+ Ball 0 X-Location: 57.44035124744375 Y-Location: 57.44035124744375 X-Velocity: 0.525596487525562 Y-Velocity: 0.525596487525562
+
+Time: 00:01:05.00
+ Ball 0 X-Location: 57.96594773496931 Y-Location: 57.96594773496931 X-Velocity: 0.5203405226503064 Y-Velocity: 0.5203405226503064
+
+Time: 00:01:06.00
+ Ball 0 X-Location: 58.48628825761962 Y-Location: 58.48628825761962 X-Velocity: 0.5151371174238033 Y-Velocity: 0.5151371174238033
+
+Time: 00:01:07.00
+ Ball 0 X-Location: 59.001425375043425 Y-Location: 59.001425375043425 X-Velocity: 0.5099857462495653 Y-Velocity: 0.5099857462495653
+
+Time: 00:01:08.00
+ Ball 0 X-Location: 59.51141112129299 Y-Location: 59.51141112129299 X-Velocity: 0.5048858887870696 Y-Velocity: 0.5048858887870696
+
+Time: 00:01:09.00
+ Ball 0 X-Location: 60.01629701008006 Y-Location: 60.01629701008006 X-Velocity: 0.4998370298991989 Y-Velocity: 0.4998370298991989
+
+Time: 00:01:10.00
+ Ball 0 X-Location: 60.516134039979256 Y-Location: 60.516134039979256 X-Velocity: 0.49483865960020695 Y-Velocity: 0.49483865960020695
+
+Time: 00:01:11.00
+ Ball 0 X-Location: 61.01097269957946 Y-Location: 61.01097269957946 X-Velocity: 0.4898902730042049 Y-Velocity: 0.4898902730042049
+
+Time: 00:01:12.00
+ Ball 0 X-Location: 61.50086297258367 Y-Location: 61.50086297258367 X-Velocity: 0.48499137027416284 Y-Velocity: 0.48499137027416284
+
+Time: 00:01:13.00
+ Ball 0 X-Location: 61.985854342857834 Y-Location: 61.985854342857834 X-Velocity: 0.4801414565714212 Y-Velocity: 0.4801414565714212
+
+Time: 00:01:14.00
+ Ball 0 X-Location: 62.46599579942926 Y-Location: 62.46599579942926 X-Velocity: 0.475340042005707 Y-Velocity: 0.475340042005707
+
+Time: 00:01:15.00
+ Ball 0 X-Location: 62.94133584143496 Y-Location: 62.94133584143496 X-Velocity: 0.47058664158564995 Y-Velocity: 0.47058664158564995
+
+Time: 00:01:16.00
+ Ball 0 X-Location: 63.41192248302061 Y-Location: 63.41192248302061 X-Velocity: 0.4658807751697934 Y-Velocity: 0.4658807751697934
+
+Time: 00:01:17.00
+ Ball 0 X-Location: 63.877803258190404 Y-Location: 63.877803258190404 X-Velocity: 0.4612219674180955 Y-Velocity: 0.4612219674180955
+
+Time: 00:01:18.00
+ Ball 0 X-Location: 64.3390252256085 Y-Location: 64.3390252256085 X-Velocity: 0.45660974774391455 Y-Velocity: 0.45660974774391455
+
+Time: 00:01:19.00
+ Ball 0 X-Location: 64.7956349733524 Y-Location: 64.7956349733524 X-Velocity: 0.4520436502664754 Y-Velocity: 0.4520436502664754
+
+Time: 00:01:20.00
+ Ball 0 X-Location: 65.24767862361888 Y-Location: 65.24767862361888 X-Velocity: 0.44752321376381066 Y-Velocity: 0.44752321376381066
+
+Time: 00:01:21.00
+ Ball 0 X-Location: 65.6952018373827 Y-Location: 65.6952018373827 X-Velocity: 0.44304798162617254 Y-Velocity: 0.44304798162617254
+
+Time: 00:01:22.00
+ Ball 0 X-Location: 66.13824981900888 Y-Location: 66.13824981900888 X-Velocity: 0.4386175018099108 Y-Velocity: 0.4386175018099108
+
+Time: 00:01:23.00
+ Ball 0 X-Location: 66.57686732081879 Y-Location: 66.57686732081879 X-Velocity: 0.4342313267918117 Y-Velocity: 0.4342313267918117
+
+Time: 00:01:24.00
+ Ball 0 X-Location: 67.01109864761061 Y-Location: 67.01109864761061 X-Velocity: 0.4298890135238936 Y-Velocity: 0.4298890135238936
+
+Time: 00:01:25.00
+ Ball 0 X-Location: 67.4409876611345 Y-Location: 67.4409876611345 X-Velocity: 0.42559012338865465 Y-Velocity: 0.42559012338865465
+
+Time: 00:01:26.00
+ Ball 0 X-Location: 67.86657778452316 Y-Location: 67.86657778452316 X-Velocity: 0.4213342221547681 Y-Velocity: 0.4213342221547681
+
+Time: 00:01:27.00
+ Ball 0 X-Location: 68.28791200667793 Y-Location: 68.28791200667793 X-Velocity: 0.41712087993322045 Y-Velocity: 0.41712087993322045
+
+Time: 00:01:28.00
+ Ball 0 X-Location: 68.70503288661115 Y-Location: 68.70503288661115 X-Velocity: 0.41294967113388825 Y-Velocity: 0.41294967113388825
+
+Time: 00:01:29.00
+ Ball 0 X-Location: 69.11798255774504 Y-Location: 69.11798255774504 X-Velocity: 0.40882017442254937 Y-Velocity: 0.40882017442254937
+
+Time: 00:01:30.00
+ Ball 0 X-Location: 69.52680273216758 Y-Location: 69.52680273216758 X-Velocity: 0.4047319726783239 Y-Velocity: 0.4047319726783239
+
+Time: 00:01:31.00
+ Ball 0 X-Location: 69.9315347048459 Y-Location: 69.9315347048459 X-Velocity: 0.40068465295154065 Y-Velocity: 0.40068465295154065
+
+Time: 00:01:32.00
+ Ball 0 X-Location: 70.33221935779744 Y-Location: 70.33221935779744 X-Velocity: 0.39667780642202527 Y-Velocity: 0.39667780642202527
+
+Time: 00:01:33.00
+ Ball 0 X-Location: 70.72889716421946 Y-Location: 70.72889716421946 X-Velocity: 0.392711028357805 Y-Velocity: 0.392711028357805
+
+Time: 00:01:34.00
+ Ball 0 X-Location: 71.12160819257727 Y-Location: 71.12160819257727 X-Velocity: 0.38878391807422696 Y-Velocity: 0.38878391807422696
+
+Time: 00:01:35.00
+ Ball 0 X-Location: 71.5103921106515 Y-Location: 71.5103921106515 X-Velocity: 0.3848960788934847 Y-Velocity: 0.3848960788934847
+
+Time: 00:01:36.00
+ Ball 0 X-Location: 71.89528818954498 Y-Location: 71.89528818954498 X-Velocity: 0.38104711810454983 Y-Velocity: 0.38104711810454983
+
+Time: 00:01:37.00
+ Ball 0 X-Location: 72.27633530764953 Y-Location: 72.27633530764953 X-Velocity: 0.37723664692350434 Y-Velocity: 0.37723664692350434
+
+Time: 00:01:38.00
+ Ball 0 X-Location: 72.65357195457304 Y-Location: 72.65357195457304 X-Velocity: 0.37346428045426927 Y-Velocity: 0.37346428045426927
+
+Time: 00:01:39.00
+ Ball 0 X-Location: 73.02703623502731 Y-Location: 73.02703623502731 X-Velocity: 0.36972963764972655 Y-Velocity: 0.36972963764972655
+
+Time: 00:01:40.00
+ Ball 0 X-Location: 73.39676587267704 Y-Location: 73.39676587267704 X-Velocity: 0.36603234127322926 Y-Velocity: 0.36603234127322926
+
+Time: 00:01:41.00
+ Ball 0 X-Location: 73.76279821395026 Y-Location: 73.76279821395026 X-Velocity: 0.36237201786049694 Y-Velocity: 0.36237201786049694
+
+Time: 00:01:42.00
+ Ball 0 X-Location: 74.12517023181076 Y-Location: 74.12517023181076 X-Velocity: 0.358748297681892 Y-Velocity: 0.358748297681892
+
+Time: 00:01:43.00
+ Ball 0 X-Location: 74.48391852949266 Y-Location: 74.48391852949266 X-Velocity: 0.35516081470507305 Y-Velocity: 0.35516081470507305
+
+Time: 00:01:44.00
+ Ball 0 X-Location: 74.83907934419773 Y-Location: 74.83907934419773 X-Velocity: 0.3516092065580223 Y-Velocity: 0.3516092065580223
+
+Time: 00:01:45.00
+ Ball 0 X-Location: 75.19068855075575 Y-Location: 75.19068855075575 X-Velocity: 0.34809311449244207 Y-Velocity: 0.34809311449244207
+
+Time: 00:01:46.00
+ Ball 0 X-Location: 75.5387816652482 Y-Location: 75.5387816652482 X-Velocity: 0.34461218334751764 Y-Velocity: 0.34461218334751764
+
+Time: 00:01:47.00
+ Ball 0 X-Location: 75.88339384859572 Y-Location: 75.88339384859572 X-Velocity: 0.34116606151404244 Y-Velocity: 0.34116606151404244
+
+Time: 00:01:48.00
+ Ball 0 X-Location: 76.22455991010976 Y-Location: 76.22455991010976 X-Velocity: 0.337754400898902 Y-Velocity: 0.337754400898902
+
+Time: 00:01:49.00
+ Ball 0 X-Location: 76.56231431100866 Y-Location: 76.56231431100866 X-Velocity: 0.334376856889913 Y-Velocity: 0.334376856889913
+
+Time: 00:01:50.00
+ Ball 0 X-Location: 76.89669116789858 Y-Location: 76.89669116789858 X-Velocity: 0.33103308832101386 Y-Velocity: 0.33103308832101386
+
+Time: 00:01:51.00
+ Ball 0 X-Location: 77.22772425621959 Y-Location: 77.22772425621959 X-Velocity: 0.3277227574378037 Y-Velocity: 0.3277227574378037
+
+Time: 00:01:52.00
+ Ball 0 X-Location: 77.55544701365739 Y-Location: 77.55544701365739 X-Velocity: 0.3244455298634257 Y-Velocity: 0.3244455298634257
+
+Time: 00:01:53.00
+ Ball 0 X-Location: 77.87989254352081 Y-Location: 77.87989254352081 X-Velocity: 0.3212010745647914 Y-Velocity: 0.3212010745647914
+
+Time: 00:01:54.00
+ Ball 0 X-Location: 78.20109361808561 Y-Location: 78.20109361808561 X-Velocity: 0.3179890638191435 Y-Velocity: 0.3179890638191435
+
+Time: 00:01:55.00
+ Ball 0 X-Location: 78.51908268190475 Y-Location: 78.51908268190475 X-Velocity: 0.31480917318095203 Y-Velocity: 0.31480917318095203
+
+Time: 00:01:56.00
+ Ball 0 X-Location: 78.8338918550857 Y-Location: 78.8338918550857 X-Velocity: 0.3116610814491425 Y-Velocity: 0.3116610814491425
+
+Time: 00:01:57.00
+ Ball 0 X-Location: 79.14555293653484 Y-Location: 79.14555293653484 X-Velocity: 0.30854447063465107 Y-Velocity: 0.30854447063465107
+
+Time: 00:01:58.00
+ Ball 0 X-Location: 79.4540974071695 Y-Location: 79.4540974071695 X-Velocity: 0.30545902592830454 Y-Velocity: 0.30545902592830454
+
+Time: 00:01:59.00
+ Ball 0 X-Location: 79.7595564330978 Y-Location: 79.7595564330978 X-Velocity: 0.3024044356690215 Y-Velocity: 0.3024044356690215
+
+Time: 00:02:00.00
+ Ball 0 X-Location: 80.06196086876682 Y-Location: 80.06196086876682 X-Velocity: 0.29938039131233124 Y-Velocity: 0.29938039131233124
+
+Time: 00:02:01.00
+ Ball 0 X-Location: 80.36134126007914 Y-Location: 80.36134126007914 X-Velocity: 0.2963865873992079 Y-Velocity: 0.2963865873992079
+
+Time: 00:02:02.00
+ Ball 0 X-Location: 80.65772784747836 Y-Location: 80.65772784747836 X-Velocity: 0.29342272152521587 Y-Velocity: 0.29342272152521587
+
+Time: 00:02:03.00
+ Ball 0 X-Location: 80.95115056900357 Y-Location: 80.95115056900357 X-Velocity: 0.2904884943099637 Y-Velocity: 0.2904884943099637
+
+Time: 00:02:04.00
+ Ball 0 X-Location: 81.24163906331354 Y-Location: 81.24163906331354 X-Velocity: 0.28758360936686406 Y-Velocity: 0.28758360936686406
+
+Time: 00:02:05.00
+ Ball 0 X-Location: 81.5292226726804 Y-Location: 81.5292226726804 X-Velocity: 0.2847077732731954 Y-Velocity: 0.2847077732731954
+
+Time: 00:02:06.00
+ Ball 0 X-Location: 81.8139304459536 Y-Location: 81.8139304459536 X-Velocity: 0.28186069554046345 Y-Velocity: 0.28186069554046345
+
+Time: 00:02:07.00
+ Ball 0 X-Location: 82.09579114149406 Y-Location: 82.09579114149406 X-Velocity: 0.2790420885850588 Y-Velocity: 0.2790420885850588
+
+Time: 00:02:08.00
+ Ball 0 X-Location: 82.37483323007912 Y-Location: 82.37483323007912 X-Velocity: 0.2762516676992082 Y-Velocity: 0.2762516676992082
+
+Time: 00:02:09.00
+ Ball 0 X-Location: 82.65108489777833 Y-Location: 82.65108489777833 X-Velocity: 0.27348915102221616 Y-Velocity: 0.27348915102221616
+
+Time: 00:02:10.00
+ Ball 0 X-Location: 82.92457404880055 Y-Location: 82.92457404880055 X-Velocity: 0.270754259511994 Y-Velocity: 0.270754259511994
+
+Time: 00:02:11.00
+ Ball 0 X-Location: 83.19532830831254 Y-Location: 83.19532830831254 X-Velocity: 0.26804671691687404 Y-Velocity: 0.26804671691687404
+
+Time: 00:02:12.00
+ Ball 0 X-Location: 83.46337502522941 Y-Location: 83.46337502522941 X-Velocity: 0.2653662497477053 Y-Velocity: 0.2653662497477053
+
+Time: 00:02:13.00
+ Ball 0 X-Location: 83.72874127497711 Y-Location: 83.72874127497711 X-Velocity: 0.2627125872502282 Y-Velocity: 0.2627125872502282
+
+Time: 00:02:14.00
+ Ball 0 X-Location: 83.99145386222735 Y-Location: 83.99145386222735 X-Velocity: 0.2600854613777259 Y-Velocity: 0.2600854613777259
+
+Time: 00:02:15.00
+ Ball 0 X-Location: 84.25153932360507 Y-Location: 84.25153932360507 X-Velocity: 0.2574846067639487 Y-Velocity: 0.2574846067639487
+
+Time: 00:02:16.00
+ Ball 0 X-Location: 84.50902393036903 Y-Location: 84.50902393036903 X-Velocity: 0.2549097606963092 Y-Velocity: 0.2549097606963092
+
+Time: 00:02:17.00
+ Ball 0 X-Location: 84.76393369106533 Y-Location: 84.76393369106533 X-Velocity: 0.2523606630893461 Y-Velocity: 0.2523606630893461
+
+Time: 00:02:18.00
+ Ball 0 X-Location: 85.01629435415468 Y-Location: 85.01629435415468 X-Velocity: 0.24983705645845267 Y-Velocity: 0.24983705645845267
+
+Time: 00:02:19.00
+ Ball 0 X-Location: 85.26613141061313 Y-Location: 85.26613141061313 X-Velocity: 0.24733868589386815 Y-Velocity: 0.24733868589386815
+
+Time: 00:02:20.00
+ Ball 0 X-Location: 85.51347009650699 Y-Location: 85.51347009650699 X-Velocity: 0.24486529903492946 Y-Velocity: 0.24486529903492946
+
+Time: 00:02:21.00
+ Ball 0 X-Location: 85.75833539554192 Y-Location: 85.75833539554192 X-Velocity: 0.24241664604458016 Y-Velocity: 0.24241664604458016
+
+Time: 00:02:22.00
+ Ball 0 X-Location: 86.0007520415865 Y-Location: 86.0007520415865 X-Velocity: 0.23999247958413436 Y-Velocity: 0.23999247958413436
+
+Time: 00:02:23.00
+ Ball 0 X-Location: 86.24074452117063 Y-Location: 86.24074452117063 X-Velocity: 0.23759255478829303 Y-Velocity: 0.23759255478829303
+
+Time: 00:02:24.00
+ Ball 0 X-Location: 86.47833707595892 Y-Location: 86.47833707595892 X-Velocity: 0.2352166292404101 Y-Velocity: 0.2352166292404101
+
+Time: 00:02:25.00
+ Ball 0 X-Location: 86.71355370519933 Y-Location: 86.71355370519933 X-Velocity: 0.232864462948006 Y-Velocity: 0.232864462948006
+
+Time: 00:02:26.00
+ Ball 0 X-Location: 86.94641816814733 Y-Location: 86.94641816814733 X-Velocity: 0.23053581831852593 Y-Velocity: 0.23053581831852593
+
+Time: 00:02:27.00
+ Ball 0 X-Location: 87.17695398646586 Y-Location: 87.17695398646586 X-Velocity: 0.22823046013534068 Y-Velocity: 0.22823046013534068
+
+Time: 00:02:28.00
+ Ball 0 X-Location: 87.4051844466012 Y-Location: 87.4051844466012 X-Velocity: 0.22594815553398728 Y-Velocity: 0.22594815553398728
+
+Time: 00:02:29.00
+ Ball 0 X-Location: 87.63113260213518 Y-Location: 87.63113260213518 X-Velocity: 0.22368867397864742 Y-Velocity: 0.22368867397864742
+
+Time: 00:02:30.00
+ Ball 0 X-Location: 87.85482127611382 Y-Location: 87.85482127611382 X-Velocity: 0.22145178723886094 Y-Velocity: 0.22145178723886094
+
+Time: 00:02:31.00
+ Ball 0 X-Location: 88.07627306335269 Y-Location: 88.07627306335269 X-Velocity: 0.21923726936647234 Y-Velocity: 0.21923726936647234
+
+Time: 00:02:32.00
+ Ball 0 X-Location: 88.29551033271916 Y-Location: 88.29551033271916 X-Velocity: 0.2170448966728076 Y-Velocity: 0.2170448966728076
+
+Time: 00:02:33.00
+ Ball 0 X-Location: 88.51255522939196 Y-Location: 88.51255522939196 X-Velocity: 0.21487444770607952 Y-Velocity: 0.21487444770607952
+
+Time: 00:02:34.00
+ Ball 0 X-Location: 88.72742967709804 Y-Location: 88.72742967709804 X-Velocity: 0.21272570322901874 Y-Velocity: 0.21272570322901874
+
+Time: 00:02:35.00
+ Ball 0 X-Location: 88.94015538032706 Y-Location: 88.94015538032706 X-Velocity: 0.21059844619672854 Y-Velocity: 0.21059844619672854
+
+Time: 00:02:36.00
+ Ball 0 X-Location: 89.15075382652378 Y-Location: 89.15075382652378 X-Velocity: 0.20849246173476127 Y-Velocity: 0.20849246173476127
+
+Time: 00:02:37.00
+ Ball 0 X-Location: 89.35924628825855 Y-Location: 89.35924628825855 X-Velocity: 0.20640753711741366 Y-Velocity: 0.20640753711741366
+
+Time: 00:02:38.00
+ Ball 0 X-Location: 89.56565382537596 Y-Location: 89.56565382537596 X-Velocity: 0.20434346174623952 Y-Velocity: 0.20434346174623952
+
+Time: 00:02:39.00
+ Ball 0 X-Location: 89.7699972871222 Y-Location: 89.7699972871222 X-Velocity: 0.20230002712877712 Y-Velocity: 0.20230002712877712
+
+Time: 00:02:40.00
+ Ball 0 X-Location: 89.97229731425097 Y-Location: 89.97229731425097 X-Velocity: 0.20027702685748935 Y-Velocity: 0.20027702685748935
+
+Time: 00:02:41.00
+ Ball 0 X-Location: 90.17257434110846 Y-Location: 90.17257434110846 X-Velocity: 0.19827425658891445 Y-Velocity: 0.19827425658891445
+
+Time: 00:02:42.00
+ Ball 0 X-Location: 90.37084859769737 Y-Location: 90.37084859769737 X-Velocity: 0.1962915140230253 Y-Velocity: 0.1962915140230253
+
+Time: 00:02:43.00
+ Ball 0 X-Location: 90.5671401117204 Y-Location: 90.5671401117204 X-Velocity: 0.19432859888279505 Y-Velocity: 0.19432859888279505
+
+Time: 00:02:44.00
+ Ball 0 X-Location: 90.7614687106032 Y-Location: 90.7614687106032 X-Velocity: 0.1923853128939671 Y-Velocity: 0.1923853128939671
+
+Time: 00:02:45.00
+ Ball 0 X-Location: 90.95385402349716 Y-Location: 90.95385402349716 X-Velocity: 0.19046145976502743 Y-Velocity: 0.19046145976502743
+
+Time: 00:02:46.00
+ Ball 0 X-Location: 91.14431548326219 Y-Location: 91.14431548326219 X-Velocity: 0.18855684516737714 Y-Velocity: 0.18855684516737714
+
+Time: 00:02:47.00
+ Ball 0 X-Location: 91.33287232842957 Y-Location: 91.33287232842957 X-Velocity: 0.18667127671570335 Y-Velocity: 0.18667127671570335
+
+Time: 00:02:48.00
+ Ball 0 X-Location: 91.51954360514527 Y-Location: 91.51954360514527 X-Velocity: 0.18480456394854633 Y-Velocity: 0.18480456394854633
+
+Time: 00:02:49.00
+ Ball 0 X-Location: 91.70434816909382 Y-Location: 91.70434816909382 X-Velocity: 0.18295651830906087 Y-Velocity: 0.18295651830906087
+
+Time: 00:02:50.00
+ Ball 0 X-Location: 91.88730468740287 Y-Location: 91.88730468740287 X-Velocity: 0.18112695312597027 Y-Velocity: 0.18112695312597027
+
+Time: 00:02:51.00
+ Ball 0 X-Location: 92.06843164052884 Y-Location: 92.06843164052884 X-Velocity: 0.17931568359471056 Y-Velocity: 0.17931568359471056
+
+Time: 00:02:52.00
+ Ball 0 X-Location: 92.24774732412355 Y-Location: 92.24774732412355 X-Velocity: 0.17752252675876345 Y-Velocity: 0.17752252675876345
+
+Time: 00:02:53.00
+ Ball 0 X-Location: 92.42526985088232 Y-Location: 92.42526985088232 X-Velocity: 0.17574730149117582 Y-Velocity: 0.17574730149117582
+
+Time: 00:02:54.00
+ Ball 0 X-Location: 92.60101715237349 Y-Location: 92.60101715237349 X-Velocity: 0.17398982847626407 Y-Velocity: 0.17398982847626407
+
+Time: 00:02:55.00
+ Ball 0 X-Location: 92.77500698084975 Y-Location: 92.77500698084975 X-Velocity: 0.17224993019150142 Y-Velocity: 0.17224993019150142
+
+Time: 00:02:56.00
+ Ball 0 X-Location: 92.94725691104125 Y-Location: 92.94725691104125 X-Velocity: 0.1705274308895864 Y-Velocity: 0.1705274308895864
+
+Time: 00:02:57.00
+ Ball 0 X-Location: 93.11778434193084 Y-Location: 93.11778434193084 X-Velocity: 0.16882215658069055 Y-Velocity: 0.16882215658069055
+
+Time: 00:02:58.00
+ Ball 0 X-Location: 93.28660649851153 Y-Location: 93.28660649851153 X-Velocity: 0.16713393501488363 Y-Velocity: 0.16713393501488363
+
+Time: 00:02:59.00
+ Ball 0 X-Location: 93.45374043352642 Y-Location: 93.45374043352642 X-Velocity: 0.16546259566473479 Y-Velocity: 0.16546259566473479
+
+Time: 00:03:00.00
+ Ball 0 X-Location: 93.61920302919115 Y-Location: 93.61920302919115 X-Velocity: 0.16380796970808745 Y-Velocity: 0.16380796970808745
+
+Time: 00:03:01.00
+ Ball 0 X-Location: 93.78301099889924 Y-Location: 93.78301099889924 X-Velocity: 0.16216989001100657 Y-Velocity: 0.16216989001100657
+
+Time: 00:03:02.00
+ Ball 0 X-Location: 93.94518088891024 Y-Location: 93.94518088891024 X-Velocity: 0.1605481911108965 Y-Velocity: 0.1605481911108965
+
+Time: 00:03:03.00
+ Ball 0 X-Location: 94.10572908002113 Y-Location: 94.10572908002113 X-Velocity: 0.15894270919978754 Y-Velocity: 0.15894270919978754
+
+Time: 00:03:04.00
+ Ball 0 X-Location: 94.26467178922093 Y-Location: 94.26467178922093 X-Velocity: 0.15735328210778965 Y-Velocity: 0.15735328210778965
+
+Time: 00:03:05.00
+ Ball 0 X-Location: 94.42202507132872 Y-Location: 94.42202507132872 X-Velocity: 0.15577974928671176 Y-Velocity: 0.15577974928671176
+
+Time: 00:03:06.00
+ Ball 0 X-Location: 94.57780482061543 Y-Location: 94.57780482061543 X-Velocity: 0.15422195179384465 Y-Velocity: 0.15422195179384465
+
+Time: 00:03:07.00
+ Ball 0 X-Location: 94.73202677240927 Y-Location: 94.73202677240927 X-Velocity: 0.1526797322759062 Y-Velocity: 0.1526797322759062
+
+Time: 00:03:08.00
+ Ball 0 X-Location: 94.88470650468517 Y-Location: 94.88470650468517 X-Velocity: 0.15115293495314713 Y-Velocity: 0.15115293495314713
+
+Time: 00:03:09.00
+ Ball 0 X-Location: 95.03585943963832 Y-Location: 95.03585943963832 X-Velocity: 0.14964140560361566 Y-Velocity: 0.14964140560361566
+
+Time: 00:03:10.00
+ Ball 0 X-Location: 95.18550084524193 Y-Location: 95.18550084524193 X-Velocity: 0.1481449915475795 Y-Velocity: 0.1481449915475795
+
+Time: 00:03:11.00
+ Ball 0 X-Location: 95.33364583678951 Y-Location: 95.33364583678951 X-Velocity: 0.1466635416321037 Y-Velocity: 0.1466635416321037
+
+Time: 00:03:12.00
+ Ball 0 X-Location: 95.48030937842162 Y-Location: 95.48030937842162 X-Velocity: 0.14519690621578268 Y-Velocity: 0.14519690621578268
+
+Time: 00:03:13.00
+ Ball 0 X-Location: 95.62550628463741 Y-Location: 95.62550628463741 X-Velocity: 0.14374493715362485 Y-Velocity: 0.14374493715362485
+
+Time: 00:03:14.00
+ Ball 0 X-Location: 95.76925122179104 Y-Location: 95.76925122179104 X-Velocity: 0.1423074877820886 Y-Velocity: 0.1423074877820886
+
+Time: 00:03:15.00
+ Ball 0 X-Location: 95.91155870957313 Y-Location: 95.91155870957313 X-Velocity: 0.1408844129042677 Y-Velocity: 0.1408844129042677
+
+Time: 00:03:16.00
+ Ball 0 X-Location: 96.0524431224774 Y-Location: 96.0524431224774 X-Velocity: 0.13947556877522502 Y-Velocity: 0.13947556877522502
+
+Time: 00:03:17.00
+ Ball 0 X-Location: 96.19191869125262 Y-Location: 96.19191869125262 X-Velocity: 0.13808081308747278 Y-Velocity: 0.13808081308747278
+
+Time: 00:03:18.00
+ Ball 0 X-Location: 96.3299995043401 Y-Location: 96.3299995043401 X-Velocity: 0.13670000495659804 Y-Velocity: 0.13670000495659804
+
+Time: 00:03:19.00
+ Ball 0 X-Location: 96.46669950929669 Y-Location: 96.46669950929669 X-Velocity: 0.13533300490703207 Y-Velocity: 0.13533300490703207
+
+Time: 00:03:20.00
+ Ball 0 X-Location: 96.60203251420371 Y-Location: 96.60203251420371 X-Velocity: 0.13397967485796175 Y-Velocity: 0.13397967485796175
+
+Time: 00:03:21.00
+ Ball 0 X-Location: 96.73601218906168 Y-Location: 96.73601218906168 X-Velocity: 0.13263987810938213 Y-Velocity: 0.13263987810938213
+
+Time: 00:03:22.00
+ Ball 0 X-Location: 96.86865206717107 Y-Location: 96.86865206717107 X-Velocity: 0.1313134793282883 Y-Velocity: 0.1313134793282883
+
+Time: 00:03:23.00
+ Ball 0 X-Location: 96.99996554649935 Y-Location: 96.99996554649935 X-Velocity: 0.13000034453500542 Y-Velocity: 0.13000034453500542
+
+Time: 00:03:24.00
+ Ball 0 X-Location: 97.12996589103436 Y-Location: 97.12996589103436 X-Velocity: 0.12870034108965536 Y-Velocity: 0.12870034108965536
+
+Time: 00:03:25.00
+ Ball 0 X-Location: 97.25866623212401 Y-Location: 97.25866623212401 X-Velocity: 0.12741333767875881 Y-Velocity: 0.12741333767875881
+
+Time: 00:03:26.00
+ Ball 0 X-Location: 97.38607956980277 Y-Location: 97.38607956980277 X-Velocity: 0.12613920430197123 Y-Velocity: 0.12613920430197123
+
+Time: 00:03:27.00
+ Ball 0 X-Location: 97.51221877410475 Y-Location: 97.51221877410475 X-Velocity: 0.12487781225895152 Y-Velocity: 0.12487781225895152
+
+Time: 00:03:28.00
+ Ball 0 X-Location: 97.63709658636371 Y-Location: 97.63709658636371 X-Velocity: 0.123629034136362 Y-Velocity: 0.123629034136362
+
+Time: 00:03:29.00
+ Ball 0 X-Location: 97.76072562050007 Y-Location: 97.76072562050007 X-Velocity: 0.12239274379499838 Y-Velocity: 0.12239274379499838
+
+Time: 00:03:30.00
+ Ball 0 X-Location: 97.88311836429507 Y-Location: 97.88311836429507 X-Velocity: 0.1211688163570484 Y-Velocity: 0.1211688163570484
+
+Time: 00:03:31.00
+ Ball 0 X-Location: 98.00428718065211 Y-Location: 98.00428718065211 X-Velocity: 0.11995712819347792 Y-Velocity: 0.11995712819347792
+
+Time: 00:03:32.00
+ Ball 0 X-Location: 98.12424430884559 Y-Location: 98.12424430884559 X-Velocity: 0.11875755691154315 Y-Velocity: 0.11875755691154315
+
+Time: 00:03:33.00
+ Ball 0 X-Location: 98.24300186575714 Y-Location: 98.24300186575714 X-Velocity: 0.11756998134242772 Y-Velocity: 0.11756998134242772
+
+Time: 00:03:34.00
+ Ball 0 X-Location: 98.36057184709956 Y-Location: 98.36057184709956 X-Velocity: 0.11639428152900344 Y-Velocity: 0.11639428152900344
+
+Time: 00:03:35.00
+ Ball 0 X-Location: 98.47696612862856 Y-Location: 98.47696612862856 X-Velocity: 0.11523033871371341 Y-Velocity: 0.11523033871371341
+
+Time: 00:03:36.00
+ Ball 0 X-Location: 98.59219646734228 Y-Location: 98.59219646734228 X-Velocity: 0.11407803532657627 Y-Velocity: 0.11407803532657627
+
+Time: 00:03:37.00
+ Ball 0 X-Location: 98.70627450266885 Y-Location: 98.70627450266885 X-Velocity: 0.11293725497331052 Y-Velocity: 0.11293725497331052
+
+Time: 00:03:38.00
+ Ball 0 X-Location: 98.81921175764215 Y-Location: 98.81921175764215 X-Velocity: 0.1118078824235774 Y-Velocity: 0.1118078824235774
+
+Time: 00:03:39.00
+ Ball 0 X-Location: 98.93101964006573 Y-Location: 98.93101964006573 X-Velocity: 0.11068980359934164 Y-Velocity: 0.11068980359934164
+
+Time: 00:03:40.00
+ Ball 0 X-Location: 99.04170944366507 Y-Location: 99.04170944366507 X-Velocity: 0.10958290556334822 Y-Velocity: 0.10958290556334822
+
+Time: 00:03:41.00
+ Ball 0 X-Location: 99.15129234922841 Y-Location: 99.15129234922841 X-Velocity: 0.10848707650771475 Y-Velocity: 0.10848707650771475
+
+Time: 00:03:42.00
+ Ball 0 X-Location: 99.25977942573613 Y-Location: 99.25977942573613 X-Velocity: 0.1074022057426376 Y-Velocity: 0.1074022057426376
+
+Time: 00:03:43.00
+ Ball 0 X-Location: 99.36718163147877 Y-Location: 99.36718163147877 X-Velocity: 0.10632818368521123 Y-Velocity: 0.10632818368521123
+
+Time: 00:03:44.00
+ Ball 0 X-Location: 99.47350981516398 Y-Location: 99.47350981516398 X-Velocity: 0.10526490184835911 Y-Velocity: 0.10526490184835911
+
+Time: 00:03:45.00
+ Ball 0 X-Location: 99.57877471701234 Y-Location: 99.57877471701234 X-Velocity: 0.10421225282987552 Y-Velocity: 0.10421225282987552
+
+Time: 00:03:46.00
+ Ball 0 X-Location: 99.68298696984222 Y-Location: 99.68298696984222 X-Velocity: 0.10317013030157676 Y-Velocity: 0.10317013030157676
+
+Time: 00:03:47.00
+ Ball 0 X-Location: 99.7861571001438 Y-Location: 99.7861571001438 X-Velocity: 0.10213842899856099 Y-Velocity: 0.10213842899856099
+
+Time: 00:03:48.00
+ Ball 0 X-Location: 99.88829552914235 Y-Location: 99.88829552914235 X-Velocity: 0.10111704470857538 Y-Velocity: 0.10111704470857538
+
+Time: 00:03:49.00
+ Ball 0 X-Location: 99.98941257385093 Y-Location: 99.98941257385093 X-Velocity: 0.10010587426148963 Y-Velocity: 0.10010587426148963
+
+Time: 00:03:50.00
+ Ball 0 X-Location: 100.08951844811241 Y-Location: 100.08951844811241 X-Velocity: 0.09910481551887473 Y-Velocity: 0.09910481551887473
+
+Time: 00:03:51.00
+ Ball 0 X-Location: 100.18862326363129 Y-Location: 100.18862326363129 X-Velocity: 0.09811376736368599 Y-Velocity: 0.09811376736368599
+
+Time: 00:03:52.00
+ Ball 0 X-Location: 100.28673703099497 Y-Location: 100.28673703099497 X-Velocity: 0.09713262969004913 Y-Velocity: 0.09713262969004913
+
+Time: 00:03:53.00
+ Ball 0 X-Location: 100.38386966068502 Y-Location: 100.38386966068502 X-Velocity: 0.09616130339314863 Y-Velocity: 0.09616130339314863
+
+Time: 00:03:54.00
+ Ball 0 X-Location: 100.48003096407817 Y-Location: 100.48003096407817 X-Velocity: 0.09519969035921715 Y-Velocity: 0.09519969035921715
+
+Time: 00:03:55.00
+ Ball 0 X-Location: 100.57523065443739 Y-Location: 100.57523065443739 X-Velocity: 0.09424769345562498 Y-Velocity: 0.09424769345562498
+
+Time: 00:03:56.00
+ Ball 0 X-Location: 100.66947834789302 Y-Location: 100.66947834789302 X-Velocity: 0.09330521652106873 Y-Velocity: 0.09330521652106873
+
+Time: 00:03:57.00
+ Ball 0 X-Location: 100.7627835644141 Y-Location: 100.7627835644141 X-Velocity: 0.09237216435585804 Y-Velocity: 0.09237216435585804
+
+Time: 00:03:58.00
+ Ball 0 X-Location: 100.85515572876996 Y-Location: 100.85515572876996 X-Velocity: 0.09144844271229946 Y-Velocity: 0.09144844271229946
+
+Time: 00:03:59.00
+ Ball 0 X-Location: 100.94660417148226 Y-Location: 100.94660417148226 X-Velocity: 0.09053395828517646 Y-Velocity: 0.09053395828517646
+
+Time: 00:04:00.00
+ Ball 0 X-Location: 101.03713812976744 Y-Location: 101.03713812976744 X-Velocity: 0.08962861870232469 Y-Velocity: 0.08962861870232469
+
+Time: 00:04:01.00
+ Ball 0 X-Location: 101.12676674846976 Y-Location: 101.12676674846976 X-Velocity: 0.08873233251530144 Y-Velocity: 0.08873233251530144
+
+Time: 00:04:02.00
+ Ball 0 X-Location: 101.21549908098507 Y-Location: 101.21549908098507 X-Velocity: 0.08784500919014843 Y-Velocity: 0.08784500919014843
+
+Time: 00:04:03.00
+ Ball 0 X-Location: 101.30334409017522 Y-Location: 101.30334409017522 X-Velocity: 0.08696655909824694 Y-Velocity: 0.08696655909824694
+
+Time: 00:04:04.00
+ Ball 0 X-Location: 101.39031064927346 Y-Location: 101.39031064927346 X-Velocity: 0.08609689350726446 Y-Velocity: 0.08609689350726446
+
+Time: 00:04:05.00
+ Ball 0 X-Location: 101.47640754278072 Y-Location: 101.47640754278072 X-Velocity: 0.08523592457219181 Y-Velocity: 0.08523592457219181
+
+Time: 00:04:06.00
+ Ball 0 X-Location: 101.56164346735291 Y-Location: 101.56164346735291 X-Velocity: 0.0843835653264699 Y-Velocity: 0.0843835653264699
+
+Time: 00:04:07.00
+ Ball 0 X-Location: 101.64602703267938 Y-Location: 101.64602703267938 X-Velocity: 0.0835397296732052 Y-Velocity: 0.0835397296732052
+
+Time: 00:04:08.00
+
+All the balls have stopped moving or left the bounds, no collision occured
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim check for collision...
+...   Should collide at about 5 seconds   
+======================================  
+
+   Welcome to SoccerSim!
+
+
+
+There is a pole at ( 25,10 )
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 10.0 Y-Location: 10.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 1 X-Location: 20.0 Y-Location: 20.0 X-Velocity: -1.0 Y-Velocity: -1.0
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 10.0 Y-Location: 10.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 1 X-Location: 20.0 Y-Location: 20.0 X-Velocity: -1.0 Y-Velocity: -1.0
+
+Time: 00:00:01.00
+ Ball 0 X-Location: 11.0 Y-Location: 11.0 X-Velocity: 0.99 Y-Velocity: 0.99
+ Ball 1 X-Location: 19.0 Y-Location: 19.0 X-Velocity: -0.99 Y-Velocity: -0.99
+
+Time: 00:00:02.00
+ Ball 0 X-Location: 11.99 Y-Location: 11.99 X-Velocity: 0.9801 Y-Velocity: 0.9801
+ Ball 1 X-Location: 18.01 Y-Location: 18.01 X-Velocity: -0.9801 Y-Velocity: -0.9801
+
+Time: 00:00:03.00
+ Ball 0 X-Location: 12.9701 Y-Location: 12.9701 X-Velocity: 0.9702989999999999 Y-Velocity: 0.9702989999999999
+ Ball 1 X-Location: 17.0299 Y-Location: 17.0299 X-Velocity: -0.9702989999999999 Y-Velocity: -0.9702989999999999
+
+Time: 00:00:04.00
+ Ball 0 X-Location: 13.940399000000001 Y-Location: 13.940399000000001 X-Velocity: 0.96059601 Y-Velocity: 0.96059601
+ Ball 1 X-Location: 16.059601 Y-Location: 16.059601 X-Velocity: -0.96059601 Y-Velocity: -0.96059601
+
+Time: 00:00:05.00
+ Ball 0 X-Location: 14.90099501 Y-Location: 14.90099501 X-Velocity: 0.9509900498999999 Y-Velocity: 0.9509900498999999
+ Ball 1 X-Location: 15.099004990000001 Y-Location: 15.099004990000001 X-Velocity: -0.9509900498999999 Y-Velocity: -0.9509900498999999
+
+COLLISION DETECTED
+The items collided have the following attributes: 
+Time: 00:00:05.00
+Ball at X-Location: 14.90099501 Y-Location: 14.90099501 X-Velocity: 0.9509900498999999 Y-Velocity: 0.9509900498999999
+Ball at X-Location: 15.099004990000001 Y-Location: 15.099004990000001 X-Velocity: -0.9509900498999999 Y-Velocity: -0.9509900498999999
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should go out of bounds...
+...   Speed *should* kick it out quickly  
+======================================  
+
+   Welcome to SoccerSim!
+
+
+
+There is a pole at ( 25,10 )
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 10.0 Y-Location: 10.0 X-Velocity: 1000.0 Y-Velocity: 1000.0
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 10.0 Y-Location: 10.0 X-Velocity: 1000.0 Y-Velocity: 1000.0
+
+Time: 00:00:01.00
+
+All the balls have stopped moving or left the bounds, no collision occured
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+...   Should collide Ball 1 and 4 in less than 1 sec  
+======================================  
+
+   Welcome to SoccerSim!
+
+
+
+There is a pole at ( 25,10 )
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 200.0 Y-Location: 200.0 X-Velocity: 10.0 Y-Velocity: 10.0
+ Ball 1 X-Location: 100.0 Y-Location: 100.0 X-Velocity: -100.0 Y-Velocity: -100.0
+ Ball 2 X-Location: 150.0 Y-Location: 150.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 3 X-Location: 175.0 Y-Location: 175.0 X-Velocity: -110.0 Y-Velocity: -110.0
+ Ball 4 X-Location: 20.0 Y-Location: 20.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 5 X-Location: 50.0 Y-Location: 50.0 X-Velocity: -5.0 Y-Velocity: -5.0
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 200.0 Y-Location: 200.0 X-Velocity: 10.0 Y-Velocity: 10.0
+ Ball 1 X-Location: 100.0 Y-Location: 100.0 X-Velocity: -100.0 Y-Velocity: -100.0
+ Ball 2 X-Location: 150.0 Y-Location: 150.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 3 X-Location: 175.0 Y-Location: 175.0 X-Velocity: -110.0 Y-Velocity: -110.0
+ Ball 4 X-Location: 20.0 Y-Location: 20.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 5 X-Location: 50.0 Y-Location: 50.0 X-Velocity: -5.0 Y-Velocity: -5.0
+
+Time: 00:00:00.10
+ Ball 0 X-Location: 201.0 Y-Location: 201.0 X-Velocity: 9.9 Y-Velocity: 9.9
+ Ball 1 X-Location: 90.0 Y-Location: 90.0 X-Velocity: -99.0 Y-Velocity: -99.0
+ Ball 2 X-Location: 170.0 Y-Location: 170.0 X-Velocity: 198.0 Y-Velocity: 198.0
+ Ball 3 X-Location: 164.0 Y-Location: 164.0 X-Velocity: -108.9 Y-Velocity: -108.9
+ Ball 4 X-Location: 20.1 Y-Location: 20.1 X-Velocity: 0.99 Y-Velocity: 0.99
+ Ball 5 X-Location: 49.5 Y-Location: 49.5 X-Velocity: -4.95 Y-Velocity: -4.95
+
+Time: 00:00:00.20
+ Ball 0 X-Location: 201.99 Y-Location: 201.99 X-Velocity: 9.801 Y-Velocity: 9.801
+ Ball 1 X-Location: 80.1 Y-Location: 80.1 X-Velocity: -98.01 Y-Velocity: -98.01
+ Ball 2 X-Location: 189.8 Y-Location: 189.8 X-Velocity: 196.02 Y-Velocity: 196.02
+ Ball 3 X-Location: 153.11 Y-Location: 153.11 X-Velocity: -107.811 Y-Velocity: -107.811
+ Ball 4 X-Location: 20.199 Y-Location: 20.199 X-Velocity: 0.9801 Y-Velocity: 0.9801
+ Ball 5 X-Location: 49.005 Y-Location: 49.005 X-Velocity: -4.9005 Y-Velocity: -4.9005
+
+Time: 00:00:00.30
+ Ball 0 X-Location: 202.9701 Y-Location: 202.9701 X-Velocity: 9.70299 Y-Velocity: 9.70299
+ Ball 1 X-Location: 70.29899999999999 Y-Location: 70.29899999999999 X-Velocity: -97.0299 Y-Velocity: -97.0299
+ Ball 2 X-Location: 209.40200000000002 Y-Location: 209.40200000000002 X-Velocity: 194.0598 Y-Velocity: 194.0598
+ Ball 3 X-Location: 142.3289 Y-Location: 142.3289 X-Velocity: -106.73289000000001 Y-Velocity: -106.73289000000001
+ Ball 4 X-Location: 20.29701 Y-Location: 20.29701 X-Velocity: 0.9702989999999999 Y-Velocity: 0.9702989999999999
+ Ball 5 X-Location: 48.514950000000006 Y-Location: 48.514950000000006 X-Velocity: -4.851495 Y-Velocity: -4.851495
+
+Time: 00:00:00.40
+ Ball 0 X-Location: 203.940399 Y-Location: 203.940399 X-Velocity: 9.605960099999999 Y-Velocity: 9.605960099999999
+ Ball 1 X-Location: 60.59600999999999 Y-Location: 60.59600999999999 X-Velocity: -96.059601 Y-Velocity: -96.059601
+ Ball 2 X-Location: 228.80798000000001 Y-Location: 228.80798000000001 X-Velocity: 192.119202 Y-Velocity: 192.119202
+ Ball 3 X-Location: 131.655611 Y-Location: 131.655611 X-Velocity: -105.6655611 Y-Velocity: -105.6655611
+ Ball 4 X-Location: 20.3940399 Y-Location: 20.3940399 X-Velocity: 0.96059601 Y-Velocity: 0.96059601
+ Ball 5 X-Location: 48.02980050000001 Y-Location: 48.02980050000001 X-Velocity: -4.8029800499999995 Y-Velocity: -4.8029800499999995
+
+Time: 00:00:00.50
+ Ball 0 X-Location: 204.90099501 Y-Location: 204.90099501 X-Velocity: 9.509900498999999 Y-Velocity: 9.509900498999999
+ Ball 1 X-Location: 50.99004989999999 Y-Location: 50.99004989999999 X-Velocity: -95.09900499 Y-Velocity: -95.09900499
+ Ball 2 X-Location: 248.01990020000002 Y-Location: 248.01990020000002 X-Velocity: 190.19800998 Y-Velocity: 190.19800998
+ Ball 3 X-Location: 121.08905489 Y-Location: 121.08905489 X-Velocity: -104.60890548900001 Y-Velocity: -104.60890548900001
+ Ball 4 X-Location: 20.490099501 Y-Location: 20.490099501 X-Velocity: 0.9509900498999999 Y-Velocity: 0.9509900498999999
+ Ball 5 X-Location: 47.549502495000006 Y-Location: 47.549502495000006 X-Velocity: -4.754950249499999 Y-Velocity: -4.754950249499999
+
+Time: 00:00:00.60
+ Ball 0 X-Location: 205.85198505990002 Y-Location: 205.85198505990002 X-Velocity: 9.414801494009998 Y-Velocity: 9.414801494009998
+ Ball 1 X-Location: 41.48014940099999 Y-Location: 41.48014940099999 X-Velocity: -94.1480149401 Y-Velocity: -94.1480149401
+ Ball 2 X-Location: 267.03970119800005 Y-Location: 267.03970119800005 X-Velocity: 188.2960298802 Y-Velocity: 188.2960298802
+ Ball 3 X-Location: 110.6281643411 Y-Location: 110.6281643411 X-Velocity: -103.56281643411 Y-Velocity: -103.56281643411
+ Ball 4 X-Location: 20.58519850599 Y-Location: 20.58519850599 X-Velocity: 0.9414801494009999 Y-Velocity: 0.9414801494009999
+ Ball 5 X-Location: 47.074007470050006 Y-Location: 47.074007470050006 X-Velocity: -4.707400747004999 Y-Velocity: -4.707400747004999
+
+Time: 00:00:00.70
+ Ball 0 X-Location: 206.79346520930102 Y-Location: 206.79346520930102 X-Velocity: 9.320653479069898 Y-Velocity: 9.320653479069898
+ Ball 1 X-Location: 32.06534790698999 Y-Location: 32.06534790698999 X-Velocity: -93.206534790699 Y-Velocity: -93.206534790699
+ Ball 2 X-Location: 285.86930418602003 Y-Location: 285.86930418602003 X-Velocity: 186.413069581398 Y-Velocity: 186.413069581398
+ Ball 3 X-Location: 100.271882697689 Y-Location: 100.271882697689 X-Velocity: -102.5271882697689 Y-Velocity: -102.5271882697689
+ Ball 4 X-Location: 20.6793465209301 Y-Location: 20.6793465209301 X-Velocity: 0.9320653479069899 Y-Velocity: 0.9320653479069899
+ Ball 5 X-Location: 46.603267395349505 Y-Location: 46.603267395349505 X-Velocity: -4.660326739534949 Y-Velocity: -4.660326739534949
+
+Time: 00:00:00.80
+ Ball 0 X-Location: 207.725530557208 Y-Location: 207.725530557208 X-Velocity: 9.2274469442792 Y-Velocity: 9.2274469442792
+ Ball 1 X-Location: 22.74469442792009 Y-Location: 22.74469442792009 X-Velocity: -92.27446944279201 Y-Velocity: -92.27446944279201
+ Ball 2 X-Location: 304.51061114415984 Y-Location: 304.51061114415984 X-Velocity: 184.54893888558402 Y-Velocity: 184.54893888558402
+ Ball 3 X-Location: 90.0191638707121 Y-Location: 90.0191638707121 X-Velocity: -101.5019163870712 Y-Velocity: -101.5019163870712
+ Ball 4 X-Location: 20.7725530557208 Y-Location: 20.7725530557208 X-Velocity: 0.92274469442792 Y-Velocity: 0.92274469442792
+ Ball 5 X-Location: 46.13723472139601 Y-Location: 46.13723472139601 X-Velocity: -4.6137234721396 Y-Velocity: -4.6137234721396
+
+Time: 00:00:00.90
+ Ball 0 X-Location: 208.64827525163594 Y-Location: 208.64827525163594 X-Velocity: 9.135172474836407 Y-Velocity: 9.135172474836407
+ Ball 1 X-Location: 13.51724748364089 Y-Location: 13.51724748364089 X-Velocity: -91.35172474836409 Y-Velocity: -91.35172474836409
+ Ball 2 X-Location: 322.9655050327182 Y-Location: 322.9655050327182 X-Velocity: 182.70344949672818 Y-Velocity: 182.70344949672818
+ Ball 3 X-Location: 79.86897223200498 Y-Location: 79.86897223200498 X-Velocity: -100.48689722320049 Y-Velocity: -100.48689722320049
+ Ball 4 X-Location: 20.86482752516359 Y-Location: 20.86482752516359 X-Velocity: 0.9135172474836407 Y-Velocity: 0.9135172474836407
+ Ball 5 X-Location: 45.67586237418205 Y-Location: 45.67586237418205 X-Velocity: -4.567586237418204 Y-Velocity: -4.567586237418204
+
+Time: 00:00:01.00
+ Ball 0 X-Location: 209.56179249911958 Y-Location: 209.56179249911958 X-Velocity: 9.043820750088043 Y-Velocity: 9.043820750088043
+ Ball 1 X-Location: 4.382075008804481 Y-Location: 4.382075008804481 X-Velocity: -90.43820750088045 Y-Velocity: -90.43820750088045
+ Ball 2 X-Location: 341.2358499823911 Y-Location: 341.2358499823911 X-Velocity: 180.8764150017609 Y-Velocity: 180.8764150017609
+ Ball 3 X-Location: 69.82028250968493 Y-Location: 69.82028250968493 X-Velocity: -99.48202825096848 Y-Velocity: -99.48202825096848
+ Ball 4 X-Location: 20.956179249911955 Y-Location: 20.956179249911955 X-Velocity: 0.9043820750088043 Y-Velocity: 0.9043820750088043
+ Ball 5 X-Location: 45.21910375044023 Y-Location: 45.21910375044023 X-Velocity: -4.521910375044022 Y-Velocity: -4.521910375044022
+
+Time: 00:00:01.10
+ Ball 0 X-Location: 210.4661745741284 Y-Location: 210.4661745741284 X-Velocity: 8.953382542587162 Y-Velocity: 8.953382542587162
+ Ball 1 X-Location: -4.661745741283564 Y-Location: -4.661745741283564 X-Velocity: -89.53382542587164 Y-Velocity: -89.53382542587164
+ Ball 2 X-Location: 359.3234914825672 Y-Location: 359.3234914825672 X-Velocity: 179.06765085174328 Y-Velocity: 179.06765085174328
+ Ball 3 X-Location: 59.87207968458808 Y-Location: 59.87207968458808 X-Velocity: -98.48720796845879 Y-Velocity: -98.48720796845879
+ Ball 4 X-Location: 21.046617457412836 Y-Location: 21.046617457412836 X-Velocity: 0.8953382542587163 Y-Velocity: 0.8953382542587163
+ Ball 5 X-Location: 44.766912712935834 Y-Location: 44.766912712935834 X-Velocity: -4.476691271293581 Y-Velocity: -4.476691271293581
+
+Time: 00:00:01.20
+ Ball 0 X-Location: 211.3615128283871 Y-Location: 211.3615128283871 X-Velocity: 8.863848717161291 Y-Velocity: 8.863848717161291
+ Ball 1 X-Location: -13.615128283870728 Y-Location: -13.615128283870728 X-Velocity: -88.63848717161292 Y-Velocity: -88.63848717161292
+ Ball 2 X-Location: 377.23025656774155 Y-Location: 377.23025656774155 X-Velocity: 177.27697434322585 Y-Velocity: 177.27697434322585
+ Ball 3 X-Location: 50.0233588877422 Y-Location: 50.0233588877422 X-Velocity: -97.5023358887742 Y-Velocity: -97.5023358887742
+ Ball 4 X-Location: 21.136151282838707 Y-Location: 21.136151282838707 X-Velocity: 0.8863848717161291 Y-Velocity: 0.8863848717161291
+ Ball 5 X-Location: 44.319243585806475 Y-Location: 44.319243585806475 X-Velocity: -4.431924358580646 Y-Velocity: -4.431924358580646
+
+Time: 00:00:01.30
+ Ball 0 X-Location: 212.24789770010324 Y-Location: 212.24789770010324 X-Velocity: 8.775210229989678 Y-Velocity: 8.775210229989678
+ Ball 1 X-Location: -22.47897700103202 Y-Location: -22.47897700103202 X-Velocity: -87.75210229989679 Y-Velocity: -87.75210229989679
+ Ball 2 X-Location: 394.9579540020641 Y-Location: 394.9579540020641 X-Velocity: 175.50420459979358 Y-Velocity: 175.50420459979358
+ Ball 3 X-Location: 40.27312529886478 Y-Location: 40.27312529886478 X-Velocity: -96.52731252988646 Y-Velocity: -96.52731252988646
+ Ball 4 X-Location: 21.22478977001032 Y-Location: 21.22478977001032 X-Velocity: 0.8775210229989678 Y-Velocity: 0.8775210229989678
+ Ball 5 X-Location: 43.87605114994841 Y-Location: 43.87605114994841 X-Velocity: -4.387605114994839 Y-Velocity: -4.387605114994839
+
+Time: 00:00:01.40
+ Ball 0 X-Location: 213.1254187231022 Y-Location: 213.1254187231022 X-Velocity: 8.687458127689782 Y-Velocity: 8.687458127689782
+ Ball 1 X-Location: -31.254187231021703 Y-Location: -31.254187231021703 X-Velocity: -86.87458127689783 Y-Velocity: -86.87458127689783
+ Ball 2 X-Location: 412.5083744620435 Y-Location: 412.5083744620435 X-Velocity: 173.74916255379566 Y-Velocity: 173.74916255379566
+ Ball 3 X-Location: 30.620394045876132 Y-Location: 30.620394045876132 X-Velocity: -95.5620394045876 Y-Velocity: -95.5620394045876
+ Ball 4 X-Location: 21.31254187231022 Y-Location: 21.31254187231022 X-Velocity: 0.8687458127689781 Y-Velocity: 0.8687458127689781
+ Ball 5 X-Location: 43.43729063844893 Y-Location: 43.43729063844893 X-Velocity: -4.343729063844891 Y-Velocity: -4.343729063844891
+
+Time: 00:00:01.50
+ Ball 0 X-Location: 213.9941645358712 Y-Location: 213.9941645358712 X-Velocity: 8.600583546412883 Y-Velocity: 8.600583546412883
+ Ball 1 X-Location: -39.94164535871148 Y-Location: -39.94164535871148 X-Velocity: -86.00583546412885 Y-Velocity: -86.00583546412885
+ Ball 2 X-Location: 429.88329071742305 Y-Location: 429.88329071742305 X-Velocity: 172.0116709282577 Y-Velocity: 172.0116709282577
+ Ball 3 X-Location: 21.064190105417374 Y-Location: 21.064190105417374 X-Velocity: -94.60641901054171 Y-Velocity: -94.60641901054171
+ Ball 4 X-Location: 21.39941645358712 Y-Location: 21.39941645358712 X-Velocity: 0.8600583546412883 Y-Velocity: 0.8600583546412883
+ Ball 5 X-Location: 43.00291773206444 Y-Location: 43.00291773206444 X-Velocity: -4.300291773206442 Y-Velocity: -4.300291773206442
+
+COLLISION DETECTED
+The items collided have the following attributes: 
+Time: 00:00:01.50
+Ball at X-Location: 21.064190105417374 Y-Location: 21.064190105417374 X-Velocity: -94.60641901054171 Y-Velocity: -94.60641901054171
+Ball at X-Location: 21.39941645358712 Y-Location: 21.39941645358712 X-Velocity: 0.8600583546412883 Y-Velocity: 0.8600583546412883
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+======================================  
+
+   Welcome to SoccerSim!
+
+
+
+There is a pole at ( 25,10 )
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 200.0 Y-Location: 200.0 X-Velocity: 10.0 Y-Velocity: 10.0
+ Ball 1 X-Location: 100.0 Y-Location: 100.0 X-Velocity: -100.0 Y-Velocity: -100.0
+ Ball 2 X-Location: 150.0 Y-Location: 150.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 3 X-Location: 175.0 Y-Location: 175.0 X-Velocity: -110.0 Y-Velocity: -110.0
+ Ball 4 X-Location: 20.0 Y-Location: 20.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 5 X-Location: 50.0 Y-Location: 50.0 X-Velocity: -5.0 Y-Velocity: -5.0
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 200.0 Y-Location: 200.0 X-Velocity: 10.0 Y-Velocity: 10.0
+ Ball 1 X-Location: 100.0 Y-Location: 100.0 X-Velocity: -100.0 Y-Velocity: -100.0
+ Ball 2 X-Location: 150.0 Y-Location: 150.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 3 X-Location: 175.0 Y-Location: 175.0 X-Velocity: -110.0 Y-Velocity: -110.0
+ Ball 4 X-Location: 20.0 Y-Location: 20.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 5 X-Location: 50.0 Y-Location: 50.0 X-Velocity: -5.0 Y-Velocity: -5.0
+
+Time: 00:00:01.23
+ Ball 0 X-Location: 212.34 Y-Location: 212.34 X-Velocity: 9.9 Y-Velocity: 9.9
+ Ball 1 X-Location: -23.400000000000006 Y-Location: -23.400000000000006 X-Velocity: -99.0 Y-Velocity: -99.0
+ Ball 2 X-Location: 396.8 Y-Location: 396.8 X-Velocity: 198.0 Y-Velocity: 198.0
+ Ball 3 X-Location: 39.25999999999999 Y-Location: 39.25999999999999 X-Velocity: -108.9 Y-Velocity: -108.9
+ Ball 4 X-Location: 21.234 Y-Location: 21.234 X-Velocity: 0.99 Y-Velocity: 0.99
+ Ball 5 X-Location: 43.83 Y-Location: 43.83 X-Velocity: -4.95 Y-Velocity: -4.95
+
+Time: 00:00:02.47
+ Ball 0 X-Location: 224.5566 Y-Location: 224.5566 X-Velocity: 9.801 Y-Velocity: 9.801
+ Ball 1 X-Location: -145.566 Y-Location: -145.566 X-Velocity: -98.01 Y-Velocity: -98.01
+ Ball 2 X-Location: -95.1226 Y-Location: -95.1226 X-Velocity: -107.811 Y-Velocity: -107.811
+ Ball 3 X-Location: 22.45566 Y-Location: 22.45566 X-Velocity: 0.9801 Y-Velocity: 0.9801
+ Ball 4 X-Location: 37.7217 Y-Location: 37.7217 X-Velocity: -4.9005 Y-Velocity: -4.9005
+
+Time: 00:00:03.70
+ Ball 0 X-Location: 236.651034 Y-Location: 236.651034 X-Velocity: 9.70299 Y-Velocity: 9.70299
+ Ball 1 X-Location: -266.51034000000004 Y-Location: -266.51034000000004 X-Velocity: -97.0299 Y-Velocity: -97.0299
+ Ball 2 X-Location: -228.16137400000002 Y-Location: -228.16137400000002 X-Velocity: -106.73289000000001 Y-Velocity: -106.73289000000001
+ Ball 3 X-Location: 23.665103400000003 Y-Location: 23.665103400000003 X-Velocity: 0.9702989999999999 Y-Velocity: 0.9702989999999999
+ Ball 4 X-Location: 31.674483 Y-Location: 31.674483 X-Velocity: -4.851495 Y-Velocity: -4.851495
+
+Time: 00:00:04.94
+ Ball 0 X-Location: 248.62452366000002 Y-Location: 248.62452366000002 X-Velocity: 9.605960099999999 Y-Velocity: 9.605960099999999
+ Ball 1 X-Location: -386.24523660000006 Y-Location: -386.24523660000006 X-Velocity: -96.059601 Y-Velocity: -96.059601
+ Ball 2 X-Location: -359.86976026 Y-Location: -359.86976026 X-Velocity: -105.6655611 Y-Velocity: -105.6655611
+ Ball 3 X-Location: 24.862452366000003 Y-Location: 24.862452366000003 X-Velocity: 0.96059601 Y-Velocity: 0.96059601
+ Ball 4 X-Location: 25.68773817 Y-Location: 25.68773817 X-Velocity: -4.8029800499999995 Y-Velocity: -4.8029800499999995
+
+Time: 00:00:06.17
+ Ball 0 X-Location: 260.4782784234 Y-Location: 260.4782784234 X-Velocity: 9.509900498999999 Y-Velocity: 9.509900498999999
+ Ball 1 X-Location: -490.26106265740003 Y-Location: -490.26106265740003 X-Velocity: -104.60890548900001 Y-Velocity: -104.60890548900001
+ Ball 2 X-Location: 26.047827842340002 Y-Location: 26.047827842340002 X-Velocity: 0.9509900498999999 Y-Velocity: 0.9509900498999999
+ Ball 3 X-Location: 19.7608607883 Y-Location: 19.7608607883 X-Velocity: -4.754950249499999 Y-Velocity: -4.754950249499999
+
+Time: 00:00:07.40
+ Ball 0 X-Location: 272.213495639166 Y-Location: 272.213495639166 X-Velocity: 9.414801494009998 Y-Velocity: 9.414801494009998
+ Ball 1 X-Location: 27.2213495639166 Y-Location: 27.2213495639166 X-Velocity: 0.9414801494009999 Y-Velocity: 0.9414801494009999
+ Ball 2 X-Location: 13.893252180417 Y-Location: 13.893252180417 X-Velocity: -4.707400747004999 Y-Velocity: -4.707400747004999
+
+Time: 00:00:08.64
+ Ball 0 X-Location: 283.83136068277435 Y-Location: 283.83136068277435 X-Velocity: 9.320653479069898 Y-Velocity: 9.320653479069898
+ Ball 1 X-Location: 28.383136068277434 Y-Location: 28.383136068277434 X-Velocity: 0.9320653479069899 Y-Velocity: 0.9320653479069899
+ Ball 2 X-Location: 8.084319658612833 Y-Location: 8.084319658612833 X-Velocity: -4.660326739534949 Y-Velocity: -4.660326739534949
+
+Time: 00:00:09.87
+ Ball 0 X-Location: 295.3330470759466 Y-Location: 295.3330470759466 X-Velocity: 9.2274469442792 Y-Velocity: 9.2274469442792
+ Ball 1 X-Location: 29.53330470759466 Y-Location: 29.53330470759466 X-Velocity: 0.92274469442792 Y-Velocity: 0.92274469442792
+ Ball 2 X-Location: 2.333476462026705 Y-Location: 2.333476462026705 X-Velocity: -4.6137234721396 Y-Velocity: -4.6137234721396
+
+Time: 00:00:11.11
+ Ball 0 X-Location: 306.7197166051871 Y-Location: 306.7197166051871 X-Velocity: 9.135172474836407 Y-Velocity: 9.135172474836407
+ Ball 1 X-Location: 30.671971660518714 Y-Location: 30.671971660518714 X-Velocity: 0.9135172474836407 Y-Velocity: 0.9135172474836407
+ Ball 2 X-Location: -3.359858302593561 Y-Location: -3.359858302593561 X-Velocity: -4.567586237418204 Y-Velocity: -4.567586237418204
+
+Time: 00:00:12.34
+ Ball 0 X-Location: 317.9925194391352 Y-Location: 317.9925194391352 X-Velocity: 9.043820750088043 Y-Velocity: 9.043820750088043
+ Ball 1 X-Location: 31.79925194391353 Y-Location: 31.79925194391353 X-Velocity: 0.9043820750088043 Y-Velocity: 0.9043820750088043
+ Ball 2 X-Location: -8.996259719567625 Y-Location: -8.996259719567625 X-Velocity: -4.521910375044022 Y-Velocity: -4.521910375044022
+
+Time: 00:00:13.57
+ Ball 0 X-Location: 329.15259424474385 Y-Location: 329.15259424474385 X-Velocity: 8.953382542587162 Y-Velocity: 8.953382542587162
+ Ball 1 X-Location: 32.91525942447439 Y-Location: 32.91525942447439 X-Velocity: 0.8953382542587163 Y-Velocity: 0.8953382542587163
+ Ball 2 X-Location: -14.576297122371948 Y-Location: -14.576297122371948 X-Velocity: -4.476691271293581 Y-Velocity: -4.476691271293581
+
+Time: 00:00:14.81
+ Ball 0 X-Location: 340.2010683022964 Y-Location: 340.2010683022964 X-Velocity: 8.863848717161291 Y-Velocity: 8.863848717161291
+ Ball 1 X-Location: 34.02010683022965 Y-Location: 34.02010683022965 X-Velocity: 0.8863848717161291 Y-Velocity: 0.8863848717161291
+ Ball 2 X-Location: -20.100534151148228 Y-Location: -20.100534151148228 X-Velocity: -4.431924358580646 Y-Velocity: -4.431924358580646
+
+Time: 00:00:16.04
+ Ball 0 X-Location: 351.13905761927344 Y-Location: 351.13905761927344 X-Velocity: 8.775210229989678 Y-Velocity: 8.775210229989678
+ Ball 1 X-Location: 35.113905761927356 Y-Location: 35.113905761927356 X-Velocity: 0.8775210229989678 Y-Velocity: 0.8775210229989678
+ Ball 2 X-Location: -25.569528809636743 Y-Location: -25.569528809636743 X-Velocity: -4.387605114994839 Y-Velocity: -4.387605114994839
+
+Time: 00:00:17.28
+ Ball 0 X-Location: 361.9676670430807 Y-Location: 361.9676670430807 X-Velocity: 8.687458127689782 Y-Velocity: 8.687458127689782
+ Ball 1 X-Location: 36.19676670430808 Y-Location: 36.19676670430808 X-Velocity: 0.8687458127689781 Y-Velocity: 0.8687458127689781
+ Ball 2 X-Location: -30.983833521540376 Y-Location: -30.983833521540376 X-Velocity: -4.343729063844891 Y-Velocity: -4.343729063844891
+
+Time: 00:00:18.51
+ Ball 0 X-Location: 372.6879903726499 Y-Location: 372.6879903726499 X-Velocity: 8.600583546412883 Y-Velocity: 8.600583546412883
+ Ball 1 X-Location: 37.268799037265 Y-Location: 37.268799037265 X-Velocity: 0.8600583546412883 Y-Velocity: 0.8600583546412883
+ Ball 2 X-Location: -36.343995186324975 Y-Location: -36.343995186324975 X-Velocity: -4.300291773206442 Y-Velocity: -4.300291773206442
+
+Time: 00:00:19.74
+ Ball 0 X-Location: 383.3011104689234 Y-Location: 383.3011104689234 X-Velocity: 8.514577710948755 Y-Velocity: 8.514577710948755
+ Ball 1 X-Location: 38.33011104689235 Y-Location: 38.33011104689235 X-Velocity: 0.8514577710948754 Y-Velocity: 0.8514577710948754
+ Ball 2 X-Location: -41.65055523446172 Y-Location: -41.65055523446172 X-Velocity: -4.2572888554743775 Y-Velocity: -4.2572888554743775
+
+Time: 00:00:20.98
+ Ball 0 X-Location: 393.8080993642342 Y-Location: 393.8080993642342 X-Velocity: 8.429431933839268 Y-Velocity: 8.429431933839268
+ Ball 1 X-Location: 39.380809936423425 Y-Location: 39.380809936423425 X-Velocity: 0.8429431933839266 Y-Velocity: 0.8429431933839266
+ Ball 2 X-Location: -46.904049682117105 Y-Location: -46.904049682117105 X-Velocity: -4.214715966919634 Y-Velocity: -4.214715966919634
+
+Time: 00:00:22.21
+ Ball 0 X-Location: 404.21001837059185 Y-Location: 404.21001837059185 X-Velocity: 8.345137614500876 Y-Velocity: 8.345137614500876
+ Ball 1 X-Location: 40.421001837059194 Y-Location: 40.421001837059194 X-Velocity: 0.8345137614500874 Y-Velocity: 0.8345137614500874
+ Ball 2 X-Location: -52.105009185295934 Y-Location: -52.105009185295934 X-Velocity: -4.172568807250438 Y-Velocity: -4.172568807250438
+
+Time: 00:00:23.45
+ Ball 0 X-Location: 414.50791818688595 Y-Location: 414.50791818688595 X-Velocity: 8.261686238355868 Y-Velocity: 8.261686238355868
+ Ball 1 X-Location: 41.4507918186886 Y-Location: 41.4507918186886 X-Velocity: 0.8261686238355865 Y-Velocity: 0.8261686238355865
+ Ball 2 X-Location: -57.25395909344297 Y-Location: -57.25395909344297 X-Velocity: -4.130843119177934 Y-Velocity: -4.130843119177934
+
+Time: 00:00:24.68
+ Ball 0 X-Location: 424.7028390050171 Y-Location: 424.7028390050171 X-Velocity: 8.17906937597231 Y-Velocity: 8.17906937597231
+ Ball 1 X-Location: 42.47028390050171 Y-Location: 42.47028390050171 X-Velocity: 0.8179069375972307 Y-Velocity: 0.8179069375972307
+ Ball 2 X-Location: -62.35141950250854 Y-Location: -62.35141950250854 X-Velocity: -4.089534687986155 Y-Velocity: -4.089534687986155
+
+Time: 00:00:25.91
+ Ball 0 X-Location: 434.7958106149669 Y-Location: 434.7958106149669 X-Velocity: 8.097278682212586 Y-Velocity: 8.097278682212586
+ Ball 1 X-Location: 43.479581061496695 Y-Location: 43.479581061496695 X-Velocity: 0.8097278682212583 Y-Velocity: 0.8097278682212583
+ Ball 2 X-Location: -67.39790530748346 Y-Location: -67.39790530748346 X-Velocity: -4.048639341106293 Y-Velocity: -4.048639341106293
+
+Time: 00:00:27.15
+ Ball 0 X-Location: 444.78785250881725 Y-Location: 444.78785250881725 X-Velocity: 8.01630589539046 Y-Velocity: 8.01630589539046
+ Ball 1 X-Location: 44.47878525088173 Y-Location: 44.47878525088173 X-Velocity: 0.8016305895390458 Y-Velocity: 0.8016305895390458
+ Ball 2 X-Location: -72.39392625440863 Y-Location: -72.39392625440863 X-Velocity: -4.00815294769523 Y-Velocity: -4.00815294769523
+
+Time: 00:00:28.38
+ Ball 0 X-Location: 454.6799739837291 Y-Location: 454.6799739837291 X-Velocity: 7.936142836436555 Y-Velocity: 7.936142836436555
+ Ball 1 X-Location: 45.46799739837291 Y-Location: 45.46799739837291 X-Velocity: 0.7936142836436553 Y-Velocity: 0.7936142836436553
+ Ball 2 X-Location: -77.33998699186454 Y-Location: -77.33998699186454 X-Velocity: -3.9680714182182775 Y-Velocity: -3.9680714182182775
+
+Time: 00:00:29.62
+ Ball 0 X-Location: 464.47317424389183 Y-Location: 464.47317424389183 X-Velocity: 7.856781408072189 Y-Velocity: 7.856781408072189
+ Ball 1 X-Location: 46.447317424389176 Y-Location: 46.447317424389176 X-Velocity: 0.7856781408072188 Y-Velocity: 0.7856781408072188
+ Ball 2 X-Location: -82.23658712194589 Y-Location: -82.23658712194589 X-Velocity: -3.9283907040360946 Y-Velocity: -3.9283907040360946
+
+Time: 00:00:30.85
+ Ball 0 X-Location: 474.1684425014529 Y-Location: 474.1684425014529 X-Velocity: 7.778213593991468 Y-Velocity: 7.778213593991468
+ Ball 1 X-Location: 47.41684425014528 Y-Location: 47.41684425014528 X-Velocity: 0.7778213593991465 Y-Velocity: 0.7778213593991465
+ Ball 2 X-Location: -87.08422125072643 Y-Location: -87.08422125072643 X-Velocity: -3.889106796995734 Y-Velocity: -3.889106796995734
+
+Time: 00:00:32.08
+ Ball 0 X-Location: 483.76675807643835 Y-Location: 483.76675807643835 X-Velocity: 7.700431458051553 Y-Velocity: 7.700431458051553
+ Ball 1 X-Location: 48.37667580764383 Y-Location: 48.37667580764383 X-Velocity: 0.7700431458051551 Y-Velocity: 0.7700431458051551
+ Ball 2 X-Location: -91.88337903821916 Y-Location: -91.88337903821916 X-Velocity: -3.8502157290257766 Y-Velocity: -3.8502157290257766
+
+Time: 00:00:33.32
+ Ball 0 X-Location: 493.269090495674 Y-Location: 493.269090495674 X-Velocity: 7.623427143471037 Y-Velocity: 7.623427143471037
+ Ball 1 X-Location: 49.32690904956739 Y-Location: 49.32690904956739 X-Velocity: 0.7623427143471035 Y-Velocity: 0.7623427143471035
+ Ball 2 X-Location: -96.63454524783697 Y-Location: -96.63454524783697 X-Velocity: -3.8117135717355186 Y-Velocity: -3.8117135717355186
+
+Time: 00:00:34.55
+ Ball 0 X-Location: 50.267639959071715 Y-Location: 50.267639959071715 X-Velocity: 0.7547192872036325 Y-Velocity: 0.7547192872036325
+ Ball 1 X-Location: -101.3381997953586 Y-Location: -101.3381997953586 X-Velocity: -3.7735964360181633 Y-Velocity: -3.7735964360181633
+
+Time: 00:00:35.79
+ Ball 0 X-Location: 51.198963559481 Y-Location: 51.198963559481 X-Velocity: 0.7471720943315961 Y-Velocity: 0.7471720943315961
+ Ball 1 X-Location: -105.99481779740502 Y-Location: -105.99481779740502 X-Velocity: -3.7358604716579817 Y-Velocity: -3.7358604716579817
+
+Time: 00:00:37.02
+ Ball 0 X-Location: 52.12097392388619 Y-Location: 52.12097392388619 X-Velocity: 0.7397003733882802 Y-Velocity: 0.7397003733882802
+ Ball 1 X-Location: -110.60486961943097 Y-Location: -110.60486961943097 X-Velocity: -3.698501866941402 Y-Velocity: -3.698501866941402
+
+Time: 00:00:38.25
+ Ball 0 X-Location: 53.033764184647325 Y-Location: 53.033764184647325 X-Velocity: 0.7323033696543974 Y-Velocity: 0.7323033696543974
+ Ball 1 X-Location: -115.16882092323667 Y-Location: -115.16882092323667 X-Velocity: -3.661516848271988 Y-Velocity: -3.661516848271988
+
+Time: 00:00:39.49
+ Ball 0 X-Location: 53.93742654280085 Y-Location: 53.93742654280085 X-Velocity: 0.7249803359578534 Y-Velocity: 0.7249803359578534
+ Ball 1 X-Location: -119.68713271400429 Y-Location: -119.68713271400429 X-Velocity: -3.624901679789268 Y-Velocity: -3.624901679789268
+
+Time: 00:00:40.72
+ Ball 0 X-Location: 54.83205227737284 Y-Location: 54.83205227737284 X-Velocity: 0.7177305325982748 Y-Velocity: 0.7177305325982748
+ Ball 1 X-Location: -124.16026138686425 Y-Location: -124.16026138686425 X-Velocity: -3.5886526629913753 Y-Velocity: -3.5886526629913753
+
+Time: 00:00:41.96
+ Ball 0 X-Location: 55.71773175459911 Y-Location: 55.71773175459911 X-Velocity: 0.7105532272722921 Y-Velocity: 0.7105532272722921
+ Ball 1 X-Location: -128.58865877299561 Y-Location: -128.58865877299561 X-Velocity: -3.5527661363614613 Y-Velocity: -3.5527661363614613
+
+Time: 00:00:43.19
+ Ball 0 X-Location: 56.59455443705311 Y-Location: 56.59455443705311 X-Velocity: 0.7034476949995692 Y-Velocity: 0.7034476949995692
+ Ball 1 X-Location: -132.97277218526565 Y-Location: -132.97277218526565 X-Velocity: -3.5172384749978467 Y-Velocity: -3.5172384749978467
+
+Time: 00:00:44.42
+ Ball 0 X-Location: 57.46260889268258 Y-Location: 57.46260889268258 X-Velocity: 0.6964132180495735 Y-Velocity: 0.6964132180495735
+ Ball 1 X-Location: -137.313044463413 Y-Location: -137.313044463413 X-Velocity: -3.4820660902478684 Y-Velocity: -3.4820660902478684
+
+Time: 00:00:45.66
+ Ball 0 X-Location: 58.32198280375575 Y-Location: 58.32198280375575 X-Velocity: 0.6894490858690777 Y-Velocity: 0.6894490858690777
+ Ball 1 X-Location: -141.60991401877888 Y-Location: -141.60991401877888 X-Velocity: -3.4472454293453896 Y-Velocity: -3.4472454293453896
+
+Time: 00:00:46.89
+ Ball 0 X-Location: 59.17276297571819 Y-Location: 59.17276297571819 X-Velocity: 0.682554595010387 Y-Velocity: 0.682554595010387
+ Ball 1 X-Location: -145.86381487859109 Y-Location: -145.86381487859109 X-Velocity: -3.4127729750519356 Y-Velocity: -3.4127729750519356
+
+Time: 00:00:48.13
+ Ball 0 X-Location: 60.01503534596101 Y-Location: 60.01503534596101 X-Velocity: 0.6757290490602831 Y-Velocity: 0.6757290490602831
+ Ball 1 X-Location: -150.07517672980518 Y-Location: -150.07517672980518 X-Velocity: -3.378645245301416 Y-Velocity: -3.378645245301416
+
+Time: 00:00:49.36
+ Ball 0 X-Location: 60.8488849925014 Y-Location: 60.8488849925014 X-Velocity: 0.6689717585696803 Y-Velocity: 0.6689717585696803
+ Ball 1 X-Location: -154.24442496250714 Y-Location: -154.24442496250714 X-Velocity: -3.344858792848402 Y-Velocity: -3.344858792848402
+
+Time: 00:00:50.59
+ Ball 0 X-Location: 61.674396142576384 Y-Location: 61.674396142576384 X-Velocity: 0.6622820409839835 Y-Velocity: 0.6622820409839835
+ Ball 1 X-Location: -158.37198071288208 Y-Location: -158.37198071288208 X-Velocity: -3.311410204919918 Y-Velocity: -3.311410204919918
+
+Time: 00:00:51.83
+ Ball 0 X-Location: 62.49165218115062 Y-Location: 62.49165218115062 X-Velocity: 0.6556592205741436 Y-Velocity: 0.6556592205741436
+ Ball 1 X-Location: -162.45826090575326 Y-Location: -162.45826090575326 X-Velocity: -3.2782961028707187 Y-Velocity: -3.2782961028707187
+
+Time: 00:00:53.06
+ Ball 0 X-Location: 63.30073565933911 Y-Location: 63.30073565933911 X-Velocity: 0.6491026283684022 Y-Velocity: 0.6491026283684022
+ Ball 1 X-Location: -166.50367829669574 Y-Location: -166.50367829669574 X-Velocity: -3.2455131418420113 Y-Velocity: -3.2455131418420113
+
+Time: 00:00:54.30
+ Ball 0 X-Location: 64.10172830274571 Y-Location: 64.10172830274571 X-Velocity: 0.6426116020847181 Y-Velocity: 0.6426116020847181
+ Ball 1 X-Location: -170.50864151372878 Y-Location: -170.50864151372878 X-Velocity: -3.213058010423591 Y-Velocity: -3.213058010423591
+
+Time: 00:00:55.53
+ Ball 0 X-Location: 64.89471101971826 Y-Location: 64.89471101971826 X-Velocity: 0.6361854860638709 Y-Velocity: 0.6361854860638709
+ Ball 1 X-Location: -174.47355509859148 Y-Location: -174.47355509859148 X-Velocity: -3.1809274303193553 Y-Velocity: -3.1809274303193553
+
+Time: 00:00:56.76
+ Ball 0 X-Location: 65.67976390952107 Y-Location: 65.67976390952107 X-Velocity: 0.6298236312032323 Y-Velocity: 0.6298236312032323
+ Ball 1 X-Location: -178.39881954760557 Y-Location: -178.39881954760557 X-Velocity: -3.149118156016162 Y-Velocity: -3.149118156016162
+
+Time: 00:00:58.00
+ Ball 0 X-Location: 66.45696627042587 Y-Location: 66.45696627042587 X-Velocity: 0.6235253948912 Y-Velocity: 0.6235253948912
+ Ball 1 X-Location: -182.28483135212952 Y-Location: -182.28483135212952 X-Velocity: -3.1176269744560003 Y-Velocity: -3.1176269744560003
+
+Time: 00:00:59.23
+ Ball 0 X-Location: 67.22639660772161 Y-Location: 67.22639660772161 X-Velocity: 0.617290140942288 Y-Velocity: 0.617290140942288
+ Ball 1 X-Location: -186.1319830386082 Y-Location: -186.1319830386082 X-Velocity: -3.0864507047114405 Y-Velocity: -3.0864507047114405
+
+Time: 00:01:00.47
+ Ball 0 X-Location: 67.9881326416444 Y-Location: 67.9881326416444 X-Velocity: 0.6111172395328651 Y-Velocity: 0.6111172395328651
+ Ball 1 X-Location: -189.94066320822213 Y-Location: -189.94066320822213 X-Velocity: -3.055586197664326 Y-Velocity: -3.055586197664326
+
+Time: 00:01:01.70
+ Ball 0 X-Location: 68.74225131522796 Y-Location: 68.74225131522796 X-Velocity: 0.6050060671375365 Y-Velocity: 0.6050060671375365
+ Ball 1 X-Location: -193.7112565761399 Y-Location: -193.7112565761399 X-Velocity: -3.0250303356876826 Y-Velocity: -3.0250303356876826
+
+Time: 00:01:02.93
+ Ball 0 X-Location: 69.48882880207569 Y-Location: 69.48882880207569 X-Velocity: 0.5989560064661611 Y-Velocity: 0.5989560064661611
+ Ball 1 X-Location: -197.4441440103785 Y-Location: -197.4441440103785 X-Velocity: -2.9947800323308056 Y-Velocity: -2.9947800323308056
+
+Time: 00:01:04.17
+ Ball 0 X-Location: 70.22794051405494 Y-Location: 70.22794051405494 X-Velocity: 0.5929664464014994 Y-Velocity: 0.5929664464014994
+ Ball 1 X-Location: -201.13970257027472 Y-Location: -201.13970257027472 X-Velocity: -2.9648322320074976 Y-Velocity: -2.9648322320074976
+
+Time: 00:01:05.40
+ Ball 0 X-Location: 70.95966110891439 Y-Location: 70.95966110891439 X-Velocity: 0.5870367819374844 Y-Velocity: 0.5870367819374844
+ Ball 1 X-Location: -204.79830554457197 Y-Location: -204.79830554457197 X-Velocity: -2.9351839096874226 Y-Velocity: -2.9351839096874226
+
+Time: 00:01:06.64
+ Ball 0 X-Location: 71.68406449782525 Y-Location: 71.68406449782525 X-Velocity: 0.5811664141181095 Y-Velocity: 0.5811664141181095
+ Ball 1 X-Location: -208.42032248912625 Y-Location: -208.42032248912625 X-Velocity: -2.9058320705905483 Y-Velocity: -2.9058320705905483
+
+Time: 00:01:07.87
+ Ball 0 X-Location: 72.401223852847 Y-Location: 72.401223852847 X-Velocity: 0.5753547499769285 Y-Velocity: 0.5753547499769285
+ Ball 1 X-Location: -212.006119264235 Y-Location: -212.006119264235 X-Velocity: -2.876773749884643 Y-Velocity: -2.876773749884643
+
+Time: 00:01:09.10
+ Ball 0 X-Location: 73.11121161431852 Y-Location: 73.11121161431852 X-Velocity: 0.5696012024771592 Y-Velocity: 0.5696012024771592
+ Ball 1 X-Location: -215.55605807159264 Y-Location: -215.55605807159264 X-Velocity: -2.848006012385796 Y-Velocity: -2.848006012385796
+
+Time: 00:01:10.34
+ Ball 0 X-Location: 73.81409949817534 Y-Location: 73.81409949817534 X-Velocity: 0.5639051904523876 Y-Velocity: 0.5639051904523876
+ Ball 1 X-Location: -219.0704974908767 Y-Location: -219.0704974908767 X-Velocity: -2.8195259522619383 Y-Velocity: -2.8195259522619383
+
+Time: 00:01:11.57
+ Ball 0 X-Location: 74.50995850319359 Y-Location: 74.50995850319359 X-Velocity: 0.5582661385478638 Y-Velocity: 0.5582661385478638
+ Ball 1 X-Location: -222.54979251596794 Y-Location: -222.54979251596794 X-Velocity: -2.7913306927393187 Y-Velocity: -2.7913306927393187
+
+Time: 00:01:12.81
+ Ball 0 X-Location: 75.19885891816165 Y-Location: 75.19885891816165 X-Velocity: 0.5526834771623851 Y-Velocity: 0.5526834771623851
+ Ball 1 X-Location: -225.99429459080827 Y-Location: -225.99429459080827 X-Velocity: -2.7634173858119255 Y-Velocity: -2.7634173858119255
+
+Time: 00:01:14.04
+ Ball 0 X-Location: 75.88087032898004 Y-Location: 75.88087032898004 X-Velocity: 0.5471566423907612 Y-Velocity: 0.5471566423907612
+ Ball 1 X-Location: -229.40435164490017 Y-Location: -229.40435164490017 X-Velocity: -2.735783211953806 Y-Velocity: -2.735783211953806
+
+Time: 00:01:15.27
+ Ball 0 X-Location: 76.55606162569023 Y-Location: 76.55606162569023 X-Velocity: 0.5416850759668536 Y-Velocity: 0.5416850759668536
+ Ball 1 X-Location: -232.78030812845117 Y-Location: -232.78030812845117 X-Velocity: -2.708425379834268 Y-Velocity: -2.708425379834268
+
+Time: 00:01:16.51
+ Ball 0 X-Location: 77.22450100943333 Y-Location: 77.22450100943333 X-Velocity: 0.536268225207185 Y-Velocity: 0.536268225207185
+ Ball 1 X-Location: -236.12250504716664 Y-Location: -236.12250504716664 X-Velocity: -2.6813411260359254 Y-Velocity: -2.6813411260359254
+
+Time: 00:01:17.74
+ Ball 0 X-Location: 77.88625599933899 Y-Location: 77.88625599933899 X-Velocity: 0.5309055429551132 Y-Velocity: 0.5309055429551132
+ Ball 1 X-Location: -239.43127999669497 Y-Location: -239.43127999669497 X-Velocity: -2.654527714775566 Y-Velocity: -2.654527714775566
+
+Time: 00:01:18.98
+ Ball 0 X-Location: 78.5413934393456 Y-Location: 78.5413934393456 X-Velocity: 0.525596487525562 Y-Velocity: 0.525596487525562
+ Ball 1 X-Location: -242.70696719672802 Y-Location: -242.70696719672802 X-Velocity: -2.6279824376278103 Y-Velocity: -2.6279824376278103
+
+Time: 00:01:20.21
+ Ball 0 X-Location: 79.18997950495213 Y-Location: 79.18997950495213 X-Velocity: 0.5203405226503064 Y-Velocity: 0.5203405226503064
+ Ball 1 X-Location: -245.94989752476073 Y-Location: -245.94989752476073 X-Velocity: -2.601702613251532 Y-Velocity: -2.601702613251532
+
+Time: 00:01:21.44
+ Ball 0 X-Location: 79.83207970990262 Y-Location: 79.83207970990262 X-Velocity: 0.5151371174238033 Y-Velocity: 0.5151371174238033
+ Ball 1 X-Location: -249.16039854951313 Y-Location: -249.16039854951313 X-Velocity: -2.575685587119017 Y-Velocity: -2.575685587119017
+
+Time: 00:01:22.68
+ Ball 0 X-Location: 80.46775891280359 Y-Location: 80.46775891280359 X-Velocity: 0.5099857462495653 Y-Velocity: 0.5099857462495653
+ Ball 1 X-Location: -252.338794564018 Y-Location: -252.338794564018 X-Velocity: -2.5499287312478267 Y-Velocity: -2.5499287312478267
+
+Time: 00:01:23.91
+ Ball 0 X-Location: 81.09708132367555 Y-Location: 81.09708132367555 X-Velocity: 0.5048858887870696 Y-Velocity: 0.5048858887870696
+ Ball 1 X-Location: -255.48540661837782 Y-Location: -255.48540661837782 X-Velocity: -2.5244294439353485 Y-Velocity: -2.5244294439353485
+
+Time: 00:01:25.15
+ Ball 0 X-Location: 81.7201105104388 Y-Location: 81.7201105104388 X-Velocity: 0.4998370298991989 Y-Velocity: 0.4998370298991989
+ Ball 1 X-Location: -258.600552552194 Y-Location: -258.600552552194 X-Velocity: -2.499185149495995 Y-Velocity: -2.499185149495995
+
+Time: 00:01:26.38
+ Ball 0 X-Location: 82.33690940533441 Y-Location: 82.33690940533441 X-Velocity: 0.49483865960020695 Y-Velocity: 0.49483865960020695
+ Ball 1 X-Location: -261.6845470266721 Y-Location: -261.6845470266721 X-Velocity: -2.474193298001035 Y-Velocity: -2.474193298001035
+
+Time: 00:01:27.61
+ Ball 0 X-Location: 82.94754031128106 Y-Location: 82.94754031128106 X-Velocity: 0.4898902730042049 Y-Velocity: 0.4898902730042049
+ Ball 1 X-Location: -264.73770155640534 Y-Location: -264.73770155640534 X-Velocity: -2.449451365021025 Y-Velocity: -2.449451365021025
+
+Time: 00:01:28.85
+ Ball 0 X-Location: 83.55206490816825 Y-Location: 83.55206490816825 X-Velocity: 0.48499137027416284 Y-Velocity: 0.48499137027416284
+ Ball 1 X-Location: -267.7603245408413 Y-Location: -267.7603245408413 X-Velocity: -2.4249568513708146 Y-Velocity: -2.4249568513708146
+
+Time: 00:01:30.08
+ Ball 0 X-Location: 84.15054425908656 Y-Location: 84.15054425908656 X-Velocity: 0.4801414565714212 Y-Velocity: 0.4801414565714212
+ Ball 1 X-Location: -270.7527212954329 Y-Location: -270.7527212954329 X-Velocity: -2.4007072828571063 Y-Velocity: -2.4007072828571063
+
+Time: 00:01:31.32
+ Ball 0 X-Location: 84.7430388164957 Y-Location: 84.7430388164957 X-Velocity: 0.475340042005707 Y-Velocity: 0.475340042005707
+ Ball 1 X-Location: -273.71519408247855 Y-Location: -273.71519408247855 X-Velocity: -2.376700210028535 Y-Velocity: -2.376700210028535
+
+Time: 00:01:32.55
+ Ball 0 X-Location: 85.32960842833074 Y-Location: 85.32960842833074 X-Velocity: 0.47058664158564995 Y-Velocity: 0.47058664158564995
+ Ball 1 X-Location: -276.6480421416538 Y-Location: -276.6480421416538 X-Velocity: -2.35293320792825 Y-Velocity: -2.35293320792825
+
+Time: 00:01:33.78
+ Ball 0 X-Location: 85.91031234404744 Y-Location: 85.91031234404744 X-Velocity: 0.4658807751697934 Y-Velocity: 0.4658807751697934
+ Ball 1 X-Location: -279.55156172023726 Y-Location: -279.55156172023726 X-Velocity: -2.3294038758489672 Y-Velocity: -2.3294038758489672
+
+Time: 00:01:35.02
+ Ball 0 X-Location: 86.48520922060696 Y-Location: 86.48520922060696 X-Velocity: 0.4612219674180955 Y-Velocity: 0.4612219674180955
+ Ball 1 X-Location: -282.4260461030349 Y-Location: -282.4260461030349 X-Velocity: -2.3061098370904776 Y-Velocity: -2.3061098370904776
+
+Time: 00:01:36.25
+ Ball 0 X-Location: 87.0543571284009 Y-Location: 87.0543571284009 X-Velocity: 0.45660974774391455 Y-Velocity: 0.45660974774391455
+ Ball 1 X-Location: -285.27178564200455 Y-Location: -285.27178564200455 X-Velocity: -2.2830487387195726 Y-Velocity: -2.2830487387195726
+
+Time: 00:01:37.49
+ Ball 0 X-Location: 87.61781355711689 Y-Location: 87.61781355711689 X-Velocity: 0.4520436502664754 Y-Velocity: 0.4520436502664754
+ Ball 1 X-Location: -288.0890677855845 Y-Location: -288.0890677855845 X-Velocity: -2.2602182513323767 Y-Velocity: -2.2602182513323767
+
+Time: 00:01:38.72
+ Ball 0 X-Location: 88.17563542154572 Y-Location: 88.17563542154572 X-Velocity: 0.44752321376381066 Y-Velocity: 0.44752321376381066
+ Ball 1 X-Location: -290.8781771077287 Y-Location: -290.8781771077287 X-Velocity: -2.237616068819053 Y-Velocity: -2.237616068819053
+
+Time: 00:01:39.95
+ Ball 0 X-Location: 88.72787906733026 Y-Location: 88.72787906733026 X-Velocity: 0.44304798162617254 Y-Velocity: 0.44304798162617254
+ Ball 1 X-Location: -293.6393953366514 Y-Location: -293.6393953366514 X-Velocity: -2.2152399081308625 Y-Velocity: -2.2152399081308625
+
+Time: 00:01:41.19
+ Ball 0 X-Location: 89.27460027665695 Y-Location: 89.27460027665695 X-Velocity: 0.4386175018099108 Y-Velocity: 0.4386175018099108
+ Ball 1 X-Location: -296.3730013832849 Y-Location: -296.3730013832849 X-Velocity: -2.193087509049554 Y-Velocity: -2.193087509049554
+
+Time: 00:01:42.42
+ Ball 0 X-Location: 89.81585427389038 Y-Location: 89.81585427389038 X-Velocity: 0.4342313267918117 Y-Velocity: 0.4342313267918117
+ Ball 1 X-Location: -299.07927136945204 Y-Location: -299.07927136945204 X-Velocity: -2.1711566339590584 Y-Velocity: -2.1711566339590584
+
+Time: 00:01:43.66
+ Ball 0 X-Location: 90.35169573115148 Y-Location: 90.35169573115148 X-Velocity: 0.4298890135238936 Y-Velocity: 0.4298890135238936
+ Ball 1 X-Location: -301.75847865575753 Y-Location: -301.75847865575753 X-Velocity: -2.149445067619468 Y-Velocity: -2.149445067619468
+
+Time: 00:01:44.89
+ Ball 0 X-Location: 90.88217877383997 Y-Location: 90.88217877383997 X-Velocity: 0.42559012338865465 Y-Velocity: 0.42559012338865465
+ Ball 1 X-Location: -304.4108938691999 Y-Location: -304.4108938691999 X-Velocity: -2.127950616943273 Y-Velocity: -2.127950616943273
+
+Time: 00:01:46.12
+ Ball 0 X-Location: 91.40735698610156 Y-Location: 91.40735698610156 X-Velocity: 0.4213342221547681 Y-Velocity: 0.4213342221547681
+ Ball 1 X-Location: -307.0367849305079 Y-Location: -307.0367849305079 X-Velocity: -2.1066711107738403 Y-Velocity: -2.1066711107738403
+
+Time: 00:01:47.36
+ Ball 0 X-Location: 91.92728341624054 Y-Location: 91.92728341624054 X-Velocity: 0.41712087993322045 Y-Velocity: 0.41712087993322045
+ Ball 1 X-Location: -309.6364170812028 Y-Location: -309.6364170812028 X-Velocity: -2.085604399666102 Y-Velocity: -2.085604399666102
+
+Time: 00:01:48.59
+ Ball 0 X-Location: 92.44201058207814 Y-Location: 92.44201058207814 X-Velocity: 0.41294967113388825 Y-Velocity: 0.41294967113388825
+ Ball 1 X-Location: -312.2100529103908 Y-Location: -312.2100529103908 X-Velocity: -2.064748355669441 Y-Velocity: -2.064748355669441
+
+Time: 00:01:49.83
+ Ball 0 X-Location: 92.95159047625735 Y-Location: 92.95159047625735 X-Velocity: 0.40882017442254937 Y-Velocity: 0.40882017442254937
+ Ball 1 X-Location: -314.7579523812869 Y-Location: -314.7579523812869 X-Velocity: -2.0441008721127463 Y-Velocity: -2.0441008721127463
+
+Time: 00:01:51.06
+ Ball 0 X-Location: 93.45607457149478 Y-Location: 93.45607457149478 X-Velocity: 0.4047319726783239 Y-Velocity: 0.4047319726783239
+ Ball 1 X-Location: -317.280372857474 Y-Location: -317.280372857474 X-Velocity: -2.023659863391619 Y-Velocity: -2.023659863391619
+
+Time: 00:01:52.29
+ Ball 0 X-Location: 93.95551382577983 Y-Location: 93.95551382577983 X-Velocity: 0.40068465295154065 Y-Velocity: 0.40068465295154065
+ Ball 1 X-Location: -319.77756912889924 Y-Location: -319.77756912889924 X-Velocity: -2.0034232647577026 Y-Velocity: -2.0034232647577026
+
+Time: 00:01:53.53
+ Ball 0 X-Location: 94.44995868752203 Y-Location: 94.44995868752203 X-Velocity: 0.39667780642202527 Y-Velocity: 0.39667780642202527
+ Ball 1 X-Location: -322.24979343761026 Y-Location: -322.24979343761026 X-Velocity: -1.9833890321101255 Y-Velocity: -1.9833890321101255
+
+Time: 00:01:54.76
+ Ball 0 X-Location: 94.9394591006468 Y-Location: 94.9394591006468 X-Velocity: 0.392711028357805 Y-Velocity: 0.392711028357805
+ Ball 1 X-Location: -324.69729550323416 Y-Location: -324.69729550323416 X-Velocity: -1.9635551417890242 Y-Velocity: -1.9635551417890242
+
+Time: 00:01:56.00
+ Ball 0 X-Location: 95.42406450964033 Y-Location: 95.42406450964033 X-Velocity: 0.38878391807422696 Y-Velocity: 0.38878391807422696
+ Ball 1 X-Location: -327.12032254820184 Y-Location: -327.12032254820184 X-Velocity: -1.943919590371134 Y-Velocity: -1.943919590371134
+
+Time: 00:01:57.23
+ Ball 0 X-Location: 95.90382386454392 Y-Location: 95.90382386454392 X-Velocity: 0.3848960788934847 Y-Velocity: 0.3848960788934847
+ Ball 1 X-Location: -329.5191193227198 Y-Location: -329.5191193227198 X-Velocity: -1.9244803944674225 Y-Velocity: -1.9244803944674225
+
+Time: 00:01:58.46
+ Ball 0 X-Location: 96.37878562589849 Y-Location: 96.37878562589849 X-Velocity: 0.38104711810454983 Y-Velocity: 0.38104711810454983
+ Ball 1 X-Location: -331.8939281294926 Y-Location: -331.8939281294926 X-Velocity: -1.9052355905227483 Y-Velocity: -1.9052355905227483
+
+Time: 00:01:59.70
+ Ball 0 X-Location: 96.8489977696395 Y-Location: 96.8489977696395 X-Velocity: 0.37723664692350434 Y-Velocity: 0.37723664692350434
+ Ball 1 X-Location: -334.2449888481977 Y-Location: -334.2449888481977 X-Velocity: -1.8861832346175207 Y-Velocity: -1.8861832346175207
+
+Time: 00:02:00.93
+ Ball 0 X-Location: 97.3145077919431 Y-Location: 97.3145077919431 X-Velocity: 0.37346428045426927 Y-Velocity: 0.37346428045426927
+ Ball 1 X-Location: -336.5725389597157 Y-Location: -336.5725389597157 X-Velocity: -1.8673214022713454 Y-Velocity: -1.8673214022713454
+
+Time: 00:02:02.17
+ Ball 0 X-Location: 97.77536271402367 Y-Location: 97.77536271402367 X-Velocity: 0.36972963764972655 Y-Velocity: 0.36972963764972655
+ Ball 1 X-Location: -338.87681357011854 Y-Location: -338.87681357011854 X-Velocity: -1.8486481882486319 Y-Velocity: -1.8486481882486319
+
+Time: 00:02:03.40
+ Ball 0 X-Location: 98.23160908688344 Y-Location: 98.23160908688344 X-Velocity: 0.36603234127322926 Y-Velocity: 0.36603234127322926
+ Ball 1 X-Location: -341.1580454344174 Y-Location: -341.1580454344174 X-Velocity: -1.8301617063661455 Y-Velocity: -1.8301617063661455
+
+Time: 00:02:04.63
+ Ball 0 X-Location: 98.6832929960146 Y-Location: 98.6832929960146 X-Velocity: 0.36237201786049694 Y-Velocity: 0.36237201786049694
+ Ball 1 X-Location: -343.4164649800732 Y-Location: -343.4164649800732 X-Velocity: -1.811860089302484 Y-Velocity: -1.811860089302484
+
+Time: 00:02:05.87
+ Ball 0 X-Location: 99.13046006605445 Y-Location: 99.13046006605445 X-Velocity: 0.358748297681892 Y-Velocity: 0.358748297681892
+ Ball 1 X-Location: -345.65230033027245 Y-Location: -345.65230033027245 X-Velocity: -1.7937414884094594 Y-Velocity: -1.7937414884094594
+
+Time: 00:02:07.10
+ Ball 0 X-Location: 99.57315546539391 Y-Location: 99.57315546539391 X-Velocity: 0.35516081470507305 Y-Velocity: 0.35516081470507305
+ Ball 1 X-Location: -347.86577732696975 Y-Location: -347.86577732696975 X-Velocity: -1.7758040735253648 Y-Velocity: -1.7758040735253648
+
+Time: 00:02:08.34
+ Ball 0 X-Location: 100.01142391073996 Y-Location: 100.01142391073996 X-Velocity: 0.3516092065580223 Y-Velocity: 0.3516092065580223
+ Ball 1 X-Location: -350.05711955370003 Y-Location: -350.05711955370003 X-Velocity: -1.7580460327901113 Y-Velocity: -1.7580460327901113
+
+Time: 00:02:09.57
+ Ball 0 X-Location: 100.44530967163256 Y-Location: 100.44530967163256 X-Velocity: 0.34809311449244207 Y-Velocity: 0.34809311449244207
+ Ball 1 X-Location: -352.22654835816303 Y-Location: -352.22654835816303 X-Velocity: -1.7404655724622102 Y-Velocity: -1.7404655724622102
+
+Time: 00:02:10.80
+ Ball 0 X-Location: 100.87485657491624 Y-Location: 100.87485657491624 X-Velocity: 0.34461218334751764 Y-Velocity: 0.34461218334751764
+ Ball 1 X-Location: -354.3742828745814 Y-Location: -354.3742828745814 X-Velocity: -1.723060916737588 Y-Velocity: -1.723060916737588
+
+Time: 00:02:12.04
+ Ball 0 X-Location: 101.30010800916708 Y-Location: 101.30010800916708 X-Velocity: 0.34116606151404244 Y-Velocity: 0.34116606151404244
+ Ball 1 X-Location: -356.5005400458356 Y-Location: -356.5005400458356 X-Velocity: -1.7058303075702121 Y-Velocity: -1.7058303075702121
+
+Time: 00:02:13.27
+ Ball 0 X-Location: 101.7211069290754 Y-Location: 101.7211069290754 X-Velocity: 0.337754400898902 Y-Velocity: 0.337754400898902
+ Ball 1 X-Location: -358.60553464537725 Y-Location: -358.60553464537725 X-Velocity: -1.68877200449451 Y-Velocity: -1.68877200449451
+
+Time: 00:02:14.51
+ Ball 0 X-Location: 102.13789585978465 Y-Location: 102.13789585978465 X-Velocity: 0.334376856889913 Y-Velocity: 0.334376856889913
+ Ball 1 X-Location: -360.68947929892346 Y-Location: -360.68947929892346 X-Velocity: -1.671884284449565 Y-Velocity: -1.671884284449565
+
+Time: 00:02:15.74
+ Ball 0 X-Location: 102.5505169011868 Y-Location: 102.5505169011868 X-Velocity: 0.33103308832101386 Y-Velocity: 0.33103308832101386
+ Ball 1 X-Location: -362.75258450593424 Y-Location: -362.75258450593424 X-Velocity: -1.6551654416050692 Y-Velocity: -1.6551654416050692
+
+Time: 00:02:16.97
+ Ball 0 X-Location: 102.95901173217493 Y-Location: 102.95901173217493 X-Velocity: 0.3277227574378037 Y-Velocity: 0.3277227574378037
+ Ball 1 X-Location: -364.7950586608749 Y-Location: -364.7950586608749 X-Velocity: -1.6386137871890185 Y-Velocity: -1.6386137871890185
+
+Time: 00:02:18.21
+ Ball 0 X-Location: 103.36342161485318 Y-Location: 103.36342161485318 X-Velocity: 0.3244455298634257 Y-Velocity: 0.3244455298634257
+ Ball 1 X-Location: -366.8171080742661 Y-Location: -366.8171080742661 X-Velocity: -1.6222276493171284 Y-Velocity: -1.6222276493171284
+
+Time: 00:02:19.44
+ Ball 0 X-Location: 103.76378739870465 Y-Location: 103.76378739870465 X-Velocity: 0.3212010745647914 Y-Velocity: 0.3212010745647914
+ Ball 1 X-Location: -368.81893699352344 Y-Location: -368.81893699352344 X-Velocity: -1.6060053728239572 Y-Velocity: -1.6060053728239572
+
+Time: 00:02:20.68
+ Ball 0 X-Location: 104.1601495247176 Y-Location: 104.1601495247176 X-Velocity: 0.3179890638191435 Y-Velocity: 0.3179890638191435
+ Ball 1 X-Location: -370.8007476235882 Y-Location: -370.8007476235882 X-Velocity: -1.5899453190957176 Y-Velocity: -1.5899453190957176
+
+Time: 00:02:21.91
+ Ball 0 X-Location: 104.55254802947042 Y-Location: 104.55254802947042 X-Velocity: 0.31480917318095203 Y-Velocity: 0.31480917318095203
+ Ball 1 X-Location: -372.76274014735236 Y-Location: -372.76274014735236 X-Velocity: -1.5740458659047605 Y-Velocity: -1.5740458659047605
+
+Time: 00:02:23.14
+ Ball 0 X-Location: 104.94102254917571 Y-Location: 104.94102254917571 X-Velocity: 0.3116610814491425 Y-Velocity: 0.3116610814491425
+ Ball 1 X-Location: -374.7051127458788 Y-Location: -374.7051127458788 X-Velocity: -1.5583054072457128 Y-Velocity: -1.5583054072457128
+
+Time: 00:02:24.38
+ Ball 0 X-Location: 105.32561232368396 Y-Location: 105.32561232368396 X-Velocity: 0.30854447063465107 Y-Velocity: 0.30854447063465107
+ Ball 1 X-Location: -376.62806161842 Y-Location: -376.62806161842 X-Velocity: -1.5427223531732557 Y-Velocity: -1.5427223531732557
+
+Time: 00:02:25.61
+ Ball 0 X-Location: 105.70635620044712 Y-Location: 105.70635620044712 X-Velocity: 0.30545902592830454 Y-Velocity: 0.30545902592830454
+ Ball 1 X-Location: -378.5317810022358 Y-Location: -378.5317810022358 X-Velocity: -1.5272951296415231 Y-Velocity: -1.5272951296415231
+
+Time: 00:02:26.85
+ Ball 0 X-Location: 106.08329263844264 Y-Location: 106.08329263844264 X-Velocity: 0.3024044356690215 Y-Velocity: 0.3024044356690215
+ Ball 1 X-Location: -380.4164631922134 Y-Location: -380.4164631922134 X-Velocity: -1.512022178345108 Y-Velocity: -1.512022178345108
+
+Time: 00:02:28.08
+ Ball 0 X-Location: 106.45645971205822 Y-Location: 106.45645971205822 X-Velocity: 0.29938039131233124 Y-Velocity: 0.29938039131233124
+ Ball 1 X-Location: -382.2822985602913 Y-Location: -382.2822985602913 X-Velocity: -1.4969019565616568 Y-Velocity: -1.4969019565616568
+
+Time: 00:02:29.31
+ Ball 0 X-Location: 106.82589511493764 Y-Location: 106.82589511493764 X-Velocity: 0.2963865873992079 Y-Velocity: 0.2963865873992079
+ Ball 1 X-Location: -384.12947557468834 Y-Location: -384.12947557468834 X-Velocity: -1.4819329369960403 Y-Velocity: -1.4819329369960403
+
+Time: 00:02:30.55
+ Ball 0 X-Location: 107.19163616378826 Y-Location: 107.19163616378826 X-Velocity: 0.29342272152521587 Y-Velocity: 0.29342272152521587
+ Ball 1 X-Location: -385.95818081894146 Y-Location: -385.95818081894146 X-Velocity: -1.46711360762608 Y-Velocity: -1.46711360762608
+
+Time: 00:02:31.78
+ Ball 0 X-Location: 107.55371980215038 Y-Location: 107.55371980215038 X-Velocity: 0.2904884943099637 Y-Velocity: 0.2904884943099637
+ Ball 1 X-Location: -387.76859901075204 Y-Location: -387.76859901075204 X-Velocity: -1.4524424715498192 Y-Velocity: -1.4524424715498192
+
+Time: 00:02:33.02
+ Ball 0 X-Location: 107.91218260412887 Y-Location: 107.91218260412887 X-Velocity: 0.28758360936686406 Y-Velocity: 0.28758360936686406
+ Ball 1 X-Location: -389.56091302064453 Y-Location: -389.56091302064453 X-Velocity: -1.437918046834321 Y-Velocity: -1.437918046834321
+
+Time: 00:02:34.25
+ Ball 0 X-Location: 108.26706077808758 Y-Location: 108.26706077808758 X-Velocity: 0.2847077732731954 Y-Velocity: 0.2847077732731954
+ Ball 1 X-Location: -391.33530389043807 Y-Location: -391.33530389043807 X-Velocity: -1.4235388663659776 Y-Velocity: -1.4235388663659776
+
+Time: 00:02:35.48
+ Ball 0 X-Location: 108.61839017030671 Y-Location: 108.61839017030671 X-Velocity: 0.28186069554046345 Y-Velocity: 0.28186069554046345
+ Ball 1 X-Location: -393.0919508515337 Y-Location: -393.0919508515337 X-Velocity: -1.409303477702318 Y-Velocity: -1.409303477702318
+
+Time: 00:02:36.72
+ Ball 0 X-Location: 108.96620626860364 Y-Location: 108.96620626860364 X-Velocity: 0.2790420885850588 Y-Velocity: 0.2790420885850588
+ Ball 1 X-Location: -394.83103134301837 Y-Location: -394.83103134301837 X-Velocity: -1.3952104429252947 Y-Velocity: -1.3952104429252947
+
+Time: 00:02:37.95
+ Ball 0 X-Location: 109.31054420591761 Y-Location: 109.31054420591761 X-Velocity: 0.2762516676992082 Y-Velocity: 0.2762516676992082
+ Ball 1 X-Location: -396.55272102958816 Y-Location: -396.55272102958816 X-Velocity: -1.3812583384960417 Y-Velocity: -1.3812583384960417
+
+Time: 00:02:39.19
+ Ball 0 X-Location: 109.65143876385844 Y-Location: 109.65143876385844 X-Velocity: 0.27348915102221616 Y-Velocity: 0.27348915102221616
+ Ball 1 X-Location: -398.2571938192923 Y-Location: -398.2571938192923 X-Velocity: -1.3674457551110812 Y-Velocity: -1.3674457551110812
+
+Time: 00:02:40.42
+ Ball 0 X-Location: 109.98892437621986 Y-Location: 109.98892437621986 X-Velocity: 0.270754259511994 Y-Velocity: 0.270754259511994
+ Ball 1 X-Location: -399.94462188109935 Y-Location: -399.94462188109935 X-Velocity: -1.3537712975599705 Y-Velocity: -1.3537712975599705
+
+Time: 00:02:41.65
+ Ball 0 X-Location: 110.32303513245766 Y-Location: 110.32303513245766 X-Velocity: 0.26804671691687404 Y-Velocity: 0.26804671691687404
+ Ball 1 X-Location: -401.6151756622884 Y-Location: -401.6151756622884 X-Velocity: -1.3402335845843707 Y-Velocity: -1.3402335845843707
+
+Time: 00:02:42.89
+ Ball 0 X-Location: 110.65380478113309 Y-Location: 110.65380478113309 X-Velocity: 0.2653662497477053 Y-Velocity: 0.2653662497477053
+ Ball 1 X-Location: -403.2690239056655 Y-Location: -403.2690239056655 X-Velocity: -1.326831248738527 Y-Velocity: -1.326831248738527
+
+Time: 00:02:44.12
+ Ball 0 X-Location: 110.98126673332176 Y-Location: 110.98126673332176 X-Velocity: 0.2627125872502282 Y-Velocity: 0.2627125872502282
+ Ball 1 X-Location: -404.9063336666089 Y-Location: -404.9063336666089 X-Velocity: -1.3135629362511416 Y-Velocity: -1.3135629362511416
+
+Time: 00:02:45.36
+ Ball 0 X-Location: 111.30545406598854 Y-Location: 111.30545406598854 X-Velocity: 0.2600854613777259 Y-Velocity: 0.2600854613777259
+ Ball 1 X-Location: -406.5272703299428 Y-Location: -406.5272703299428 X-Velocity: -1.3004273068886303 Y-Velocity: -1.3004273068886303
+
+Time: 00:02:46.59
+ Ball 0 X-Location: 111.62639952532865 Y-Location: 111.62639952532865 X-Velocity: 0.2574846067639487 Y-Velocity: 0.2574846067639487
+ Ball 1 X-Location: -408.13199762664334 Y-Location: -408.13199762664334 X-Velocity: -1.2874230338197439 Y-Velocity: -1.2874230338197439
+
+Time: 00:02:47.82
+ Ball 0 X-Location: 111.94413553007536 Y-Location: 111.94413553007536 X-Velocity: 0.2549097606963092 Y-Velocity: 0.2549097606963092
+ Ball 1 X-Location: -409.7206776503769 Y-Location: -409.7206776503769 X-Velocity: -1.2745488034815464 Y-Velocity: -1.2745488034815464
+
+Time: 00:02:49.06
+ Ball 0 X-Location: 112.2586941747746 Y-Location: 112.2586941747746 X-Velocity: 0.2523606630893461 Y-Velocity: 0.2523606630893461
+ Ball 1 X-Location: -411.2934708738731 Y-Location: -411.2934708738731 X-Velocity: -1.261803315446731 Y-Velocity: -1.261803315446731
+
+Time: 00:02:50.29
+ Ball 0 X-Location: 112.57010723302686 Y-Location: 112.57010723302686 X-Velocity: 0.24983705645845267 Y-Velocity: 0.24983705645845267
+ Ball 1 X-Location: -412.8505361651344 Y-Location: -412.8505361651344 X-Velocity: -1.2491852822922636 Y-Velocity: -1.2491852822922636
+
+Time: 00:02:51.53
+ Ball 0 X-Location: 112.87840616069658 Y-Location: 112.87840616069658 X-Velocity: 0.24733868589386815 Y-Velocity: 0.24733868589386815
+ Ball 1 X-Location: -414.392030803483 Y-Location: -414.392030803483 X-Velocity: -1.2366934294693408 Y-Velocity: -1.2366934294693408
+
+Time: 00:02:52.76
+ Ball 0 X-Location: 113.18362209908962 Y-Location: 113.18362209908962 X-Velocity: 0.24486529903492946 Y-Velocity: 0.24486529903492946
+ Ball 1 X-Location: -415.91811049544816 Y-Location: -415.91811049544816 X-Velocity: -1.2243264951746473 Y-Velocity: -1.2243264951746473
+
+Time: 00:02:53.99
+ Ball 0 X-Location: 113.48578587809872 Y-Location: 113.48578587809872 X-Velocity: 0.24241664604458016 Y-Velocity: 0.24241664604458016
+ Ball 1 X-Location: -417.4289293904937 Y-Location: -417.4289293904937 X-Velocity: -1.2120832302229008 Y-Velocity: -1.2120832302229008
+
+Time: 00:02:55.23
+ Ball 0 X-Location: 113.78492801931773 Y-Location: 113.78492801931773 X-Velocity: 0.23999247958413436 Y-Velocity: 0.23999247958413436
+ Ball 1 X-Location: -418.92464009658875 Y-Location: -418.92464009658875 X-Velocity: -1.1999623979206717 Y-Velocity: -1.1999623979206717
+
+Time: 00:02:56.46
+ Ball 0 X-Location: 114.08107873912455 Y-Location: 114.08107873912455 X-Velocity: 0.23759255478829303 Y-Velocity: 0.23759255478829303
+ Ball 1 X-Location: -420.4053936956229 Y-Location: -420.4053936956229 X-Velocity: -1.187962773941465 Y-Velocity: -1.187962773941465
+
+Time: 00:02:57.70
+ Ball 0 X-Location: 114.3742679517333 Y-Location: 114.3742679517333 X-Velocity: 0.2352166292404101 Y-Velocity: 0.2352166292404101
+ Ball 1 X-Location: -421.87133975866664 Y-Location: -421.87133975866664 X-Velocity: -1.1760831462020505 Y-Velocity: -1.1760831462020505
+
+Time: 00:02:58.93
+ Ball 0 X-Location: 114.66452527221597 Y-Location: 114.66452527221597 X-Velocity: 0.232864462948006 Y-Velocity: 0.232864462948006
+ Ball 1 X-Location: -423.32262636108 Y-Location: -423.32262636108 X-Velocity: -1.16432231474003 Y-Velocity: -1.16432231474003
+
+Time: 00:03:00.16
+ Ball 0 X-Location: 114.95188001949381 Y-Location: 114.95188001949381 X-Velocity: 0.23053581831852593 Y-Velocity: 0.23053581831852593
+ Ball 1 X-Location: -424.75940009746915 Y-Location: -424.75940009746915 X-Velocity: -1.1526790915926295 Y-Velocity: -1.1526790915926295
+
+Time: 00:03:01.40
+ Ball 0 X-Location: 115.23636121929887 Y-Location: 115.23636121929887 X-Velocity: 0.22823046013534068 Y-Velocity: 0.22823046013534068
+ Ball 1 X-Location: -426.1818060964945 Y-Location: -426.1818060964945 X-Velocity: -1.1411523006767033 Y-Velocity: -1.1411523006767033
+
+Time: 00:03:02.63
+ Ball 0 X-Location: 115.51799760710588 Y-Location: 115.51799760710588 X-Velocity: 0.22594815553398728 Y-Velocity: 0.22594815553398728
+ Ball 1 X-Location: -427.58998803552953 Y-Location: -427.58998803552953 X-Velocity: -1.1297407776699362 Y-Velocity: -1.1297407776699362
+
+Time: 00:03:03.87
+ Ball 0 X-Location: 115.79681763103483 Y-Location: 115.79681763103483 X-Velocity: 0.22368867397864742 Y-Velocity: 0.22368867397864742
+ Ball 1 X-Location: -428.9840881551742 Y-Location: -428.9840881551742 X-Velocity: -1.1184433698932368 Y-Velocity: -1.1184433698932368
+
+Time: 00:03:05.10
+ Ball 0 X-Location: 116.07284945472448 Y-Location: 116.07284945472448 X-Velocity: 0.22145178723886094 Y-Velocity: 0.22145178723886094
+ Ball 1 X-Location: -430.3642472736225 Y-Location: -430.3642472736225 X-Velocity: -1.1072589361943044 Y-Velocity: -1.1072589361943044
+
+Time: 00:03:06.33
+ Ball 0 X-Location: 116.34612096017723 Y-Location: 116.34612096017723 X-Velocity: 0.21923726936647234 Y-Velocity: 0.21923726936647234
+ Ball 1 X-Location: -431.7306048008862 Y-Location: -431.7306048008862 X-Velocity: -1.0961863468323614 Y-Velocity: -1.0961863468323614
+
+Time: 00:03:07.57
+ Ball 0 X-Location: 116.61665975057545 Y-Location: 116.61665975057545 X-Velocity: 0.2170448966728076 Y-Velocity: 0.2170448966728076
+ Ball 1 X-Location: -433.08329875287734 Y-Location: -433.08329875287734 X-Velocity: -1.0852244833640377 Y-Velocity: -1.0852244833640377
+
+Time: 00:03:08.80
+ Ball 0 X-Location: 116.8844931530697 Y-Location: 116.8844931530697 X-Velocity: 0.21487444770607952 Y-Velocity: 0.21487444770607952
+ Ball 1 X-Location: -434.4224657653486 Y-Location: -434.4224657653486 X-Velocity: -1.0743722385303973 Y-Velocity: -1.0743722385303973
+
+Time: 00:03:10.04
+ Ball 0 X-Location: 117.149648221539 Y-Location: 117.149648221539 X-Velocity: 0.21272570322901874 Y-Velocity: 0.21272570322901874
+ Ball 1 X-Location: -435.7482411076951 Y-Location: -435.7482411076951 X-Velocity: -1.0636285161450934 Y-Velocity: -1.0636285161450934
+
+Time: 00:03:11.27
+ Ball 0 X-Location: 117.4121517393236 Y-Location: 117.4121517393236 X-Velocity: 0.21059844619672854 Y-Velocity: 0.21059844619672854
+ Ball 1 X-Location: -437.06075869661817 Y-Location: -437.06075869661817 X-Velocity: -1.0529922309836424 Y-Velocity: -1.0529922309836424
+
+Time: 00:03:12.50
+ Ball 0 X-Location: 117.67203022193037 Y-Location: 117.67203022193037 X-Velocity: 0.20849246173476127 Y-Velocity: 0.20849246173476127
+ Ball 1 X-Location: -438.360151109652 Y-Location: -438.360151109652 X-Velocity: -1.0424623086738058 Y-Velocity: -1.0424623086738058
+
+Time: 00:03:13.74
+ Ball 0 X-Location: 117.92930991971106 Y-Location: 117.92930991971106 X-Velocity: 0.20640753711741366 Y-Velocity: 0.20640753711741366
+ Ball 1 X-Location: -439.6465495985555 Y-Location: -439.6465495985555 X-Velocity: -1.0320376855870679 Y-Velocity: -1.0320376855870679
+
+Time: 00:03:14.97
+ Ball 0 X-Location: 118.18401682051395 Y-Location: 118.18401682051395 X-Velocity: 0.20434346174623952 Y-Velocity: 0.20434346174623952
+ Ball 1 X-Location: -440.92008410256994 Y-Location: -440.92008410256994 X-Velocity: -1.0217173087311973 Y-Velocity: -1.0217173087311973
+
+Time: 00:03:16.21
+ Ball 0 X-Location: 118.4361766523088 Y-Location: 118.4361766523088 X-Velocity: 0.20230002712877712 Y-Velocity: 0.20230002712877712
+ Ball 1 X-Location: -442.18088326154424 Y-Location: -442.18088326154424 X-Velocity: -1.0115001356438853 Y-Velocity: -1.0115001356438853
+
+Time: 00:03:17.44
+ Ball 0 X-Location: 118.68581488578572 Y-Location: 118.68581488578572 X-Velocity: 0.20027702685748935 Y-Velocity: 0.20027702685748935
+ Ball 1 X-Location: -443.4290744289288 Y-Location: -443.4290744289288 X-Velocity: -1.0013851342874465 Y-Velocity: -1.0013851342874465
+
+Time: 00:03:18.67
+ Ball 0 X-Location: 118.93295673692786 Y-Location: 118.93295673692786 X-Velocity: 0.19827425658891445 Y-Velocity: 0.19827425658891445
+ Ball 1 X-Location: -444.66478368463953 Y-Location: -444.66478368463953 X-Velocity: -0.991371282944572 Y-Velocity: -0.991371282944572
+
+Time: 00:03:19.91
+ Ball 0 X-Location: 119.17762716955859 Y-Location: 119.17762716955859 X-Velocity: 0.1962915140230253 Y-Velocity: 0.1962915140230253
+ Ball 1 X-Location: -445.88813584779314 Y-Location: -445.88813584779314 X-Velocity: -0.9814575701151262 Y-Velocity: -0.9814575701151262
+
+Time: 00:03:21.14
+ Ball 0 X-Location: 119.419850897863 Y-Location: 119.419850897863 X-Velocity: 0.19432859888279505 Y-Velocity: 0.19432859888279505
+ Ball 1 X-Location: -447.09925448931523 Y-Location: -447.09925448931523 X-Velocity: -0.971642994413975 Y-Velocity: -0.971642994413975
+
+Time: 00:03:22.38
+ Ball 0 X-Location: 119.65965238888437 Y-Location: 119.65965238888437 X-Velocity: 0.1923853128939671 Y-Velocity: 0.1923853128939671
+ Ball 1 X-Location: -448.29826194442205 Y-Location: -448.29826194442205 X-Velocity: -0.9619265644698352 Y-Velocity: -0.9619265644698352
+
+Time: 00:03:23.61
+ Ball 0 X-Location: 119.89705586499552 Y-Location: 119.89705586499552 X-Velocity: 0.19046145976502743 Y-Velocity: 0.19046145976502743
+ Ball 1 X-Location: -449.48527932497785 Y-Location: -449.48527932497785 X-Velocity: -0.9523072988251368 Y-Velocity: -0.9523072988251368
+
+Time: 00:03:24.84
+ Ball 0 X-Location: 120.13208530634557 Y-Location: 120.13208530634557 X-Velocity: 0.18855684516737714 Y-Velocity: 0.18855684516737714
+ Ball 1 X-Location: -450.6604265317281 Y-Location: -450.6604265317281 X-Velocity: -0.9427842258368854 Y-Velocity: -0.9427842258368854
+
+Time: 00:03:26.08
+ Ball 0 X-Location: 120.36476445328212 Y-Location: 120.36476445328212 X-Velocity: 0.18667127671570335 Y-Velocity: 0.18667127671570335
+ Ball 1 X-Location: -451.8238222664108 Y-Location: -451.8238222664108 X-Velocity: -0.9333563835785165 Y-Velocity: -0.9333563835785165
+
+Time: 00:03:27.31
+ Ball 0 X-Location: 120.5951168087493 Y-Location: 120.5951168087493 X-Velocity: 0.18480456394854633 Y-Velocity: 0.18480456394854633
+ Ball 1 X-Location: -452.97558404374666 Y-Location: -452.97558404374666 X-Velocity: -0.9240228197427313 Y-Velocity: -0.9240228197427313
+
+Time: 00:03:28.55
+ Ball 0 X-Location: 120.8231656406618 Y-Location: 120.8231656406618 X-Velocity: 0.18295651830906087 Y-Velocity: 0.18295651830906087
+ Ball 1 X-Location: -454.1158282033092 Y-Location: -454.1158282033092 X-Velocity: -0.914782591545304 Y-Velocity: -0.914782591545304
+
+Time: 00:03:29.78
+ Ball 0 X-Location: 121.04893398425519 Y-Location: 121.04893398425519 X-Velocity: 0.18112695312597027 Y-Velocity: 0.18112695312597027
+ Ball 1 X-Location: -455.2446699212761 Y-Location: -455.2446699212761 X-Velocity: -0.9056347656298509 Y-Velocity: -0.9056347656298509
+
+Time: 00:03:31.01
+ Ball 0 X-Location: 121.27244464441263 Y-Location: 121.27244464441263 X-Velocity: 0.17931568359471056 Y-Velocity: 0.17931568359471056
+ Ball 1 X-Location: -456.36222322206334 Y-Location: -456.36222322206334 X-Velocity: -0.8965784179735524 Y-Velocity: -0.8965784179735524
+
+Time: 00:03:32.25
+ Ball 0 X-Location: 121.4937201979685 Y-Location: 121.4937201979685 X-Velocity: 0.17752252675876345 Y-Velocity: 0.17752252675876345
+ Ball 1 X-Location: -457.4686009898427 Y-Location: -457.4686009898427 X-Velocity: -0.8876126337938169 Y-Velocity: -0.8876126337938169
+
+Time: 00:03:33.48
+ Ball 0 X-Location: 121.71278299598882 Y-Location: 121.71278299598882 X-Velocity: 0.17574730149117582 Y-Velocity: 0.17574730149117582
+ Ball 1 X-Location: -458.56391497994423 Y-Location: -458.56391497994423 X-Velocity: -0.8787365074558787 Y-Velocity: -0.8787365074558787
+
+Time: 00:03:34.72
+ Ball 0 X-Location: 121.92965516602892 Y-Location: 121.92965516602892 X-Velocity: 0.17398982847626407 Y-Velocity: 0.17398982847626407
+ Ball 1 X-Location: -459.64827583014477 Y-Location: -459.64827583014477 X-Velocity: -0.8699491423813199 Y-Velocity: -0.8699491423813199
+
+Time: 00:03:35.95
+ Ball 0 X-Location: 122.14435861436863 Y-Location: 122.14435861436863 X-Velocity: 0.17224993019150142 Y-Velocity: 0.17224993019150142
+ Ball 1 X-Location: -460.7217930718433 Y-Location: -460.7217930718433 X-Velocity: -0.8612496509575067 Y-Velocity: -0.8612496509575067
+
+Time: 00:03:37.18
+ Ball 0 X-Location: 122.35691502822495 Y-Location: 122.35691502822495 X-Velocity: 0.1705274308895864 Y-Velocity: 0.1705274308895864
+ Ball 1 X-Location: -461.7845751411249 Y-Location: -461.7845751411249 X-Velocity: -0.8526371544479316 Y-Velocity: -0.8526371544479316
+
+Time: 00:03:38.42
+ Ball 0 X-Location: 122.5673458779427 Y-Location: 122.5673458779427 X-Velocity: 0.16882215658069055 Y-Velocity: 0.16882215658069055
+ Ball 1 X-Location: -462.83672938971364 Y-Location: -462.83672938971364 X-Velocity: -0.8441107829034523 Y-Velocity: -0.8441107829034523
+
+Time: 00:03:39.65
+ Ball 0 X-Location: 122.77567241916327 Y-Location: 122.77567241916327 X-Velocity: 0.16713393501488363 Y-Velocity: 0.16713393501488363
+ Ball 1 X-Location: -463.8783620958165 Y-Location: -463.8783620958165 X-Velocity: -0.8356696750744178 Y-Velocity: -0.8356696750744178
+
+Time: 00:03:40.89
+ Ball 0 X-Location: 122.98191569497163 Y-Location: 122.98191569497163 X-Velocity: 0.16546259566473479 Y-Velocity: 0.16546259566473479
+ Ball 1 X-Location: -464.90957847485834 Y-Location: -464.90957847485834 X-Velocity: -0.8273129783236737 Y-Velocity: -0.8273129783236737
+
+Time: 00:03:42.12
+ Ball 0 X-Location: 123.18609653802191 Y-Location: 123.18609653802191 X-Velocity: 0.16380796970808745 Y-Velocity: 0.16380796970808745
+ Ball 1 X-Location: -465.9304826901097 Y-Location: -465.9304826901097 X-Velocity: -0.8190398485404369 Y-Velocity: -0.8190398485404369
+
+Time: 00:03:43.35
+ Ball 0 X-Location: 123.38823557264169 Y-Location: 123.38823557264169 X-Velocity: 0.16216989001100657 Y-Velocity: 0.16216989001100657
+ Ball 1 X-Location: -466.9411778632086 Y-Location: -466.9411778632086 X-Velocity: -0.8108494500550325 Y-Velocity: -0.8108494500550325
+
+Time: 00:03:44.59
+ Ball 0 X-Location: 123.58835321691527 Y-Location: 123.58835321691527 X-Velocity: 0.1605481911108965 Y-Velocity: 0.1605481911108965
+ Ball 1 X-Location: -467.94176608457656 Y-Location: -467.94176608457656 X-Velocity: -0.8027409555544822 Y-Velocity: -0.8027409555544822
+
+Time: 00:03:45.82
+ Ball 0 X-Location: 123.78646968474611 Y-Location: 123.78646968474611 X-Velocity: 0.15894270919978754 Y-Velocity: 0.15894270919978754
+ Ball 1 X-Location: -468.9323484237308 Y-Location: -468.9323484237308 X-Velocity: -0.7947135459989374 Y-Velocity: -0.7947135459989374
+
+Time: 00:03:47.06
+ Ball 0 X-Location: 123.98260498789865 Y-Location: 123.98260498789865 X-Velocity: 0.15735328210778965 Y-Velocity: 0.15735328210778965
+ Ball 1 X-Location: -469.9130249394935 Y-Location: -469.9130249394935 X-Velocity: -0.786766410538948 Y-Velocity: -0.786766410538948
+
+Time: 00:03:48.29
+ Ball 0 X-Location: 124.17677893801967 Y-Location: 124.17677893801967 X-Velocity: 0.15577974928671176 Y-Velocity: 0.15577974928671176
+ Ball 1 X-Location: -470.88389469009854 Y-Location: -470.88389469009854 X-Velocity: -0.7788987464335585 Y-Velocity: -0.7788987464335585
+
+Time: 00:03:49.52
+ Ball 0 X-Location: 124.36901114863947 Y-Location: 124.36901114863947 X-Velocity: 0.15422195179384465 Y-Velocity: 0.15422195179384465
+ Ball 1 X-Location: -471.8450557431976 Y-Location: -471.8450557431976 X-Velocity: -0.771109758969223 Y-Velocity: -0.771109758969223
+
+Time: 00:03:50.76
+ Ball 0 X-Location: 124.55932103715308 Y-Location: 124.55932103715308 X-Velocity: 0.1526797322759062 Y-Velocity: 0.1526797322759062
+ Ball 1 X-Location: -472.7966051857656 Y-Location: -472.7966051857656 X-Velocity: -0.7633986613795307 Y-Velocity: -0.7633986613795307
+
+Time: 00:03:51.99
+ Ball 0 X-Location: 124.74772782678156 Y-Location: 124.74772782678156 X-Velocity: 0.15115293495314713 Y-Velocity: 0.15115293495314713
+ Ball 1 X-Location: -473.73863913390795 Y-Location: -473.73863913390795 X-Velocity: -0.7557646747657354 Y-Velocity: -0.7557646747657354
+
+Time: 00:03:53.23
+ Ball 0 X-Location: 124.93425054851375 Y-Location: 124.93425054851375 X-Velocity: 0.14964140560361566 Y-Velocity: 0.14964140560361566
+ Ball 1 X-Location: -474.67125274256887 Y-Location: -474.67125274256887 X-Velocity: -0.748207028018078 Y-Velocity: -0.748207028018078
+
+Time: 00:03:54.46
+ Ball 0 X-Location: 125.11890804302861 Y-Location: 125.11890804302861 X-Velocity: 0.1481449915475795 Y-Velocity: 0.1481449915475795
+ Ball 1 X-Location: -475.5945402151432 Y-Location: -475.5945402151432 X-Velocity: -0.7407249577378973 Y-Velocity: -0.7407249577378973
+
+Time: 00:03:55.69
+ Ball 0 X-Location: 125.30171896259833 Y-Location: 125.30171896259833 X-Velocity: 0.1466635416321037 Y-Velocity: 0.1466635416321037
+ Ball 1 X-Location: -476.50859481299176 Y-Location: -476.50859481299176 X-Velocity: -0.7333177081605183 Y-Velocity: -0.7333177081605183
+
+Time: 00:03:56.93
+ Ball 0 X-Location: 125.48270177297235 Y-Location: 125.48270177297235 X-Velocity: 0.14519690621578268 Y-Velocity: 0.14519690621578268
+ Ball 1 X-Location: -477.41350886486185 Y-Location: -477.41350886486185 X-Velocity: -0.7259845310789131 Y-Velocity: -0.7259845310789131
+
+Time: 00:03:58.16
+ Ball 0 X-Location: 125.66187475524262 Y-Location: 125.66187475524262 X-Velocity: 0.14374493715362485 Y-Velocity: 0.14374493715362485
+ Ball 1 X-Location: -478.30937377621325 Y-Location: -478.30937377621325 X-Velocity: -0.718724685768124 Y-Velocity: -0.718724685768124
+
+Time: 00:03:59.40
+ Ball 0 X-Location: 125.8392560076902 Y-Location: 125.8392560076902 X-Velocity: 0.1423074877820886 Y-Velocity: 0.1423074877820886
+ Ball 1 X-Location: -479.1962800384511 Y-Location: -479.1962800384511 X-Velocity: -0.7115374389104427 Y-Velocity: -0.7115374389104427
+
+Time: 00:04:00.63
+ Ball 0 X-Location: 126.0148634476133 Y-Location: 126.0148634476133 X-Velocity: 0.1408844129042677 Y-Velocity: 0.1408844129042677
+ Ball 1 X-Location: -480.0743172380666 Y-Location: -480.0743172380666 X-Velocity: -0.7044220645213383 Y-Velocity: -0.7044220645213383
+
+Time: 00:04:01.86
+ Ball 0 X-Location: 126.18871481313717 Y-Location: 126.18871481313717 X-Velocity: 0.13947556877522502 Y-Velocity: 0.13947556877522502
+ Ball 1 X-Location: -480.94357406568594 Y-Location: -480.94357406568594 X-Velocity: -0.6973778438761249 Y-Velocity: -0.6973778438761249
+
+Time: 00:04:03.10
+ Ball 0 X-Location: 126.3608276650058 Y-Location: 126.3608276650058 X-Velocity: 0.13808081308747278 Y-Velocity: 0.13808081308747278
+ Ball 1 X-Location: -481.8041383250291 Y-Location: -481.8041383250291 X-Velocity: -0.6904040654373637 Y-Velocity: -0.6904040654373637
+
+Time: 00:04:04.33
+ Ball 0 X-Location: 126.53121938835574 Y-Location: 126.53121938835574 X-Velocity: 0.13670000495659804 Y-Velocity: 0.13670000495659804
+ Ball 1 X-Location: -482.6560969417788 Y-Location: -482.6560969417788 X-Velocity: -0.68350002478299 Y-Velocity: -0.68350002478299
+
+Time: 00:04:05.57
+ Ball 0 X-Location: 126.69990719447217 Y-Location: 126.69990719447217 X-Velocity: 0.13533300490703207 Y-Velocity: 0.13533300490703207
+ Ball 1 X-Location: -483.499535972361 Y-Location: -483.499535972361 X-Velocity: -0.6766650245351601 Y-Velocity: -0.6766650245351601
+
+Time: 00:04:06.80
+ Ball 0 X-Location: 126.86690812252745 Y-Location: 126.86690812252745 X-Velocity: 0.13397967485796175 Y-Velocity: 0.13397967485796175
+ Ball 1 X-Location: -484.3345406126374 Y-Location: -484.3345406126374 X-Velocity: -0.6698983742898085 Y-Velocity: -0.6698983742898085
+
+Time: 00:04:08.03
+ Ball 0 X-Location: 127.03223904130218 Y-Location: 127.03223904130218 X-Velocity: 0.13263987810938213 Y-Velocity: 0.13263987810938213
+ Ball 1 X-Location: -485.161195206511 Y-Location: -485.161195206511 X-Velocity: -0.6631993905469104 Y-Velocity: -0.6631993905469104
+
+Time: 00:04:09.27
+ Ball 0 X-Location: 127.19591665088916 Y-Location: 127.19591665088916 X-Velocity: 0.1313134793282883 Y-Velocity: 0.1313134793282883
+ Ball 1 X-Location: -485.9795832544459 Y-Location: -485.9795832544459 X-Velocity: -0.6565673966414413 Y-Velocity: -0.6565673966414413
+
+Time: 00:04:10.50
+ Ball 0 X-Location: 127.35795748438026 Y-Location: 127.35795748438026 X-Velocity: 0.13000034453500542 Y-Velocity: 0.13000034453500542
+ Ball 1 X-Location: -486.78978742190145 Y-Location: -486.78978742190145 X-Velocity: -0.6500017226750269 Y-Velocity: -0.6500017226750269
+
+Time: 00:04:11.74
+ Ball 0 X-Location: 127.51837790953645 Y-Location: 127.51837790953645 X-Velocity: 0.12870034108965536 Y-Velocity: 0.12870034108965536
+ Ball 1 X-Location: -487.59188954768246 Y-Location: -487.59188954768246 X-Velocity: -0.6435017054482766 Y-Velocity: -0.6435017054482766
+
+Time: 00:04:12.97
+ Ball 0 X-Location: 127.6771941304411 Y-Location: 127.6771941304411 X-Velocity: 0.12741333767875881 Y-Velocity: 0.12741333767875881
+ Ball 1 X-Location: -488.38597065220563 Y-Location: -488.38597065220563 X-Velocity: -0.6370666883937938 Y-Velocity: -0.6370666883937938
+
+Time: 00:04:14.20
+ Ball 0 X-Location: 127.83442218913669 Y-Location: 127.83442218913669 X-Velocity: 0.12613920430197123 Y-Velocity: 0.12613920430197123
+ Ball 1 X-Location: -489.1721109456836 Y-Location: -489.1721109456836 X-Velocity: -0.6306960215098558 Y-Velocity: -0.6306960215098558
+
+Time: 00:04:15.44
+ Ball 0 X-Location: 127.99007796724533 Y-Location: 127.99007796724533 X-Velocity: 0.12487781225895152 Y-Velocity: 0.12487781225895152
+ Ball 1 X-Location: -489.95038983622675 Y-Location: -489.95038983622675 X-Velocity: -0.6243890612947572 Y-Velocity: -0.6243890612947572
+
+Time: 00:04:16.67
+ Ball 0 X-Location: 128.14417718757286 Y-Location: 128.14417718757286 X-Velocity: 0.123629034136362 Y-Velocity: 0.123629034136362
+ Ball 1 X-Location: -490.72088593786447 Y-Location: -490.72088593786447 X-Velocity: -0.6181451706818096 Y-Velocity: -0.6181451706818096
+
+Time: 00:04:17.91
+ Ball 0 X-Location: 128.29673541569713 Y-Location: 128.29673541569713 X-Velocity: 0.12239274379499838 Y-Velocity: 0.12239274379499838
+ Ball 1 X-Location: -491.4836770784858 Y-Location: -491.4836770784858 X-Velocity: -0.6119637189749916 Y-Velocity: -0.6119637189749916
+
+Time: 00:04:19.14
+ Ball 0 X-Location: 128.44776806154016 Y-Location: 128.44776806154016 X-Velocity: 0.1211688163570484 Y-Velocity: 0.1211688163570484
+ Ball 1 X-Location: -492.23884030770097 Y-Location: -492.23884030770097 X-Velocity: -0.6058440817852416 Y-Velocity: -0.6058440817852416
+
+Time: 00:04:20.37
+ Ball 0 X-Location: 128.59729038092476 Y-Location: 128.59729038092476 X-Velocity: 0.11995712819347792 Y-Velocity: 0.11995712819347792
+ Ball 1 X-Location: -492.98645190462395 Y-Location: -492.98645190462395 X-Velocity: -0.5997856409673892 Y-Velocity: -0.5997856409673892
+
+Time: 00:04:21.61
+ Ball 0 X-Location: 128.74531747711552 Y-Location: 128.74531747711552 X-Velocity: 0.11875755691154315 Y-Velocity: 0.11875755691154315
+ Ball 1 X-Location: -493.7265873855777 Y-Location: -493.7265873855777 X-Velocity: -0.5937877845577153 Y-Velocity: -0.5937877845577153
+
+Time: 00:04:22.84
+ Ball 0 X-Location: 128.89186430234437 Y-Location: 128.89186430234437 X-Velocity: 0.11756998134242772 Y-Velocity: 0.11756998134242772
+ Ball 1 X-Location: -494.45932151172195 Y-Location: -494.45932151172195 X-Velocity: -0.5878499067121381 Y-Velocity: -0.5878499067121381
+
+Time: 00:04:24.08
+ Ball 0 X-Location: 129.03694565932093 Y-Location: 129.03694565932093 X-Velocity: 0.11639428152900344 Y-Velocity: 0.11639428152900344
+ Ball 1 X-Location: -495.1847282966047 Y-Location: -495.1847282966047 X-Velocity: -0.5819714076450168 Y-Velocity: -0.5819714076450168
+
+Time: 00:04:25.31
+ Ball 0 X-Location: 129.18057620272774 Y-Location: 129.18057620272774 X-Velocity: 0.11523033871371341 Y-Velocity: 0.11523033871371341
+ Ball 1 X-Location: -495.90288101363865 Y-Location: -495.90288101363865 X-Velocity: -0.5761516935685665 Y-Velocity: -0.5761516935685665
+
+Time: 00:04:26.54
+ Ball 0 X-Location: 129.32277044070045 Y-Location: 129.32277044070045 X-Velocity: 0.11407803532657627 Y-Velocity: 0.11407803532657627
+ Ball 1 X-Location: -496.61385220350223 Y-Location: -496.61385220350223 X-Velocity: -0.5703901766328808 Y-Velocity: -0.5703901766328808
+
+Time: 00:04:27.78
+ Ball 0 X-Location: 129.46354273629345 Y-Location: 129.46354273629345 X-Velocity: 0.11293725497331052 Y-Velocity: 0.11293725497331052
+ Ball 1 X-Location: -497.3177136814672 Y-Location: -497.3177136814672 X-Velocity: -0.564686274866552 Y-Velocity: -0.564686274866552
+
+Time: 00:04:29.01
+ Ball 0 X-Location: 129.60290730893053 Y-Location: 129.60290730893053 X-Velocity: 0.1118078824235774 Y-Velocity: 0.1118078824235774
+ Ball 1 X-Location: -498.0145365446525 Y-Location: -498.0145365446525 X-Velocity: -0.5590394121178864 Y-Velocity: -0.5590394121178864
+
+Time: 00:04:30.25
+ Ball 0 X-Location: 129.74087823584122 Y-Location: 129.74087823584122 X-Velocity: 0.11068980359934164 Y-Velocity: 0.11068980359934164
+ Ball 1 X-Location: -498.70439117920597 Y-Location: -498.70439117920597 X-Velocity: -0.5534490179967075 Y-Velocity: -0.5534490179967075
+
+Time: 00:04:31.48
+ Ball 0 X-Location: 129.8774694534828 Y-Location: 129.8774694534828 X-Velocity: 0.10958290556334822 Y-Velocity: 0.10958290556334822
+ Ball 1 X-Location: -499.38734726741393 Y-Location: -499.38734726741393 X-Velocity: -0.5479145278167404 Y-Velocity: -0.5479145278167404
+
+Time: 00:04:32.71
+ Ball 0 X-Location: 130.012694758948 Y-Location: 130.012694758948 X-Velocity: 0.10848707650771475 Y-Velocity: 0.10848707650771475
+
+Time: 00:04:33.95
+ Ball 0 X-Location: 130.1465678113585 Y-Location: 130.1465678113585 X-Velocity: 0.1074022057426376 Y-Velocity: 0.1074022057426376
+
+Time: 00:04:35.18
+ Ball 0 X-Location: 130.27910213324492 Y-Location: 130.27910213324492 X-Velocity: 0.10632818368521123 Y-Velocity: 0.10632818368521123
+
+Time: 00:04:36.42
+ Ball 0 X-Location: 130.41031111191248 Y-Location: 130.41031111191248 X-Velocity: 0.10526490184835911 Y-Velocity: 0.10526490184835911
+
+Time: 00:04:37.65
+ Ball 0 X-Location: 130.54020800079334 Y-Location: 130.54020800079334 X-Velocity: 0.10421225282987552 Y-Velocity: 0.10421225282987552
+
+Time: 00:04:38.88
+ Ball 0 X-Location: 130.66880592078542 Y-Location: 130.66880592078542 X-Velocity: 0.10317013030157676 Y-Velocity: 0.10317013030157676
+
+Time: 00:04:40.12
+ Ball 0 X-Location: 130.79611786157756 Y-Location: 130.79611786157756 X-Velocity: 0.10213842899856099 Y-Velocity: 0.10213842899856099
+
+Time: 00:04:41.35
+ Ball 0 X-Location: 130.92215668296177 Y-Location: 130.92215668296177 X-Velocity: 0.10111704470857538 Y-Velocity: 0.10111704470857538
+
+Time: 00:04:42.59
+ Ball 0 X-Location: 131.04693511613215 Y-Location: 131.04693511613215 X-Velocity: 0.10010587426148963 Y-Velocity: 0.10010587426148963
+
+Time: 00:04:43.82
+ Ball 0 X-Location: 131.17046576497083 Y-Location: 131.17046576497083 X-Velocity: 0.09910481551887473 Y-Velocity: 0.09910481551887473
+
+Time: 00:04:45.05
+ Ball 0 X-Location: 131.29276110732113 Y-Location: 131.29276110732113 X-Velocity: 0.09811376736368599 Y-Velocity: 0.09811376736368599
+
+Time: 00:04:46.29
+ Ball 0 X-Location: 131.41383349624792 Y-Location: 131.41383349624792 X-Velocity: 0.09713262969004913 Y-Velocity: 0.09713262969004913
+
+Time: 00:04:47.52
+ Ball 0 X-Location: 131.53369516128544 Y-Location: 131.53369516128544 X-Velocity: 0.09616130339314863 Y-Velocity: 0.09616130339314863
+
+Time: 00:04:48.76
+ Ball 0 X-Location: 131.65235820967257 Y-Location: 131.65235820967257 X-Velocity: 0.09519969035921715 Y-Velocity: 0.09519969035921715
+
+Time: 00:04:49.99
+ Ball 0 X-Location: 131.76983462757585 Y-Location: 131.76983462757585 X-Velocity: 0.09424769345562498 Y-Velocity: 0.09424769345562498
+
+Time: 00:04:51.22
+ Ball 0 X-Location: 131.88613628130008 Y-Location: 131.88613628130008 X-Velocity: 0.09330521652106873 Y-Velocity: 0.09330521652106873
+
+Time: 00:04:52.46
+ Ball 0 X-Location: 132.00127491848707 Y-Location: 132.00127491848707 X-Velocity: 0.09237216435585804 Y-Velocity: 0.09237216435585804
+
+Time: 00:04:53.69
+ Ball 0 X-Location: 132.1152621693022 Y-Location: 132.1152621693022 X-Velocity: 0.09144844271229946 Y-Velocity: 0.09144844271229946
+
+Time: 00:04:54.93
+ Ball 0 X-Location: 132.2281095476092 Y-Location: 132.2281095476092 X-Velocity: 0.09053395828517646 Y-Velocity: 0.09053395828517646
+
+Time: 00:04:56.16
+ Ball 0 X-Location: 132.3398284521331 Y-Location: 132.3398284521331 X-Velocity: 0.08962861870232469 Y-Velocity: 0.08962861870232469
+
+Time: 00:04:57.39
+ Ball 0 X-Location: 132.45043016761178 Y-Location: 132.45043016761178 X-Velocity: 0.08873233251530144 Y-Velocity: 0.08873233251530144
+
+Time: 00:04:58.63
+ Ball 0 X-Location: 132.55992586593567 Y-Location: 132.55992586593567 X-Velocity: 0.08784500919014843 Y-Velocity: 0.08784500919014843
+
+Time: 00:04:59.86
+ Ball 0 X-Location: 132.6683266072763 Y-Location: 132.6683266072763 X-Velocity: 0.08696655909824694 Y-Velocity: 0.08696655909824694
+
+Time: 00:05:01.10
+ Ball 0 X-Location: 132.77564334120353 Y-Location: 132.77564334120353 X-Velocity: 0.08609689350726446 Y-Velocity: 0.08609689350726446
+
+Time: 00:05:02.33
+ Ball 0 X-Location: 132.8818869077915 Y-Location: 132.8818869077915 X-Velocity: 0.08523592457219181 Y-Velocity: 0.08523592457219181
+
+Time: 00:05:03.56
+ Ball 0 X-Location: 132.9870680387136 Y-Location: 132.9870680387136 X-Velocity: 0.0843835653264699 Y-Velocity: 0.0843835653264699
+
+Time: 00:05:04.80
+ Ball 0 X-Location: 133.09119735832647 Y-Location: 133.09119735832647 X-Velocity: 0.0835397296732052 Y-Velocity: 0.0835397296732052
+
+Time: 00:05:06.03
+
+All the balls have stopped moving or left the bounds, no collision occured
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+...   Should contact ball 1 and 8 @ 30 sec  
+======================================  
+
+   Welcome to SoccerSim!
+
+
+
+There is a pole at ( 25,10 )
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 150.0 Y-Location: 150.0 X-Velocity: 10.0 Y-Velocity: 10.0
+ Ball 1 X-Location: 100.0 Y-Location: 100.0 X-Velocity: -100.0 Y-Velocity: -100.0
+ Ball 2 X-Location: 200.0 Y-Location: 200.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 3 X-Location: 250.0 Y-Location: 250.0 X-Velocity: -110.0 Y-Velocity: -110.0
+ Ball 4 X-Location: 20.0 Y-Location: 20.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 5 X-Location: 50.0 Y-Location: 50.0 X-Velocity: -5.0 Y-Velocity: -5.0
+ Ball 6 X-Location: -100.0 Y-Location: -100.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 7 X-Location: -200.0 Y-Location: -200.0 X-Velocity: 300.0 Y-Velocity: 300.0
+ Ball 8 X-Location: -110.0 Y-Location: -110.0 X-Velocity: 20.0 Y-Velocity: 20.0
+ Ball 9 X-Location: 1.0 Y-Location: 1.0 X-Velocity: 50.0 Y-Velocity: 50.0
+
+Time: 00:00:00.00
+ Ball 0 X-Location: 150.0 Y-Location: 150.0 X-Velocity: 10.0 Y-Velocity: 10.0
+ Ball 1 X-Location: 100.0 Y-Location: 100.0 X-Velocity: -100.0 Y-Velocity: -100.0
+ Ball 2 X-Location: 200.0 Y-Location: 200.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 3 X-Location: 250.0 Y-Location: 250.0 X-Velocity: -110.0 Y-Velocity: -110.0
+ Ball 4 X-Location: 20.0 Y-Location: 20.0 X-Velocity: 1.0 Y-Velocity: 1.0
+ Ball 5 X-Location: 50.0 Y-Location: 50.0 X-Velocity: -5.0 Y-Velocity: -5.0
+ Ball 6 X-Location: -100.0 Y-Location: -100.0 X-Velocity: 200.0 Y-Velocity: 200.0
+ Ball 7 X-Location: -200.0 Y-Location: -200.0 X-Velocity: 300.0 Y-Velocity: 300.0
+ Ball 8 X-Location: -110.0 Y-Location: -110.0 X-Velocity: 20.0 Y-Velocity: 20.0
+ Ball 9 X-Location: 1.0 Y-Location: 1.0 X-Velocity: 50.0 Y-Velocity: 50.0
+
+Time: 00:00:10.00
+ Ball 0 X-Location: 250.0 Y-Location: 250.0 X-Velocity: 9.9 Y-Velocity: 9.9
+ Ball 1 X-Location: 2200.0 Y-Location: 2200.0 X-Velocity: 198.0 Y-Velocity: 198.0
+ Ball 2 X-Location: 30.0 Y-Location: 30.0 X-Velocity: 0.99 Y-Velocity: 0.99
+ Ball 3 X-Location: 0.0 Y-Location: 0.0 X-Velocity: -4.95 Y-Velocity: -4.95
+ Ball 4 X-Location: 2800.0 Y-Location: 2800.0 X-Velocity: 297.0 Y-Velocity: 297.0
+ Ball 5 X-Location: 90.0 Y-Location: 90.0 X-Velocity: 19.8 Y-Velocity: 19.8
+
+Time: 00:00:20.00
+ Ball 0 X-Location: 349.0 Y-Location: 349.0 X-Velocity: 9.801 Y-Velocity: 9.801
+ Ball 1 X-Location: 39.9 Y-Location: 39.9 X-Velocity: 0.9801 Y-Velocity: 0.9801
+ Ball 2 X-Location: -49.5 Y-Location: -49.5 X-Velocity: -4.9005 Y-Velocity: -4.9005
+ Ball 3 X-Location: 288.0 Y-Location: 288.0 X-Velocity: 19.602 Y-Velocity: 19.602
+
+Time: 00:00:30.00
+ Ball 0 X-Location: 447.01 Y-Location: 447.01 X-Velocity: 9.70299 Y-Velocity: 9.70299
+ Ball 1 X-Location: 49.701 Y-Location: 49.701 X-Velocity: 0.9702989999999999 Y-Velocity: 0.9702989999999999
+ Ball 2 X-Location: -98.505 Y-Location: -98.505 X-Velocity: -4.851495 Y-Velocity: -4.851495
+ Ball 3 X-Location: 484.02 Y-Location: 484.02 X-Velocity: 19.40598 Y-Velocity: 19.40598
+
+Time: 00:00:40.00
+ Ball 0 X-Location: 59.40399 Y-Location: 59.40399 X-Velocity: 0.96059601 Y-Velocity: 0.96059601
+ Ball 1 X-Location: -147.01995 Y-Location: -147.01995 X-Velocity: -4.8029800499999995 Y-Velocity: -4.8029800499999995
+
+Time: 00:00:50.00
+ Ball 0 X-Location: 69.0099501 Y-Location: 69.0099501 X-Velocity: 0.9509900498999999 Y-Velocity: 0.9509900498999999
+ Ball 1 X-Location: -195.0497505 Y-Location: -195.0497505 X-Velocity: -4.754950249499999 Y-Velocity: -4.754950249499999
+
+Time: 00:01:00.00
+ Ball 0 X-Location: 78.519850599 Y-Location: 78.519850599 X-Velocity: 0.9414801494009999 Y-Velocity: 0.9414801494009999
+ Ball 1 X-Location: -242.59925299499997 Y-Location: -242.59925299499997 X-Velocity: -4.707400747004999 Y-Velocity: -4.707400747004999
+
+Time: 00:01:10.00
+ Ball 0 X-Location: 87.93465209300999 Y-Location: 87.93465209300999 X-Velocity: 0.9320653479069899 Y-Velocity: 0.9320653479069899
+ Ball 1 X-Location: -289.67326046504996 Y-Location: -289.67326046504996 X-Velocity: -4.660326739534949 Y-Velocity: -4.660326739534949
+
+Time: 00:01:20.00
+ Ball 0 X-Location: 97.25530557207989 Y-Location: 97.25530557207989 X-Velocity: 0.92274469442792 Y-Velocity: 0.92274469442792
+ Ball 1 X-Location: -336.2765278603995 Y-Location: -336.2765278603995 X-Velocity: -4.6137234721396 Y-Velocity: -4.6137234721396
+
+Time: 00:01:30.00
+ Ball 0 X-Location: 106.48275251635908 Y-Location: 106.48275251635908 X-Velocity: 0.9135172474836407 Y-Velocity: 0.9135172474836407
+ Ball 1 X-Location: -382.4137625817955 Y-Location: -382.4137625817955 X-Velocity: -4.567586237418204 Y-Velocity: -4.567586237418204
+
+Time: 00:01:40.00
+ Ball 0 X-Location: 115.6179249911955 Y-Location: 115.6179249911955 X-Velocity: 0.9043820750088043 Y-Velocity: 0.9043820750088043
+ Ball 1 X-Location: -428.0896249559775 Y-Location: -428.0896249559775 X-Velocity: -4.521910375044022 Y-Velocity: -4.521910375044022
+
+Time: 00:01:50.00
+ Ball 0 X-Location: 124.66174574128354 Y-Location: 124.66174574128354 X-Velocity: 0.8953382542587163 Y-Velocity: 0.8953382542587163
+ Ball 1 X-Location: -473.30872870641775 Y-Location: -473.30872870641775 X-Velocity: -4.476691271293581 Y-Velocity: -4.476691271293581
+
+Time: 00:02:00.00
+ Ball 0 X-Location: 133.6151282838707 Y-Location: 133.6151282838707 X-Velocity: 0.8863848717161291 Y-Velocity: 0.8863848717161291
+
+Time: 00:02:10.00
+ Ball 0 X-Location: 142.47897700103198 Y-Location: 142.47897700103198 X-Velocity: 0.8775210229989678 Y-Velocity: 0.8775210229989678
+
+Time: 00:02:20.00
+ Ball 0 X-Location: 151.25418723102166 Y-Location: 151.25418723102166 X-Velocity: 0.8687458127689781 Y-Velocity: 0.8687458127689781
+
+Time: 00:02:30.00
+ Ball 0 X-Location: 159.94164535871144 Y-Location: 159.94164535871144 X-Velocity: 0.8600583546412883 Y-Velocity: 0.8600583546412883
+
+Time: 00:02:40.00
+ Ball 0 X-Location: 168.54222890512432 Y-Location: 168.54222890512432 X-Velocity: 0.8514577710948754 Y-Velocity: 0.8514577710948754
+
+Time: 00:02:50.00
+ Ball 0 X-Location: 177.05680661607306 Y-Location: 177.05680661607306 X-Velocity: 0.8429431933839266 Y-Velocity: 0.8429431933839266
+
+Time: 00:03:00.00
+ Ball 0 X-Location: 185.48623854991231 Y-Location: 185.48623854991231 X-Velocity: 0.8345137614500874 Y-Velocity: 0.8345137614500874
+
+Time: 00:03:10.00
+ Ball 0 X-Location: 193.8313761644132 Y-Location: 193.8313761644132 X-Velocity: 0.8261686238355865 Y-Velocity: 0.8261686238355865
+
+Time: 00:03:20.00
+ Ball 0 X-Location: 202.09306240276908 Y-Location: 202.09306240276908 X-Velocity: 0.8179069375972307 Y-Velocity: 0.8179069375972307
+
+Time: 00:03:30.00
+ Ball 0 X-Location: 210.2721317787414 Y-Location: 210.2721317787414 X-Velocity: 0.8097278682212583 Y-Velocity: 0.8097278682212583
+
+Time: 00:03:40.00
+ Ball 0 X-Location: 218.369410460954 Y-Location: 218.369410460954 X-Velocity: 0.8016305895390458 Y-Velocity: 0.8016305895390458
+
+Time: 00:03:50.00
+ Ball 0 X-Location: 226.38571635634443 Y-Location: 226.38571635634443 X-Velocity: 0.7936142836436553 Y-Velocity: 0.7936142836436553
+
+Time: 00:04:00.00
+ Ball 0 X-Location: 234.32185919278098 Y-Location: 234.32185919278098 X-Velocity: 0.7856781408072188 Y-Velocity: 0.7856781408072188
+
+Time: 00:04:10.00
+ Ball 0 X-Location: 242.17864060085316 Y-Location: 242.17864060085316 X-Velocity: 0.7778213593991465 Y-Velocity: 0.7778213593991465
+
+Time: 00:04:20.00
+ Ball 0 X-Location: 249.95685419484462 Y-Location: 249.95685419484462 X-Velocity: 0.7700431458051551 Y-Velocity: 0.7700431458051551
+
+Time: 00:04:30.00
+ Ball 0 X-Location: 257.6572856528962 Y-Location: 257.6572856528962 X-Velocity: 0.7623427143471035 Y-Velocity: 0.7623427143471035
+
+Time: 00:04:40.00
+ Ball 0 X-Location: 265.2807127963672 Y-Location: 265.2807127963672 X-Velocity: 0.7547192872036325 Y-Velocity: 0.7547192872036325
+
+Time: 00:04:50.00
+ Ball 0 X-Location: 272.8279056684035 Y-Location: 272.8279056684035 X-Velocity: 0.7471720943315961 Y-Velocity: 0.7471720943315961
+
+Time: 00:05:00.00
+ Ball 0 X-Location: 280.2996266117195 Y-Location: 280.2996266117195 X-Velocity: 0.7397003733882802 Y-Velocity: 0.7397003733882802
+
+Time: 00:05:10.00
+ Ball 0 X-Location: 287.6966303456023 Y-Location: 287.6966303456023 X-Velocity: 0.7323033696543974 Y-Velocity: 0.7323033696543974
+
+Time: 00:05:20.00
+ Ball 0 X-Location: 295.01966404214625 Y-Location: 295.01966404214625 X-Velocity: 0.7249803359578534 Y-Velocity: 0.7249803359578534
+
+Time: 00:05:30.00
+ Ball 0 X-Location: 302.2694674017248 Y-Location: 302.2694674017248 X-Velocity: 0.7177305325982748 Y-Velocity: 0.7177305325982748
+
+Time: 00:05:40.00
+ Ball 0 X-Location: 309.4467727277075 Y-Location: 309.4467727277075 X-Velocity: 0.7105532272722921 Y-Velocity: 0.7105532272722921
+
+Time: 00:05:50.00
+ Ball 0 X-Location: 316.55230500043047 Y-Location: 316.55230500043047 X-Velocity: 0.7034476949995692 Y-Velocity: 0.7034476949995692
+
+Time: 00:06:00.00
+ Ball 0 X-Location: 323.58678195042614 Y-Location: 323.58678195042614 X-Velocity: 0.6964132180495735 Y-Velocity: 0.6964132180495735
+
+Time: 00:06:10.00
+ Ball 0 X-Location: 330.55091413092185 Y-Location: 330.55091413092185 X-Velocity: 0.6894490858690777 Y-Velocity: 0.6894490858690777
+
+Time: 00:06:20.00
+ Ball 0 X-Location: 337.44540498961265 Y-Location: 337.44540498961265 X-Velocity: 0.682554595010387 Y-Velocity: 0.682554595010387
+
+Time: 00:06:30.00
+ Ball 0 X-Location: 344.2709509397165 Y-Location: 344.2709509397165 X-Velocity: 0.6757290490602831 Y-Velocity: 0.6757290490602831
+
+Time: 00:06:40.00
+ Ball 0 X-Location: 351.0282414303193 Y-Location: 351.0282414303193 X-Velocity: 0.6689717585696803 Y-Velocity: 0.6689717585696803
+
+Time: 00:06:50.00
+ Ball 0 X-Location: 357.71795901601615 Y-Location: 357.71795901601615 X-Velocity: 0.6622820409839835 Y-Velocity: 0.6622820409839835
+
+Time: 00:07:00.00
+ Ball 0 X-Location: 364.340779425856 Y-Location: 364.340779425856 X-Velocity: 0.6556592205741436 Y-Velocity: 0.6556592205741436
+
+Time: 00:07:10.00
+ Ball 0 X-Location: 370.8973716315974 Y-Location: 370.8973716315974 X-Velocity: 0.6491026283684022 Y-Velocity: 0.6491026283684022
+
+Time: 00:07:20.00
+ Ball 0 X-Location: 377.3883979152814 Y-Location: 377.3883979152814 X-Velocity: 0.6426116020847181 Y-Velocity: 0.6426116020847181
+
+Time: 00:07:30.00
+ Ball 0 X-Location: 383.8145139361286 Y-Location: 383.8145139361286 X-Velocity: 0.6361854860638709 Y-Velocity: 0.6361854860638709
+
+Time: 00:07:40.00
+ Ball 0 X-Location: 390.1763687967673 Y-Location: 390.1763687967673 X-Velocity: 0.6298236312032323 Y-Velocity: 0.6298236312032323
+
+Time: 00:07:50.00
+ Ball 0 X-Location: 396.4746051087996 Y-Location: 396.4746051087996 X-Velocity: 0.6235253948912 Y-Velocity: 0.6235253948912
+
+Time: 00:08:00.00
+ Ball 0 X-Location: 402.7098590577116 Y-Location: 402.7098590577116 X-Velocity: 0.617290140942288 Y-Velocity: 0.617290140942288
+
+Time: 00:08:10.00
+ Ball 0 X-Location: 408.88276046713446 Y-Location: 408.88276046713446 X-Velocity: 0.6111172395328651 Y-Velocity: 0.6111172395328651
+
+Time: 00:08:20.00
+ Ball 0 X-Location: 414.9939328624631 Y-Location: 414.9939328624631 X-Velocity: 0.6050060671375365 Y-Velocity: 0.6050060671375365
+
+Time: 00:08:30.00
+ Ball 0 X-Location: 421.0439935338385 Y-Location: 421.0439935338385 X-Velocity: 0.5989560064661611 Y-Velocity: 0.5989560064661611
+
+Time: 00:08:40.00
+ Ball 0 X-Location: 427.0335535985001 Y-Location: 427.0335535985001 X-Velocity: 0.5929664464014994 Y-Velocity: 0.5929664464014994
+
+Time: 00:08:50.00
+ Ball 0 X-Location: 432.96321806251507 Y-Location: 432.96321806251507 X-Velocity: 0.5870367819374844 Y-Velocity: 0.5870367819374844
+
+Time: 00:09:00.00
+ Ball 0 X-Location: 438.8335858818899 Y-Location: 438.8335858818899 X-Velocity: 0.5811664141181095 Y-Velocity: 0.5811664141181095
+
+Time: 00:09:10.00
+ Ball 0 X-Location: 444.645250023071 Y-Location: 444.645250023071 X-Velocity: 0.5753547499769285 Y-Velocity: 0.5753547499769285
+
+Time: 00:09:20.00
+ Ball 0 X-Location: 450.3987975228403 Y-Location: 450.3987975228403 X-Velocity: 0.5696012024771592 Y-Velocity: 0.5696012024771592
+
+Time: 00:09:30.00
+ Ball 0 X-Location: 456.09480954761193 Y-Location: 456.09480954761193 X-Velocity: 0.5639051904523876 Y-Velocity: 0.5639051904523876
+
+Time: 00:09:40.00
+ Ball 0 X-Location: 461.7338614521358 Y-Location: 461.7338614521358 X-Velocity: 0.5582661385478638 Y-Velocity: 0.5582661385478638
+
+Time: 00:09:50.00
+ Ball 0 X-Location: 467.3165228376144 Y-Location: 467.3165228376144 X-Velocity: 0.5526834771623851 Y-Velocity: 0.5526834771623851
+
+Time: 00:10:00.00
+ Ball 0 X-Location: 472.84335760923824 Y-Location: 472.84335760923824 X-Velocity: 0.5471566423907612 Y-Velocity: 0.5471566423907612
+
+Time: 00:10:10.00
+ Ball 0 X-Location: 478.31492403314587 Y-Location: 478.31492403314587 X-Velocity: 0.5416850759668536 Y-Velocity: 0.5416850759668536
+
+Time: 00:10:20.00
+ Ball 0 X-Location: 483.7317747928144 Y-Location: 483.7317747928144 X-Velocity: 0.536268225207185 Y-Velocity: 0.536268225207185
+
+Time: 00:10:30.00
+ Ball 0 X-Location: 489.09445704488627 Y-Location: 489.09445704488627 X-Velocity: 0.5309055429551132 Y-Velocity: 0.5309055429551132
+
+Time: 00:10:40.00
+ Ball 0 X-Location: 494.4035124744374 Y-Location: 494.4035124744374 X-Velocity: 0.525596487525562 Y-Velocity: 0.525596487525562
+
+Time: 00:10:50.00
+ Ball 0 X-Location: 499.659477349693 Y-Location: 499.659477349693 X-Velocity: 0.5203405226503064 Y-Velocity: 0.5203405226503064
+
+Time: 00:11:00.00
+
+All the balls have stopped moving or left the bounds, no collision occured
+.                                       
+.                                       
+======================================  
+... End of SoccerSim Testing...         
+======================================  
