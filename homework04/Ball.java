@@ -29,12 +29,15 @@ public class Ball {
     public void move(double timeSlice){
         this.locX += this.velX * timeSlice;
         this.locY += this.velY * timeSlice; 
-    }
 
-    public void updateVel(){
         this.velX = this.velX * 0.99; 
         this.velY = this.velY * 0.99;
     }
+
+    // public void updateVel(){
+    //     this.velX = this.velX * 0.99; 
+    //     this.velY = this.velY * 0.99;
+    // }
 
     public void stopVelocity(){
         this.velX = 0.0;
