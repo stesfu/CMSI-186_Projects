@@ -137,6 +137,7 @@ public class SoccerSim{
         for(int i=0; i< balls.size(); i++){
             if (balls.get(i).isInMotion() == false || balls.get(i).isInBounds() == false){
                 balls.get(i).stopVelocity();
+                balls.remove(i);
                 ballsStopped++;
             }
 
@@ -162,14 +163,17 @@ public class SoccerSim{
     // }
 
     public boolean allBallStop(){
-        boolean ballStopValue = false;
-        for(int i=0; i< balls.size(); i++){
-            if (ballsStopped >= (balls.size())){ 
-                ballStopValue = true;
-            }
-        }
-        return ballStopValue;
+        return balls.size() == 0;
+    //     boolean ballStopValue = false;
+    //     for(int i=0; i< balls.size(); i++){
+    //         if (ballsStopped >= (balls.size() + 1)){ // +1 fixes the time problem but runs infinite loop
+    //             ballStopValue = true;
+    //         }
+    //     }
+    //     return ballStopValue;
     }
+
+
 
     // public boolean allBallLeft(){
     //     boolean ballStopValue = false;
@@ -270,7 +274,7 @@ public class SoccerSim{
 
     public String toString(){
         String result = ""; 
-        result += "Time: " + this.toStringTime() + "\n"; 
+        result += "Time: " + this.toStringTime() + "\n"; //problem area! What's here throws an infinite loop
         for (int i = 0; i < balls.size(); i++ ){
             result += " Ball " + i + " " + balls.get(i);
             result += "\n";
@@ -282,7 +286,7 @@ public class SoccerSim{
 
         SoccerSim sim = new SoccerSim();
         sim.handleInitialArguments(args);
-        System.out.println(sim);
+        System.out.println(sim.toString());
 
         // System.out.println(sim);
         // int times = 4;
@@ -297,15 +301,16 @@ public class SoccerSim{
 
         // }
 
-        while(sim.simulationRunning == true){
+        while(sim.simulationRunning){
             // sim.outCount();
             // sim.removeBall();
             System.out.println(sim);
-            if(sim.allBallStop() == true){
+            if(sim.allBallStop()){
                 sim.simulationRunning = false;
                 System.out.println("All the balls have stopped moving or left the bounds, no collision occured");
+                break;
             }
-            if(sim.ballsCollision() == true){
+            if(sim.ballsCollision()){
                 sim.simulationRunning = false;
                 System.out.println("COLLISION DETECTED");
                 System.out.println(sim.collideItems);
