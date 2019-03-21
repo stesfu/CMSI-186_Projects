@@ -1,11 +1,12 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-//What's not working: Pole Collisions, Out of Bounds (some cases works for: 10 20 20 20 40 40 20 20 but not 10 10 10 10 20 20 20 20)
+//What's not working: Out of Bounds (some cases works for: 10 20 20 20 40 40 20 20 but not 10 10)
 
 public class SoccerSim{
     double timeSlice = 1.0; 
-    double BALL_RADIUS = 4.45;
+    double BALL_RADIUS = (4.45/12.0); //allows to collide in proper time
+    //double BALL_RADIUS = 4.45; //allows to collide with pole 
     boolean collision = true;
     double time = 0; 
     public static boolean ballsMoving = true;
@@ -118,7 +119,7 @@ public class SoccerSim{
 
     public void moveAll(double timeslice) {
         for(int i=0; i < balls.size(); i++){
-            balls.get(i).updateVel();
+            // balls.get(i).updateVel();
             balls.get(i).move(timeslice); //this.timeSlice? but that doesnt compile
         }
         this.time += this.timeSlice;
@@ -128,13 +129,13 @@ public class SoccerSim{
     public void runSimulation(double timeSlice){
         moveAll(timeSlice);
         stopBall();
-        ballOutOfBounds();
+        // ballOutOfBounds();
 
     }
 
     public void stopBall(){
         for(int i=0; i< balls.size(); i++){
-            if (balls.get(i).isInMotion() == false){
+            if (balls.get(i).isInMotion() == false || balls.get(i).isInBounds() == false){
                 balls.get(i).stopVelocity();
                 ballsStopped++;
             }
@@ -150,20 +151,20 @@ public class SoccerSim{
     //     }
     
 
-    public void ballOutOfBounds(){
-        for(int i=0; i< balls.size(); i++){
-            if (balls.get(i).isInBounds() == false){
-                balls.get(i).stopVelocity();
-                ballsStopped++;
-            }
+    // public void ballOutOfBounds(){
+    //     for(int i=0; i< balls.size(); i++){
+    //         if (balls.get(i).isInBounds() == false){
+    //             balls.get(i).stopVelocity();
+    //             ballsStopped++;
+    //         }
 
-        }
-    }
+    //     }
+    // }
 
     public boolean allBallStop(){
         boolean ballStopValue = false;
         for(int i=0; i< balls.size(); i++){
-            if (ballsStopped >= balls.size()){ 
+            if (ballsStopped >= (balls.size())){ 
                 ballStopValue = true;
             }
         }
@@ -182,35 +183,71 @@ public class SoccerSim{
 
     public boolean ballsCollision(){
         boolean ballCollide = false;
-        for (int i = 0; i < balls.size() - 1; i++ ){
-            double xElement = Math.abs(balls.get(i).locX - (balls.get(i + 1).locX));
-            double yElement = Math.abs(balls.get(i).locY - (balls.get(i + 1).locY));
+        // if(balls.size() != 1){
+
+            for (int i = 0; i < balls.size(); i++ ){
+                if (i+1 < balls.size()){
+                    double xElement = Math.abs(balls.get(i).locX - (balls.get(i + 1).locX));
+                    double yElement = Math.abs(balls.get(i).locY - (balls.get(i + 1).locY));
+                    double distance = Math.hypot(xElement, yElement);
+        
+                    if(distance <= (2 * BALL_RADIUS) ){
+                        ballCollide = true;
+                        collideItems += "\n" + "Time: " + this.toStringTime() + "\n" + "Ball at " + (balls.get(i).toString() + "\n" + "Ball at " +  balls.get(i + 1).toString()) + "\n";
+                        
+                    }
+                }
+            }
+        // }
+
+            // for (int i = 0; i < balls.size(); i++ ){
+            //    for (int j = 1;  j < balls.size(); j++ ){
+            //     double xElement = Math.abs(balls.get(i).locX - (balls.get(j).locX));
+            //     double yElement = Math.abs(balls.get(i).locY - (balls.get(j).locY));
+            //     double distance = Math.hypot(xElement, yElement);
+    
+            //     if(distance <= (2 * BALL_RADIUS) ){
+            //         ballCollide = true;
+            //         collideItems += "\n" + "Ball at " + (balls.get(i).toString() + "\n" + "Ball at " +  balls.get(j).toString()) + "\n";
+                    
+            //     }
+
+            //    }
+           // }
+
+            
+
+        
+        for (int i = 0; i < balls.size(); i++ ){
+            // System.out.println("BALLS X LOCATION: " + Double.toString(balls.get(i).locX));
+            // System.out.println("BALLS Y LOCATION: " + Double.toString(balls.get(i).locY));
+            double xElement = Math.abs(balls.get(i).locX - 25.0);
+            double yElement = Math.abs(balls.get(i).locY - 10.0);
             double distance = Math.hypot(xElement, yElement);
 
             if(distance <= (2 * BALL_RADIUS) ){
                 ballCollide = true;
-                collideItems += "\n" + "Ball at " + (balls.get(i).toString() + "\n" + "Ball at " +  balls.get(i + 1).toString()) + "\n";
-                
+                collideItems += "\n" + "Time: " + this.toStringTime() + "\n" + "Ball at " + balls.get(i).toString() + "\n" + "Pole at X-Location: 25 Y-Location: 10" + "\n";
             }
         }
 
         return ballCollide;
     }
 
-    public boolean poleCollision(){ 
-        boolean poleCollide = false;
-        for (int i = 0; i < balls.size() - 1; i++ ){
-            double xElement = Math.abs(balls.get(i).locX - 25);
-            double yElement = Math.abs(balls.get(i).locY - 10);
-            double distance = Math.hypot(xElement, yElement);
+    // public boolean poleCollision(){  made in ballCollision
+    //     boolean poleCollide = false;
+    //     for (int i = 0; i < balls.size() - 1; i++ ){
+    //         double xElement = Math.abs(balls.get(i).locX - 25);
+    //         double yElement = Math.abs(balls.get(i).locY - 10);
+    //         double distance = Math.hypot(xElement, yElement);
 
-            if(distance <= (2 * BALL_RADIUS) ){
-                poleCollide = true;
-                collideItems += "\n" + "Ball at " + balls.get(i).toString() + "\n" + "Pole at X-Location: 25 Y-Location: 10" + "\n";
-            }
-        }
-        return poleCollide;
-    }
+    //         if(distance <= (2 * BALL_RADIUS) ){
+    //             poleCollide = true;
+    //             collideItems += "\n" + "Ball at " + balls.get(i).toString() + "\n" + "Pole at X-Location: 25 Y-Location: 10" + "\n";
+    //         }
+    //     }
+    //     return poleCollide;
+    // }
 
     public String toStringTime(){
         DecimalFormat secFormatter = new DecimalFormat("00.00");
@@ -263,7 +300,6 @@ public class SoccerSim{
         while(sim.simulationRunning == true){
             // sim.outCount();
             // sim.removeBall();
-            sim.runSimulation(sim.timeSlice);
             System.out.println(sim);
             if(sim.allBallStop() == true){
                 sim.simulationRunning = false;
@@ -274,11 +310,12 @@ public class SoccerSim{
                 System.out.println("COLLISION DETECTED");
                 System.out.println(sim.collideItems);
             }
-            if(sim.poleCollision() == true){
-                sim.simulationRunning = false;
-                System.out.println("COLLISION DETECTED");
-                System.out.println(sim.collideItems);
-            }
+            // if(sim.poleCollision() == true){
+            //     sim.simulationRunning = false;
+            //     System.out.println("COLLISION DETECTED");
+            //     System.out.println(sim.collideItems);
+            // }
+            sim.runSimulation(sim.timeSlice);
         }
 
 
