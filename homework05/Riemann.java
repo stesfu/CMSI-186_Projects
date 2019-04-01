@@ -15,6 +15,7 @@ import java.util.ArrayList;
     double upperB = 0;
     double lowerB = 0;
     double percent = 1;
+    double deltaX = 0;
 
 
     public Riemann(){
@@ -36,9 +37,10 @@ import java.util.ArrayList;
         
 
         if(args[args.length - 1].contains("%")){
-            percent = Double.parseDouble(args[args.length -1].substring(0,(args[args.length - 1].length()-2)));
-            lowerB = Double.parseDouble(args[args.length -2]); //need to adjust wheb upperbound is smaller?
-            upperB = Double.parseDouble(args[args.length -3]);
+            // percent = Double.parseDouble(args[args.length -1].substring(0,(args[args.length - 1].length()-2)));
+            percent = Double.parseDouble(args[args.length - 1].replace("%", " ").trim());
+            upperB = Double.parseDouble(args[args.length -2]);
+            lowerB = Double.parseDouble(args[args.length -3]); //need to adjust when upperbound is smaller?
             for(int i = 1; i < (args.length - 3); i++ ){
                 inputs.add(Double.parseDouble(args[i])); 
             }
@@ -63,11 +65,15 @@ import java.util.ArrayList;
         return solved;
     }
 
+    public double solveSin(double x){
+        double solved = 0;
+        return solved;
+    }
+
     public double integratePoly(double upperB, double lowerB,double q){ 
-        double integral = 0;
-        double deltaX = 0;
+        double integral = 0.0;
         deltaX = ((Math.abs(upperB - lowerB))/q); // absolute value... do i have to take things in to use them?
-        for(double i = lowerB; i < upperB; i = (i + deltaX)){
+        for(double i = lowerB; i < upperB; i += deltaX){
             integral += (solvePoly(i) * deltaX);
         }
         return integral;
@@ -76,16 +82,21 @@ import java.util.ArrayList;
 
     public static void main(String args[]){
         Riemann sim = new Riemann();
-        System.out.println("leggo!");
+        sim.validateArgs(args);
+        // System.out.println("leggo!");
+        // System.out.println(sim.inputs);
+        // System.out.println("solved poly: " + sim.solvePoly(10));
+        // System.out.println("integral: " + sim.integratePoly(sim.upperB, sim.lowerB, 1));
+        // System.out.println("this b delta x: " + sim.deltaX);
+        // System.out.println("the upper and lower bounds upper: " + sim.upperB + " lower: "+ sim.lowerB);
+        // System.out.println( sim.integratePoly(sim.upperB, sim.lowerB, 1000));
         double previous = sim.integratePoly(sim.upperB, sim.lowerB, 1.0);
         System.out.println(previous);
-        double q = 2;
-        double polyArea = 0; 
-        while(polyArea == 0){ 
+        double q = 2.0;
+        while(true){ 
             double current = sim.integratePoly(sim.upperB, sim.lowerB, q);
-            if(1 - (current/previous) <= sim.percent){
-                System.out.println("the integral is" + current);
-                polyArea = 1;
+            if(Math.abs(1 - (previous/current)) <= (sim.percent/100.0)){
+                System.out.println("the integral is: " + current);
                 break;
             }
             previous = current;
