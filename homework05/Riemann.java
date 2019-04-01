@@ -57,31 +57,41 @@ import java.util.ArrayList;
 
     public double solvePoly(double x){
         double solved = 0;
-        for(double i=0; i < inputs.size(); i++){ //degree would be inputs.size - 1
+        for(int i=0; i < inputs.size(); i++){ //degree would be inputs.size - 1
             solved += (inputs.get(i) * (Math.pow(x, i)));
         }
         return solved;
     }
 
-
-
-
-    public double integratePoly(double inputs[]){ 
-        double difference = 0; 
+    public double integratePoly(double upperB, double lowerB,double q){ 
         double integral = 0;
         double deltaX = 0;
-        double x = 1; 
-        while(percent != difference){
-            deltaX = ((Math.abs(upperB - lowerB))/x); // absolute value
-            for(double i = lowerB; i > upperB; i = (i + deltaX)){
-                integral += solvePoly(i);
-            }
+        deltaX = ((Math.abs(upperB - lowerB))/q); // absolute value... do i have to take things in to use them?
+        for(double i = lowerB; i < upperB; i = (i + deltaX)){
+            integral += (solvePoly(i) * deltaX);
         }
         return integral;
 
     }
 
-    public void main(String args[]){
+    public static void main(String args[]){
+        Riemann sim = new Riemann();
+        System.out.println("leggo!");
+        double previous = sim.integratePoly(sim.upperB, sim.lowerB, 1.0);
+        System.out.println(previous);
+        double q = 2;
+        double polyArea = 0; 
+        while(polyArea == 0){ 
+            double current = sim.integratePoly(sim.upperB, sim.lowerB, q);
+            if(1 - (current/previous) <= sim.percent){
+                System.out.println("the integral is" + current);
+                polyArea = 1;
+                break;
+            }
+            previous = current;
+            q++;
+
+        }
         
     }
 
