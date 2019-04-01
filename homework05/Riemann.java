@@ -16,6 +16,7 @@ import java.util.ArrayList;
     double lowerB = 0;
     double percent = 1;
     double deltaX = 0;
+    String functionType = "";
 
 
     public Riemann(){
@@ -34,10 +35,11 @@ import java.util.ArrayList;
         // if(functions.indexOf(args[0]) == -1 ){ //why doesnt work
         //     validated = false;
         // }
+
+        functionType = args[0];
         
 
         if(args[args.length - 1].contains("%")){
-            // percent = Double.parseDouble(args[args.length -1].substring(0,(args[args.length - 1].length()-2)));
             percent = Double.parseDouble(args[args.length - 1].replace("%", " ").trim());
             upperB = Double.parseDouble(args[args.length -2]);
             lowerB = Double.parseDouble(args[args.length -3]); //need to adjust when upperbound is smaller?
@@ -65,16 +67,37 @@ import java.util.ArrayList;
         return solved;
     }
 
-    public double solveSin(double x){
+    public double solveSin(double radX){
         double solved = 0;
+        solved = Math.sin(radX);
         return solved;
     }
 
-    public double integratePoly(double upperB, double lowerB,double q){ 
+    public double solveLog(double x){
+        double solved = 0;
+        solved = Math.log(x);
+        return solved;
+    }
+
+    public double integrate(double upperB, double lowerB,double q){ 
         double integral = 0.0;
         deltaX = ((Math.abs(upperB - lowerB))/q); // absolute value... do i have to take things in to use them?
-        for(double i = lowerB; i < upperB; i += deltaX){
-            integral += (solvePoly(i) * deltaX);
+        switch(functionType){
+            case "poly":
+                for(double i = lowerB; i < upperB; i += deltaX){
+                    integral += (solvePoly(i) * deltaX);
+                }
+                break;
+            case "sin":
+                for(double i = lowerB; i < upperB; i += deltaX){
+                    integral += (solveSin(i) * deltaX);
+                }
+                break;
+            case "log":
+                for(double i = lowerB; i < upperB; i += deltaX){
+                    integral += (solveLog(i) * deltaX);
+                }
+                break;
         }
         return integral;
 
@@ -90,11 +113,11 @@ import java.util.ArrayList;
         // System.out.println("this b delta x: " + sim.deltaX);
         // System.out.println("the upper and lower bounds upper: " + sim.upperB + " lower: "+ sim.lowerB);
         // System.out.println( sim.integratePoly(sim.upperB, sim.lowerB, 1000));
-        double previous = sim.integratePoly(sim.upperB, sim.lowerB, 1.0);
+        double previous = sim.integrate(sim.upperB, sim.lowerB, 1.0);
         System.out.println(previous);
         double q = 2.0;
         while(true){ 
-            double current = sim.integratePoly(sim.upperB, sim.lowerB, q);
+            double current = sim.integrate(sim.upperB, sim.lowerB, q);
             if(Math.abs(1 - (previous/current)) <= (sim.percent/100.0)){
                 System.out.println("the integral is: " + current);
                 break;
