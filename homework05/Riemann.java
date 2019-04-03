@@ -77,9 +77,8 @@ import java.util.Arrays;
 
             }
         }
-
-        
-        if(args.length < 4 && (args[0].contains("runtests") == false)){
+        // if((args.length < 3 && (args[0].contains("runtests") == false)) || (args.length < 4 && (args[0].contains("poly") )))
+        if((args.length < 3 && (args[0].contains("runtests") == false)) || (args.length < 4 && (args[0].contains("poly") ))){
                 System.out.println(args.length);
                 System.out.println(args[0]);
                 System.out.println("Invalid input for len");
