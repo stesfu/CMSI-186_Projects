@@ -20,10 +20,7 @@ import java.util.Arrays;
     double deltaX = 0;
     String functionType = "";
 
-
-    public Riemann(){
-
-    }
+    public Riemann(){}
 
     public void handleInitialArguments(String args[]){
 
@@ -44,7 +41,6 @@ import java.util.Arrays;
                 }
             }
             if (upperB < lowerB){
-                // throw new NumberFormatException("Invalid input, Upper bound must be less than lower bound");
                 System.out.println("Invalid input, Upper bound must be less than lower bound");
                 System.exit(0);
             }
@@ -53,23 +49,12 @@ import java.util.Arrays;
                 System.out.println("Invalid input, Percent must be greater than 0");
                 System.exit(0);
             }
-
-         
-
         }
-
-
         functionType = args[0];
-
-
-
     }
 
     public boolean validateArgs(String[] args ){
-
         boolean validated = true;
-
-
         for(int i=0; i < args.length; i++){
             if((functions.contains(args[0]))== false){
                 System.out.println("Invalid input, please use a valid function");
@@ -77,10 +62,7 @@ import java.util.Arrays;
 
             }
         }
-        // if((args.length < 3 && (args[0].contains("runtests") == false)) || (args.length < 4 && (args[0].contains("poly") )))
         if((args.length < 3 && (args[0].contains("runtests") == false)) || (args.length < 4 && (args[0].contains("poly") ))){
-                System.out.println(args.length);
-                System.out.println(args[0]);
                 System.out.println("Invalid input for length for particular function");
                 validated = false;
                 System.exit(0);
@@ -90,12 +72,12 @@ import java.util.Arrays;
             validated = false;
             System.exit(0);
         }
-        return validated; //if validated is false throw number format exception
+        return validated; 
     }
 
     public void validateArgsTest(){
         String [] myArgs = {"poly", "1", "2", "1", "1", "10", ".001%"};
-        handleInitialArguments(myArgs); //returning true or
+        handleInitialArguments(myArgs); 
     }
 
     public void runMyTests(){
@@ -103,37 +85,23 @@ import java.util.Arrays;
 
     }
 
-    public double solvePoly(double x){ /// 4 3 2 lb ub percent sin(4 + 3x + 3x^2)
+    public double solvePoly(double x){ 
         double solved = 0;
-        for(int i=0; i < inputs.size(); i++){ //degree would be inputs.size - 1
+        for(int i=0; i < inputs.size(); i++){ 
             solved += (inputs.get(i) * (Math.pow(x, i)));
         }
         return solved;
     }
 
-    // public double solveSin(double radX){
-    //     double solved = 0.0; // if inputs.length == 0 
-    //     double sinX = 0.0;
-
-    //     if (inputs.size() == 0){
-    //         solved = Math.sin(radX);
-    //     }else{
-    //         sinX = solvePoly(radX); //getting whatever that y value is?
-    //         solved = Math.sin(sinX);
-    //     }
-
-    //     return solved;
-    // }
-
     public double solveOther(double radX){
-        double solved = 0.0; // if inputs.length == 0 
+        double solved = 0.0; 
         double functionX = 0.0;
         switch(functionType){
             case "sin":
                 if (inputs.size() == 0){
                     solved = Math.sin(radX);
                 }else{
-                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    functionX = solvePoly(radX); 
                     solved = Math.sin(functionX);
                 }
                 break;
@@ -141,7 +109,7 @@ import java.util.Arrays;
                 if (inputs.size() == 0){
                     solved = Math.cos(radX);
                 }else{
-                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    functionX = solvePoly(radX); 
                     solved = Math.cos(functionX);
                 }
                 break;  
@@ -149,7 +117,7 @@ import java.util.Arrays;
                 if (inputs.size() == 0){
                     solved = Math.tan(radX);
                 }else{
-                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    functionX = solvePoly(radX); 
                     solved = Math.tan(functionX);
                 }
                 break;
@@ -157,7 +125,7 @@ import java.util.Arrays;
                 if (inputs.size() == 0){
                     solved = Math.log(radX);
                 }else{
-                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    functionX = solvePoly(radX); 
                     solved = Math.log(functionX);
                 }
                 break;
@@ -165,7 +133,7 @@ import java.util.Arrays;
                 if (inputs.size() == 0){
                     solved = Math.exp(radX);
                 }else{
-                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    functionX = solvePoly(radX); 
                     solved = Math.exp(functionX);
                 }
                 break;
@@ -177,7 +145,7 @@ import java.util.Arrays;
                 if (inputs.size() == 0){
                     solved = Math.sqrt(radX);
                 }else{
-                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    functionX = solvePoly(radX); 
                     solved = Math.sqrt(functionX);
                 }
                 if(Double.isNaN(solved)){
@@ -185,23 +153,13 @@ import java.util.Arrays;
                     System.exit(0);
                 }
                 break;
-            
-
         }
-
         return solved;
     }
 
-
-    // public double solveLog(double x){
-    //     double solved = 0;
-    //     solved = Math.log(x);
-    //     return solved;
-    // }
-
     public double integrate(double upperB, double lowerB,double q){ 
         double integral = 0.0;
-        deltaX = ((upperB - lowerB)/q); // absolute value... do i have to take things in to use them?
+        deltaX = ((upperB - lowerB)/q); 
         switch(functionType){
             case "runtests":
                 runMyTests();
@@ -210,7 +168,7 @@ import java.util.Arrays;
                 for(double i = lowerB; i < upperB; i += deltaX){
                     integral += (solvePoly(i) * deltaX);
                 }
-                if(inputs.size() == 1 && inputs.get(0) == 0 ){ // only at zero does this happen 
+                if(inputs.size() == 1 && inputs.get(0) == 0 ){ 
                     System.out.println("The LH Riemann Sum is: " + 0.0000);
                     System.out.println("The number of rectangle(s): " + 0);
                     System.exit(0);
@@ -221,22 +179,13 @@ import java.util.Arrays;
                     integral += (solveOther(i) * deltaX);
                 }
         }
-        
         return integral;
-
     }
 
     public static void main(String args[]){
         Riemann sim = new Riemann();
         sim.validateArgs(args);
         sim.handleInitialArguments(args);
-        // System.out.println("leggo!");
-        // System.out.println(sim.inputs);
-        // System.out.println("solved poly: " + sim.solvePoly(10));
-        // System.out.println("integral: " + sim.integratePoly(sim.upperB, sim.lowerB, 1));
-        // System.out.println("this b delta x: " + sim.deltaX);
-        // System.out.println("the upper and lower bounds upper: " + sim.upperB + " lower: "+ sim.lowerB);
-        // System.out.println( sim.integratePoly(sim.upperB, sim.lowerB, 1000));
         double previous = sim.integrate(sim.upperB, sim.lowerB, 1.0);
         double q = 2.0;
         while(true){ 
@@ -255,35 +204,3 @@ import java.util.Arrays;
     }
 
 }
-
-// public double integrate (lb, ub, coeffs[],n){
-//     Switch(args[0]){    //this goes into the main
-//         case "runtests" : runMyTests();
-//                                       break;
-//         case "poly": integrate 
-//                              break;
-//         case "sin": sin integrate
-//                             break; 
-//     main(String [] args) --{
-//         previous = integrate(lb, ub, coeffs,1);
-//         q = 2;
-//         while(--){ //percent thing
-//             current = integrate( lb, ub, coeffd, q);
-//              if( 1 - (current/pervious) <= percentage){
-//                  break
-//               }previous = current;
-//              q++;
-//     }
-//     public void run myTests(){
-//         testIntegrate();
-//         testValidate();
-//         testIntegrateSin();
-//     //Inside test inegrate below
-//     public void testIntegrate(){
-//         String s = {"poly","0","8","-2","1","4","re-6"};
-//         Double result = integrate(s); 
-//         s[3] = "-3";
-//         result = integrate(s); 
-//        System.out.println("Expected 18, got" + result);
-    
-// 
