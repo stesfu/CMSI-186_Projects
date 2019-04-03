@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 
  public class Riemann {
-    List <String> functions = Arrays.asList("runtests","poly", "sin","cos","runtests");
+    List <String> functions = Arrays.asList("runtests","poly", "sin","cos", "tan", "sqrt", "exp", "log","runtests");
     ArrayList<Double> inputs = new ArrayList<Double>();
     double upperB = 0;
     double lowerB = 0;
@@ -81,7 +81,7 @@ import java.util.Arrays;
         if((args.length < 3 && (args[0].contains("runtests") == false)) || (args.length < 4 && (args[0].contains("poly") ))){
                 System.out.println(args.length);
                 System.out.println(args[0]);
-                System.out.println("Invalid input for len");
+                System.out.println("Invalid input for length for particular function");
                 validated = false;
                 System.exit(0);
         }
@@ -111,19 +111,87 @@ import java.util.Arrays;
         return solved;
     }
 
-    public double solveSin(double radX){
-        double solved = 0.0; // if inputs.length == 0 
-        double sinX = 0.0;
+    // public double solveSin(double radX){
+    //     double solved = 0.0; // if inputs.length == 0 
+    //     double sinX = 0.0;
 
-        if (inputs.size() == 0){
-            solved = Math.sin(radX);
-        }else{
-            sinX = solvePoly(radX); //getting whatever that y value is?
-            solved = Math.sin(sinX);
+    //     if (inputs.size() == 0){
+    //         solved = Math.sin(radX);
+    //     }else{
+    //         sinX = solvePoly(radX); //getting whatever that y value is?
+    //         solved = Math.sin(sinX);
+    //     }
+
+    //     return solved;
+    // }
+
+    public double solveOther(double radX){
+        double solved = 0.0; // if inputs.length == 0 
+        double functionX = 0.0;
+        switch(functionType){
+            case "sin":
+                if (inputs.size() == 0){
+                    solved = Math.sin(radX);
+                }else{
+                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    solved = Math.sin(functionX);
+                }
+                break;
+            case "cos":
+                if (inputs.size() == 0){
+                    solved = Math.cos(radX);
+                }else{
+                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    solved = Math.cos(functionX);
+                }
+                break;  
+            case "tan":
+                if (inputs.size() == 0){
+                    solved = Math.tan(radX);
+                }else{
+                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    solved = Math.tan(functionX);
+                }
+                break;
+            case "log":
+                if (inputs.size() == 0){
+                    solved = Math.log(radX);
+                }else{
+                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    solved = Math.log(functionX);
+                }
+                break;
+            case "exp":
+                if (inputs.size() == 0){
+                    solved = Math.exp(radX);
+                }else{
+                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    solved = Math.exp(functionX);
+                }
+                break;
+            case "sqrt":
+                if(lowerB < 0){
+                    System.out.println("inputs out of bounds for sqrt function");
+                    System.exit(0);
+                }
+                if (inputs.size() == 0){
+                    solved = Math.sqrt(radX);
+                }else{
+                    functionX = solvePoly(radX); //getting whatever that y value is?
+                    solved = Math.sqrt(functionX);
+                }
+                if(Double.isNaN(solved)){
+                    System.out.println("inputs out of bounds for sqrt function");
+                    System.exit(0);
+                }
+                break;
+            
+
         }
 
         return solved;
     }
+
 
     // public double solveLog(double x){
     //     double solved = 0;
@@ -148,18 +216,12 @@ import java.util.Arrays;
                     System.exit(0);
                 }
                 break;
-            case "sin":
+            default:
                 for(double i = lowerB; i < upperB; i += deltaX){
-                    integral += (solveSin(i) * deltaX);
-                    // System.out.println("this be the inputs" + inputs);
+                    integral += (solveOther(i) * deltaX);
                 }
-                break;
-            case "log":
-                for(double i = lowerB; i < upperB; i += deltaX){
-                    integral += (Math.log(i) * deltaX);
-                }
-                break;
         }
+        
         return integral;
 
     }
@@ -184,6 +246,7 @@ import java.util.Arrays;
                 System.out.println("The number of rectangle(s): " + q);
                 break;
             }
+
             previous = current;
             q++;
 
