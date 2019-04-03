@@ -85,7 +85,7 @@ import java.util.Arrays;
 
     }
 
-    public double solvePoly(double x){ 
+    public double solvePoly(double x){
         double solved = 0;
         for(int i=0; i < inputs.size(); i++){ 
             solved += (inputs.get(i) * (Math.pow(x, i)));
@@ -165,17 +165,17 @@ import java.util.Arrays;
                 runMyTests();
                 break;
             case "poly":
-                for(double i = lowerB; i < upperB; i += deltaX){
+                for(double i = lowerB + (deltaX/2); i < upperB; i += deltaX){
                     integral += (solvePoly(i) * deltaX);
                 }
                 if(inputs.size() == 1 && inputs.get(0) == 0 ){ 
-                    System.out.println("The LH Riemann Sum is: " + 0.0000);
+                    System.out.println("The Midpoint Riemann Sum is: " + 0.0000);
                     System.out.println("The number of rectangle(s): " + 0);
                     System.exit(0);
                 }
                 break;
             default:
-                for(double i = lowerB; i < upperB; i += deltaX){
+                for(double i = lowerB + (deltaX/2); i < upperB; i += deltaX){
                     integral += (solveOther(i) * deltaX);
                 }
         }
@@ -191,7 +191,7 @@ import java.util.Arrays;
         while(true){ 
             double current = sim.integrate(sim.upperB, sim.lowerB, q);
             if(Math.abs(1 - (previous/current)) <= (sim.percent/100.0)){
-                System.out.println("The LH Riemann Sum is: " + current);
+                System.out.println("The Midpoint Riemann Sum is: " + current);
                 System.out.println("The number of rectangle(s): " + q);
                 break;
             }
