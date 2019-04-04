@@ -9,15 +9,16 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+import java.text.DecimalFormat;
 
 
  public class Riemann {
     List <String> functions = Arrays.asList("runtests","poly", "sin","cos", "tan", "sqrt", "exp", "log","runtests");
     ArrayList<Double> inputs = new ArrayList<Double>();
-    double upperB = 0;
-    double lowerB = 0;
-    double percent = 1;
-    double deltaX = 0;
+    double upperB = 0.0;
+    double lowerB = 0.0;
+    double percent = 1.0;
+    double deltaX = 0.0;
     String functionType = "";
 
     public Riemann(){}
@@ -41,13 +42,13 @@ import java.util.Arrays;
                 }
             }
             if (upperB < lowerB){
-                System.out.println("Invalid input, Upper bound must be less than lower bound");
-                System.exit(0);
+                System.out.println("Invalid input, Upper bound must be greater than lower bound");
+                System.exit(1);
             }
 
             if(percent < 0){
                 System.out.println("Invalid input, Percent must be greater than 0");
-                System.exit(0);
+                System.exit(1);
             }
         }
         functionType = args[0];
@@ -58,25 +59,38 @@ import java.util.Arrays;
         for(int i=0; i < args.length; i++){
             if((functions.contains(args[0]))== false){
                 System.out.println("Invalid input, please use a valid function");
-                System.exit(0);
+                System.exit(1);
 
             }
         }
         if((args.length < 3 && (args[0].contains("runtests") == false)) || (args.length < 4 && (args[0].contains("poly") ))){
                 System.out.println("Invalid input for length for particular function");
                 validated = false;
-                System.exit(0);
+                System.exit(1);
         }
         if(args.length == 0){
             System.out.println("Invalid input");
             validated = false;
-            System.exit(0);
+            System.exit(1);
         }
         return validated; 
     }
 
     public void validateArgsTest(){
-        String [] myArgs = {"poly", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs1 = {"poly", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs2 = {"poly", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs3 = {"sin", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs4 = {"sin", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs5 = {"cos", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs6 = {"cos", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs7 = {"tan", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs8 = {"tan", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs9 = {"exp", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs10 = {"exp", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs11 = {"sqrt", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs12 = {"sqrt", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs13 = {"log", "1", "2", "1", "1", "10", ".001%"};
+        // String [] myArgs14 = {"log", "1", "2", "1", "1", "10", ".001%"};
         handleInitialArguments(myArgs); 
     }
 
@@ -86,7 +100,7 @@ import java.util.Arrays;
     }
 
     public double solvePoly(double x){
-        double solved = 0;
+        double solved = 0.0;
         for(int i=0; i < inputs.size(); i++){ 
             solved += (inputs.get(i) * (Math.pow(x, i)));
         }
@@ -140,7 +154,7 @@ import java.util.Arrays;
             case "sqrt":
                 if(lowerB < 0){
                     System.out.println("inputs out of bounds for sqrt function");
-                    System.exit(0);
+                    System.exit(1);
                 }
                 if (inputs.size() == 0){
                     solved = Math.sqrt(radX);
@@ -150,7 +164,7 @@ import java.util.Arrays;
                 }
                 if(Double.isNaN(solved)){
                     System.out.println("inputs out of bounds for sqrt function");
-                    System.exit(0);
+                    System.exit(1);
                 }
                 break;
         }
@@ -183,6 +197,7 @@ import java.util.Arrays;
     }
 
     public static void main(String args[]){
+        DecimalFormat fourFormat = new DecimalFormat("0.0000");
         Riemann sim = new Riemann();
         sim.validateArgs(args);
         sim.handleInitialArguments(args);
@@ -191,7 +206,8 @@ import java.util.Arrays;
         while(true){ 
             double current = sim.integrate(sim.upperB, sim.lowerB, q);
             if(Math.abs(1 - (previous/current)) <= (sim.percent/100.0)){
-                System.out.println("The Midpoint Riemann Sum is: " + current);
+                String area = String.valueOf(fourFormat.format(current));
+                System.out.println("The Midpoint Riemann Sum is: " + area);
                 System.out.println("The number of rectangle(s): " + q);
                 break;
             }
