@@ -77,25 +77,28 @@ import java.text.DecimalFormat;
     }
 
     public void validateArgsTest(){
-        // String [] myArgs1 = {"poly", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs2 = {"poly", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs3 = {"sin", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs4 = {"sin", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs5 = {"cos", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs6 = {"cos", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs7 = {"tan", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs8 = {"tan", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs9 = {"exp", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs10 = {"exp", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs11 = {"sqrt", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs12 = {"sqrt", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs13 = {"log", "1", "2", "1", "1", "10", ".001%"};
-        // String [] myArgs14 = {"log", "1", "2", "1", "1", "10", ".001%"};
+        String [] myArgs = {"poly"};
+        System.out.println("Expected error got: ");
+        validateArgs(myArgs);
         handleInitialArguments(myArgs); 
+    }
+
+    public void validateIntegrate(){
+        String [] myArgs2 = {"poly", "1", "2", "1", "1", "10", ".001%"};
+        String [] myArgs3 = {"sin", "1", "4", ".001%"};
+        System.out.println("Checking poly...");
+        System.out.println("Expected 440.9368 got: ");
+        validateArgs(myArgs2);
+        handleInitialArguments(myArgs2); 
+        System.out.println("Checking sin...");
+        System.out.println("Expected 1.1942 got: ");
+        validateArgs(myArgs3);
+        handleInitialArguments(myArgs3); 
     }
 
     public void runMyTests(){
         validateArgsTest();
+        validateIntegrate();
 
     }
 
