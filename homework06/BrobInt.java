@@ -51,6 +51,10 @@ public class BrobInt {
    public  String internalValue = "";        // internal String representation of this BrobInt
    public  byte   sign          = 0;         // "0" is positive, "1" is negative
    private String reversed      = "";        // the backwards version of the internal String representation
+   int chunks = 0;
+   int start = 0;
+   int stop = 0;
+   int[] chunksArr;
 
    private static BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
    private static final boolean DEBUG_ON = false;
@@ -63,36 +67,36 @@ public class BrobInt {
    *  @param  value  String value to make into a BrobInt
    */
   public BrobInt( String value ) {
-   internalValue = new String(value);
-   int chunks = (internalValue.length() / 9) + 1;
+   this.internalValue = new String(value);
+   this.chunks = (this.internalValue.length() / 9) + 1;
    if (value.charAt(0) == '-') {
-     sign = 1;
+     this.sign = 1;
    }
-   if (sign == 1) {
+   if (this.sign == 1) {
      value = value.substring(1);
    }
-   int[] chunksArr = new int[chunks];
-   int stop = internalValue.length();
-   int start = stop - 9;
-   if (chunks == 1) {
-     start = 0;
+   this.chunksArr = new int[this.chunks];
+   this.stop = internalValue.length();
+   this.start = this.stop - 9;
+   if (this.chunks == 1) {
+     this.start = 0;
    }
 
    for (int i = 0; i < chunks; i++) {
-     chunksArr[i] = Integer.parseInt(internalValue.substring(start, stop));
-     stop -= 9;
-     if(i == chunksArr.length - 2) {
-       start = 0;
+     this.chunksArr[i] = Integer.parseInt(internalValue.substring(this.start, this.stop));
+     this.stop -= 9;
+     if(i == this.chunksArr.length - 2) {
+       this.start = 0;
      } else {
-       start -= 9;
+       this.start -= 9;
      }
      if( DEBUG_ON) { 
-        System.out.println( "...start: " + start + ", stop: " + stop ); 
+        System.out.println( "...start: " + this.start + ", stop: " + this.stop ); 
       }
    }
 
    if( DEBUG_ON) { 
-      System.out.println("count: " + value.length() + ", numchunks: "+ chunks ); 
+      System.out.println("count: " + value.length() + ", numchunks: "+ this.chunks ); 
    }
 }
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,19 +135,27 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt bint ) {
       //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-      throw new UnsupportedOperationException( "bleeeeeerg" + bint.chunksArr.length );
-      //int carry = 0; 
-      // for(i=0; i < (Math.min(a.length,bint.chunksArr.length)); i++){
-      //    c[i] = a[i] + b[i] + carry;
-      //    if(c[i] > 999){
-      //       c[i] -= 10000;
-      //       carry = 1;
-      //    }else{
-      //       carry = 0;
-      //    }
+      //throw new UnsupportedOperationException( "bleeeeeerg " + bint.chunksArr.length );
+      BrobInt addedBrob = new BrobInt("0");
+      int carry = 0; 
+      String brobStr = "";
+      for(int i=0; i < (Math.min(this.chunksArr.length,bint.chunksArr.length)); i++){
+         addedBrob.chunksArr[i] = this.chunksArr[i] + bint.chunksArr[i] + carry;
+         if( addedBrob.chunksArr[i] > 999){
+             addedBrob.chunksArr[i] -= 10000;
+            carry = 1;
+         }else{
+            carry = 0;
+         }
+      }
 
-      // }
-      // return bint.chunksArr.length;
+      for(int i=0; i < addedBrob.chunksArr.length; i++){
+         brobStr += addedBrob.chunksArr[i];
+      }
+
+      BrobInt finalAdd = new BrobInt(brobStr);
+
+      return finalAdd;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,7 +267,8 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public String toString() {
       if (sign == 1){
-         return "-" + internalValue;
+         //return "-" + internalValue;
+         return internalValue;
       }
       return internalValue;
    }
