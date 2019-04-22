@@ -1,8 +1,10 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * File name  :  BrobInt.java
  * Purpose    :  Learning exercise to implement arbitrarily large numbers and their operations
- * @author    :  B.J. Johnson
+ * @author    :  B.J. Johnson (Prototype)
  * Date       :  2017-04-04
+ * @author    :  Salem Tesfu 
+ * Date       :  2019-04-05
  * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
  * Notes      :  None
  * Warnings   :  None
@@ -60,28 +62,39 @@ public class BrobInt {
    *   for later use
    *  @param  value  String value to make into a BrobInt
    */
-   public BrobInt( String value ) {
-      //super();			// replace this with the appropriate code to accomplish what is in the javadoc text
-      internalValue = value;
-      if(value.charAt(0) == '-'){
-         sign = 1;
-      }
-      int chunks = (internalValue.length()/9) + 1;
-      int[] chunkArray = new int [chunks];
-      int stop = value.length() - 1;
-      int start = stop - 8;
-      for(int i=0; i < chunks; i++){
-         chunkArray[i] = Integer.parseInt(value.substring(start,stop));
-         stop -= 9;
-         start -= 9;
-         if(i == chunks - 1){
-            start = 0;
-         }else{
-            start -= 9;
-         }
+  public BrobInt( String value ) {
+   internalValue = new String(value);
+   int chunks = (internalValue.length() / 9) + 1;
+   if (value.charAt(0) == '-') {
+     sign = 1;
+   }
+   if (sign == 1) {
+     value = value.substring(1);
+   }
+   int[] chunksArr = new int[chunks];
+   int stop = internalValue.length();
+   int start = stop - 9;
+   if (chunks == 1) {
+     start = 0;
+   }
+
+   for (int i = 0; i < chunks; i++) {
+     chunksArr[i] = Integer.parseInt(internalValue.substring(start, stop));
+     stop -= 9;
+     if(i == chunksArr.length - 2) {
+       start = 0;
+     } else {
+       start -= 9;
+     }
+     if( DEBUG_ON) { 
+        System.out.println( "...start: " + start + ", stop: " + stop ); 
       }
    }
 
+   if( DEBUG_ON) { 
+      System.out.println("count: " + value.length() + ", numchunks: "+ chunks ); 
+   }
+}
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to validate that all the characters in the value are valid decimal digits
    *  @return  boolean  true if all digits are good
@@ -117,7 +130,20 @@ public class BrobInt {
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      throw new UnsupportedOperationException( "bleeeeeerg" + bint.chunksArr.length );
+      //int carry = 0; 
+      // for(i=0; i < (Math.min(a.length,bint.chunksArr.length)); i++){
+      //    c[i] = a[i] + b[i] + carry;
+      //    if(c[i] > 999){
+      //       c[i] -= 10000;
+      //       carry = 1;
+      //    }else{
+      //       carry = 0;
+      //    }
+
+      // }
+      // return bint.chunksArr.length;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
