@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class BrobInt {
 
@@ -67,11 +68,13 @@ public class BrobInt {
    *  @param  value  String value to make into a BrobInt
    */
   public BrobInt( String value ) {
-   this.internalValue = new String(value);
-   this.chunks = (this.internalValue.length() / 9) + 1;
+   this.internalValue = value;
    if (value.charAt(0) == '-') {
      this.sign = 1;
+     //value.charAt(0) = "0";
+     internalValue = internalValue.substring(1, internalValue.length() );
    }
+   this.chunks = (this.internalValue.length() / 9) + 1;
    if (this.sign == 1) {
      value = value.substring(1);
    }
@@ -136,26 +139,85 @@ public class BrobInt {
    public BrobInt add( BrobInt bint ) {
       //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
       //throw new UnsupportedOperationException( "bleeeeeerg " + bint.chunksArr.length );
-      BrobInt addedBrob = new BrobInt("0");
+      //BrobInt addedBrob = new BrobInt("0");
       int carry = 0; 
       String brobStr = "";
+      DecimalFormat df = new DecimalFormat("000000000");
+
+      int [] addedBrobs = new int[Math.max(this.chunksArr.length,bint.chunksArr.length) + 1];
+     
+
+      // for(int i=0; i < (Math.min(this.chunksArr.length,bint.chunksArr.length)); i++){
+      //    addedBrob.chunksArr[i] = this.chunksArr[i] + bint.chunksArr[i] + carry;
+      //    if( addedBrob.chunksArr[i] > 9999){
+      //        addedBrob.chunksArr[i] -= 10000;
+      //       carry = 1;
+      //    }else{
+      //       carry = 0;
+      //    }
+      // }
+
+      // for(int i=0; i < addedBrob.chunksArr.length; i++){
+      //    brobStr += addedBrob.chunksArr[i];
+      // }
+
+      //format to 9 zeros 
+
+      int j = 0;
+      int smallLength = Math.min(this.chunksArr.length,bint.chunksArr.length);
+      int bigLength =  Math.max(this.chunksArr.length,bint.chunksArr.length);
+
       for(int i=0; i < (Math.min(this.chunksArr.length,bint.chunksArr.length)); i++){
-         addedBrob.chunksArr[i] = this.chunksArr[i] + bint.chunksArr[i] + carry;
-         if( addedBrob.chunksArr[i] > 999){
-             addedBrob.chunksArr[i] -= 10000;
+         // if(i < smallLength - 4){
+
+         // }
+         addedBrobs[i] = this.chunksArr[i] + bint.chunksArr[i] + carry;
+         toArray(addedBrobs);
+         if( addedBrobs[i] > 999999999){
+             addedBrobs[i] -= 1000000000;
             carry = 1;
          }else{
             carry = 0;
          }
+         j++; 
       }
 
-      for(int i=0; i < addedBrob.chunksArr.length; i++){
-         brobStr += addedBrob.chunksArr[i];
+      for(int i = j; i < Math.max(this.chunksArr.length,bint.chunksArr.length); i++){
+         if(this.chunksArr.length > bint.chunksArr.length){
+            addedBrobs[i] = this.chunksArr[i] + carry;
+            toArray(addedBrobs);
+            if( addedBrobs[i] > 999999999){
+                addedBrobs[i] -= 1000000000;
+               carry = 1;
+            }else{
+               carry = 0;
+            }
+         }
+
+         if(this.chunksArr.length < bint.chunksArr.length){
+            addedBrobs[i] = bint.chunksArr[i] + carry;
+            if( addedBrobs[i] > 999999999){
+                addedBrobs[i] -= 1000000000;
+               carry = 1;
+            }else{
+               carry = 0;
+            }
+            
+         }
+      }
+
+      for(int i= addedBrobs.length -1 ; i >= 0; i--){
+         brobStr += addedBrobs[i];
+         System.out.println("THE BROB STR ISSSS: " + brobStr);
+      }
+
+      if(sign == 1){
+         brobStr = "-" + brobStr;
       }
 
       BrobInt finalAdd = new BrobInt(brobStr);
 
-      return finalAdd;
+      return finalAdd.removeLeadingZeros(finalAdd);
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -267,8 +329,8 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public String toString() {
       if (sign == 1){
-         //return "-" + internalValue;
-         return internalValue;
+         return "-" + internalValue;
+         //return internalValue;
       }
       return internalValue;
    }
@@ -325,7 +387,7 @@ public class BrobInt {
    *  @param   d  byte array from which to display the contents
    *  NOTE: may be changed to int[] or some other type based on requirements in code above
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public void toArray( byte[] d ) {
+   public void toArray( int[] d ) {
       System.out.println( "Array contents: " + Arrays.toString( d ) );
    }
 
