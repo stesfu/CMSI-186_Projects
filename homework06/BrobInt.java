@@ -74,7 +74,10 @@ public class BrobInt {
      //value.charAt(0) = "0";
      internalValue = internalValue.substring(1, internalValue.length() );
    }
-   this.chunks = (this.internalValue.length() / 9) + 1;
+   this.chunks = (this.internalValue.length() / 9); 
+   if(value.length() % 9 != 0){
+      this.chunks++;
+   }
    if (this.sign == 1) {
      value = value.substring(1);
    }
@@ -146,33 +149,13 @@ public class BrobInt {
 
       int [] addedBrobs = new int[Math.max(this.chunksArr.length,bint.chunksArr.length) + 1];
      
-
-      // for(int i=0; i < (Math.min(this.chunksArr.length,bint.chunksArr.length)); i++){
-      //    addedBrob.chunksArr[i] = this.chunksArr[i] + bint.chunksArr[i] + carry;
-      //    if( addedBrob.chunksArr[i] > 9999){
-      //        addedBrob.chunksArr[i] -= 10000;
-      //       carry = 1;
-      //    }else{
-      //       carry = 0;
-      //    }
-      // }
-
-      // for(int i=0; i < addedBrob.chunksArr.length; i++){
-      //    brobStr += addedBrob.chunksArr[i];
-      // }
-
-      //format to 9 zeros 
-
       int j = 0;
-      int smallLength = Math.min(this.chunksArr.length,bint.chunksArr.length);
-      int bigLength =  Math.max(this.chunksArr.length,bint.chunksArr.length);
+      //int smallLength = Math.min(this.chunksArr.length,bint.chunksArr.length);
+      //int bigLength =  Math.max(this.chunksArr.length,bint.chunksArr.length);
 
       for(int i=0; i < (Math.min(this.chunksArr.length,bint.chunksArr.length)); i++){
-         // if(i < smallLength - 4){
-
-         // }
          addedBrobs[i] = this.chunksArr[i] + bint.chunksArr[i] + carry;
-         toArray(addedBrobs);
+         //toArray(addedBrobs);
          if( addedBrobs[i] > 999999999){
              addedBrobs[i] -= 1000000000;
             carry = 1;
@@ -206,9 +189,14 @@ public class BrobInt {
          }
       }
 
-      for(int i= addedBrobs.length -1 ; i >= 0; i--){
-         brobStr += addedBrobs[i];
-         System.out.println("THE BROB STR ISSSS: " + brobStr);
+      for(int i= addedBrobs.length -1; i >= 0; i--){ 
+         //brobStr += " " + df.format((double)addedBrobs[i]);
+         if(i < addedBrobs.length - 2){
+            brobStr += df.format((double)addedBrobs[i]);
+         }else{
+            brobStr += addedBrobs[i];
+         }
+         //System.out.println("THE BROB STR ISSSS: " + brobStr);
       }
 
       if(sign == 1){
@@ -235,7 +223,100 @@ public class BrobInt {
    *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      String brobStr = "";
+      DecimalFormat df = new DecimalFormat("000000000");
+      
+      int multSign = 0;
+      String multStr = "";
+      int[] arrA;
+      int[] arrB;
+      long[] result;
+      long carry = 0;
+      int k = 0;
+      int carryLength = 0;
+      String carryString = "";
+   
+      if(bint.sign != this.sign){
+         multSign = 1; 
+      }
+
+      if(this.internalValue.length() > bint.internalValue.length()){
+         arrA = new int[this.chunks];
+         for(int i = 0; i < this.chunks; i++){
+            arrA[i] = this.chunksArr[i];
+         }
+
+         arrB = new int[bint.chunks];
+         for(int j = 0; j < bint.chunks; j++){
+            arrB[j] = bint.chunksArr[j];
+         }
+      }else{
+         arrA = new int[bint.chunks];
+         for(int i = 0; i < bint.chunks; i++){
+            arrA[i] = bint.chunksArr[i];
+         }
+
+         arrB = new int[this.chunks];
+         for(int j = 0; j < this.chunks; j++){
+            arrB[j] = this.chunksArr[j];
+         }
+      }
+
+      result = new long [arrA.length + arrB.length + 1];
+      for (int i = 0; i < result.length; i++){
+         result[i] = 0;
+      }
+
+      for(int i = 0; i < arrB.length; i++){
+         k = i;
+         for(int j = 0; j < arrA.length; j++){
+            if(result[k] > 9){
+               carry = result[k]/10;
+            }else{
+               carry = 0;
+            }
+            result[k] += ((long) arrA[j] * (long) arrB[i]) + carry;
+            k++;
+         }
+         // multStr = String.valueOf(result[]);
+         // System.out.println( "grihgiqrghioqrhg'poop " + multStr + " pir");
+         // toArrayLong(result);
+         // if(multStr.length() <= 9 ){
+         //    carry = 0;
+         // }else{
+         //    carryLength = multStr.length() - 10;
+         //    carryString = multStr.substring(0, carryLength);
+         //    carry = Long.parseLong(carryString);
+         //    System.out.println("FUEIUFIWEFIWE" + carry);
+            //result[result.length - 3] += carry; 
+         //}
+       
+         
+
+         
+      }
+
+      for(int i= result.length -1; i >= 0; i--){ 
+         //brobStr += " " + df.format((double)addedBrobs[i]);
+         toArrayLong(result);
+         if(i < result.length - 2){
+            brobStr += df.format(result[i]);
+         }else{
+            brobStr += result[i];
+         }
+         System.out.println("THE BROB STR ISSSS: " + brobStr);
+      }
+
+      if(multSign == 1){
+         brobStr = "-" + brobStr;
+      }
+
+      BrobInt finalAdd = new BrobInt(brobStr);
+
+      return finalAdd.removeLeadingZeros(finalAdd);
+
+
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -253,6 +334,9 @@ public class BrobInt {
    *  @return BrobInt that is the remainder of division of this BrobInt by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt remainder( BrobInt bint ) {
+      //b1.divide(b2).multiply(b2) take this number and subtract frm b1. Then you get a brob int that
+      //is the remainder 
+      //return b1.subtract(b1.divide(b2).multiply(b2));
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
@@ -387,10 +471,18 @@ public class BrobInt {
    *  @param   d  byte array from which to display the contents
    *  NOTE: may be changed to int[] or some other type based on requirements in code above
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public void toArray( int[] d ) {
+   public void toArray( int[] d ) { //changed to long from in t
       System.out.println( "Array contents: " + Arrays.toString( d ) );
    }
 
+  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   *  Method to display an Array representation of this BrobInt as its bytes
+   *  @param   d  byte array from which to display the contents
+   *  NOTE: may be changed to long[] or some other type based on requirements in code above
+   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  public void toArrayLong( long[] d ) { //changed to long from in t
+   System.out.println( "Array contents: " + Arrays.toString( d ) );
+}
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to display a prompt for the user to press 'ENTER' and wait for her to do so
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
