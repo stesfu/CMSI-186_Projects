@@ -73,7 +73,7 @@ public class BrobInt {
    if (value.charAt(0) == '-') {
      this.sign = 1;
      //value.charAt(0) = "0";
-     internalValue = internalValue.substring(1, internalValue.length() );
+     //internalValue = internalValue.substring(1, internalValue.length() );
    }
    this.chunks = (this.internalValue.length() / 9); 
    if(value.length() % 9 != 0){
@@ -169,7 +169,7 @@ public class BrobInt {
       for(int i = j; i < Math.max(this.chunksArr.length,bint.chunksArr.length); i++){
          if(this.chunksArr.length > bint.chunksArr.length){
             addedBrobs[i] = this.chunksArr[i] + carry;
-            toArray(addedBrobs);
+            //toArray(addedBrobs);
             if( addedBrobs[i] > 999999999){
                 addedBrobs[i] -= 1000000000;
                carry = 1;
@@ -200,11 +200,27 @@ public class BrobInt {
          //System.out.println("THE BROB STR ISSSS: " + brobStr);
       }
 
-      if(sign == 1){
-         brobStr = "-" + brobStr;
+      for(int i = 0; i < brobStr.length(); i++){
+         if(i != 0 && brobStr.charAt(i) == '-'){
+            //System.out.println(brobStr);
+            brobStr = brobStr.substring(i, brobStr.length());
+         }
       }
 
+      if(sign == 1 && brobStr.charAt(0) != '-'){
+         brobStr = "-" + brobStr;
+      } 
+      //ive been helping people and havent done amnything since u
+
       BrobInt finalAdd = new BrobInt(brobStr);
+
+      // if(this.sign != bint.sign){
+      //    if(this.internalValue.length() > bint.internalValue.length()){
+      //       finalAdd = this.subtract(bint);
+      //    }else{
+      //       finalAdd = bint.subtract(this);
+      //    }
+      // }
 
       return finalAdd.removeLeadingZeros(finalAdd);
    }
@@ -221,10 +237,10 @@ public class BrobInt {
       boolean bothNegative; 
       boolean differentSigns;
       boolean specialCondition = false;
+      boolean negativeResult = false;
       int max = Math.max(this.chunksArr.length, bint.chunksArr.length);
       int min = Math.min(this.chunksArr.length, bint.chunksArr.length);
       int k = 0;
-      int sign = 0;
       String brobStr = ""; 
       BrobInt specialSub = new BrobInt("0");
       int[] longArray;
@@ -241,12 +257,6 @@ public class BrobInt {
          bothNegative = true;
       }
 
-      // if(bothPositve){
-      //    bothNegative = false;
-      // }else{
-      //    bothPositive = true; 
-      // }
-
       if(this.sign != bint.sign){
          differentSigns = true;
       }else{
@@ -254,25 +264,31 @@ public class BrobInt {
       }
 
       if ((bothPositive) && (this.compareTo(bint) < 0)) {
-         sign = 1;
+         negativeResult = true;
       } 
-      else if ((differentSigns) && (this.compareTo(bint) > 0 )) {
-         String biggerPos = bint.internalValue.substring(0, bint.internalValue.length());
-         BrobInt posBrobInt = new BrobInt(biggerPos);
+      else if ((differentSigns) && (this.compareTo(bint) > 0)) {
+         String becomeAdd = bint.internalValue.substring(1, bint.internalValue.length());
+         BrobInt posBrobInt = new BrobInt(becomeAdd);
          specialCondition = true;
+         negativeResult = false;
+         //specialSub = new BrobInt(String.valueOf(this.add(posBrobInt)));
          specialSub = new BrobInt(String.valueOf(this.add(posBrobInt)));
+  
       }
       else if ((differentSigns) && (this.compareTo(bint) < 0)) {
-         String biggerNeg = this.internalValue.substring(0, this.internalValue.length());
+         String biggerNeg = this.internalValue.substring(1, this.internalValue.length());
          BrobInt negBrobInt = new BrobInt(biggerNeg);
-         negBrobInt = negBrobInt.removeLeadingZeros(negBrobInt); //but doesnt fix it!
+         //negBrobInt = negBrobInt.removeLeadingZeros(negBrobInt); //but doesnt fix it!
          String negAnswer = "-" + bint.add(negBrobInt).toString();
          specialCondition = true;
          specialSub = new BrobInt(negAnswer);
       }
-      else if ((bothNegative) && (this.compareTo(bint) > 0)) {
-         sign = 1;
+      else if ((bothNegative) && (this.compareTo(bint) > 0)) { //allows 37 to work 
+         negativeResult = true;
       }
+      // else if ((bothNegative) && (this.compareTo(bint) < 0)) { 
+      //    negativeResult = false;
+      // }
 
       longArray = new int[max];
       shortArray = new int[min];
@@ -296,8 +312,10 @@ public class BrobInt {
       
       for (int i = 0; i < min; i++) {
          if (longArray[i] < shortArray[i]) {
-            longArray[i] += 10;
+            //longArray[i] += 0; //longArray[i] +=10
+            //longArray[i + 1]--;
             if (i != shortArray.length - 1) {
+               //longArray[i] += 20;
                longArray[i + 1]--;
             }
          }
@@ -318,16 +336,16 @@ public class BrobInt {
 
       for(int i = 0; i < brobStr.length(); i++){
          if(i != 0 && brobStr.charAt(i) == '-'){
-            System.out.println(brobStr);
+            //System.out.println(brobStr);
             brobStr = brobStr.substring(i, brobStr.length());
-            if(sign == 1){
-               brobStr = brobStr.substring(0, brobStr.length());
+            if(!negativeResult){
+               brobStr = brobStr.substring(1, brobStr.length());
             }
 
          }
       }
 
-      if(sign == 1 && (brobStr.charAt(0) != '-')){
+      if(negativeResult && (brobStr.charAt(0) != '-')){
          brobStr = "-" + brobStr;
       }
 
@@ -398,21 +416,39 @@ public class BrobInt {
       for(int i = 0; i < arrB.length; i++){
          k = i;
          for(int j = 0; j < arrA.length; j++){
+            //System.out.println("THIS IS THE CARRY " + carry);
             result[k] = ((long) arrA[j] * (long) arrB[i]) + carry;
-            System.out.println("THIFE BE IT RIGHT AWAY " + result[k]);
-            multStr = String.valueOf(result[k]);
+
+            if(result[k] > 999999999){
+               carry = result[k] / 1000000000;
+               result[k] = result[k] % 1000000000;
+            }else{
+               carry = 0;
+            }
+
+
+            // if(result[k] > 999999999){
+            //    long placeholder = result[k];
+            //    result[k] = result[k] % 1000000000;
+            //    carry = placeholder - result[k];
+            // }else{
+            //    carry = 0;
+            // }
+
+            // System.out.println("THIFE BE IT RIGHT AWAY " + result[k]);
+            // multStr = String.valueOf(result[k]);
           
          // System.out.println( "grihgiqrghioqrhg'poop " + multStr + " pir");
          // toArrayLong(result);
-         if(multStr.length() <= 9 ){ //multStr.length() <= 9 
-           carry = 0;
-         }else{
-           carryLength = multStr.length() - 9;
-           carryString = multStr.substring(0, carryLength);
-           carry = Long.parseLong(carryString);
-           System.out.println("THIS IS THE CARRY " + carry);
+         // if(multStr.length() <= 9 ){ //multStr.length() <= 9 
+         //   carry = 0;
+         // }else{
+         //   carryLength = multStr.length() - 9;
+         //   carryString = multStr.substring(0, carryLength);
+         //   carry = Long.parseLong(carryString);
+         //   System.out.println("THIS IS THE CARRY " + carry);
            
-         }
+         // }
         
 
 
@@ -424,7 +460,8 @@ public class BrobInt {
             k++;
          }
          if (carry != 0){
-            result[result.length - 4] += carry;
+            result[k - 1] += carry;
+            carry = 0;
          }
          // multStr = String.valueOf(result[k]);
          // System.out.println( "grihgiqrghioqrhg'poop " + multStr + " pir");
@@ -446,13 +483,13 @@ public class BrobInt {
 
       for(int i= result.length -1; i >= 0; i--){ 
          //brobStr += " " + df.format((double)addedBrobs[i]);
-         toArrayLong(result);
+         //toArrayLong(result);
          if(i < result.length - 2){
             brobStr += df.format(result[i]);
          }else{
             brobStr += result[i];
          }
-         System.out.println("THE BROB STR ISSSS: " + brobStr);
+         //System.out.println("THE BROB STR ISSSS: " + brobStr);
       }
 
       if(multSign == 1){
@@ -561,10 +598,10 @@ public class BrobInt {
    *  @return String  which is the String representation of this BrobInt
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public String toString() {
-      if (sign == 1){
-         return "-" + internalValue;
-         //return internalValue;
-      }
+      // if (sign == 1){
+      //    return "-" + internalValue;
+      //    //return internalValue;
+      // }
       return internalValue;
    }
 
