@@ -56,6 +56,7 @@ public class BrobInt {
    int start = 0;
    int stop = 0;
    int[] chunksArr;
+   DecimalFormat df = new DecimalFormat("000000000");
 
    private static BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
    private static final boolean DEBUG_ON = false;
@@ -214,7 +215,134 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      
+
+      boolean bothPositive;
+      boolean bothNegative; 
+      boolean differentSigns;
+      boolean specialCondition = false;
+      int max = Math.max(this.chunksArr.length, bint.chunksArr.length);
+      int min = Math.min(this.chunksArr.length, bint.chunksArr.length);
+      int k = 0;
+      int sign = 0;
+      String brobStr = ""; 
+      BrobInt specialSub = new BrobInt("0");
+      int[] longArray;
+      int[] shortArray;
+      int[] result = new int[ max + 2 ];
+      //DecimalFormat df = new DecimalFormat("000000000");
+
+
+      if(this.sign == 0 && bint.sign == 0){
+         bothPositive = true;
+         bothNegative = false;
+      }else{
+         bothPositive = false; 
+         bothNegative = true;
+      }
+
+      // if(bothPositve){
+      //    bothNegative = false;
+      // }else{
+      //    bothPositive = true; 
+      // }
+
+      if(this.sign != bint.sign){
+         differentSigns = true;
+      }else{
+         differentSigns = false; 
+      }
+
+      if ((bothPositive) && (this.compareTo(bint) < 0)) {
+         sign = 1;
+      } 
+      else if ((differentSigns) && (this.compareTo(bint) > 0 )) {
+         String biggerPos = bint.internalValue.substring(0, bint.internalValue.length());
+         BrobInt posBrobInt = new BrobInt(biggerPos);
+         specialCondition = true;
+         specialSub = new BrobInt(String.valueOf(this.add(posBrobInt)));
+      }
+      else if ((differentSigns) && (this.compareTo(bint) < 0)) {
+         String biggerNeg = this.internalValue.substring(0, this.internalValue.length());
+         BrobInt negBrobInt = new BrobInt(biggerNeg);
+         negBrobInt = negBrobInt.removeLeadingZeros(negBrobInt); //but doesnt fix it!
+         String negAnswer = "-" + bint.add(negBrobInt).toString();
+         specialCondition = true;
+         specialSub = new BrobInt(negAnswer);
+      }
+      else if ((bothNegative) && (this.compareTo(bint) > 0)) {
+         sign = 1;
+      }
+
+      longArray = new int[max];
+      shortArray = new int[min];
+
+      if (this.internalValue.length() > bint.internalValue.length()) {
+         for (int i = 0; i < max; i++) {
+            longArray[i] = this.chunksArr[i];
+         }
+         for (int j = 0; j < min; j++) {
+            shortArray[j] = bint.chunksArr[j];
+         }
+      }
+      else {
+         for (int i = 0; i < max; i++) {
+            longArray[i] = bint.chunksArr[i];
+         }
+         for (int j = 0; j < min; j++) {
+            shortArray[j] = this.chunksArr[j];
+         }
+      }
+      
+      for (int i = 0; i < min; i++) {
+         if (longArray[i] < shortArray[i]) {
+            longArray[i] += 10;
+            if (i != shortArray.length - 1) {
+               longArray[i + 1]--;
+            }
+         }
+         result[i] = longArray[i] - shortArray[i];
+         k++;
+      }
+
+      for(int i= result.length -1; i >= 0; i--){ 
+         //brobStr += result[i];
+         //brobStr += " " + df.format((double)addedBrobs[i]);
+         if(i < result.length - 3){
+            brobStr += df.format((double)result[i]);
+         }else{
+            brobStr += result[i];
+         }
+         //System.out.println("THE BROB STR ISSSS: " + brobStr);
+      }
+
+      for(int i = 0; i < brobStr.length(); i++){
+         if(i != 0 && brobStr.charAt(i) == '-'){
+            System.out.println(brobStr);
+            brobStr = brobStr.substring(i, brobStr.length());
+            if(sign == 1){
+               brobStr = brobStr.substring(0, brobStr.length());
+            }
+
+         }
+      }
+
+      if(sign == 1 && (brobStr.charAt(0) != '-')){
+         brobStr = "-" + brobStr;
+      }
+
+      BrobInt finalSub = new BrobInt (brobStr);
+
+      if (!specialCondition) { 
+         finalSub = finalSub.removeLeadingZeros(finalSub);
+      }
+      else{
+         finalSub = specialSub.removeLeadingZeros(specialSub);
+      }
+
+      return finalSub;
+
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -224,7 +352,7 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt bint ) {
       String brobStr = "";
-      DecimalFormat df = new DecimalFormat("000000000");
+      //DecimalFormat df = new DecimalFormat("000000000");
       
       int multSign = 0;
       String multStr = "";
@@ -262,7 +390,7 @@ public class BrobInt {
          }
       }
 
-      result = new long [arrA.length + arrB.length + 1];
+      result = new long [arrA.length + arrB.length + 1]; 
       for (int i = 0; i < result.length; i++){
          result[i] = 0;
       }
@@ -270,15 +398,35 @@ public class BrobInt {
       for(int i = 0; i < arrB.length; i++){
          k = i;
          for(int j = 0; j < arrA.length; j++){
-            if(result[k] > 9){
-               carry = result[k]/10;
-            }else{
-               carry = 0;
-            }
-            result[k] += ((long) arrA[j] * (long) arrB[i]) + carry;
+            result[k] = ((long) arrA[j] * (long) arrB[i]) + carry;
+            System.out.println("THIFE BE IT RIGHT AWAY " + result[k]);
+            multStr = String.valueOf(result[k]);
+          
+         // System.out.println( "grihgiqrghioqrhg'poop " + multStr + " pir");
+         // toArrayLong(result);
+         if(multStr.length() <= 9 ){ //multStr.length() <= 9 
+           carry = 0;
+         }else{
+           carryLength = multStr.length() - 9;
+           carryString = multStr.substring(0, carryLength);
+           carry = Long.parseLong(carryString);
+           System.out.println("THIS IS THE CARRY " + carry);
+           
+         }
+        
+
+
+            // if(result[k] > 9){
+            //    carry = 1;
+            // }else{
+            //    carry = 0;
+            // }
             k++;
          }
-         // multStr = String.valueOf(result[]);
+         if (carry != 0){
+            result[result.length - 4] += carry;
+         }
+         // multStr = String.valueOf(result[k]);
          // System.out.println( "grihgiqrghioqrhg'poop " + multStr + " pir");
          // toArrayLong(result);
          // if(multStr.length() <= 9 ){
@@ -311,9 +459,9 @@ public class BrobInt {
          brobStr = "-" + brobStr;
       }
 
-      BrobInt finalAdd = new BrobInt(brobStr);
+      BrobInt finalMult = new BrobInt(brobStr);
 
-      return finalAdd.removeLeadingZeros(finalAdd);
+      return finalMult.removeLeadingZeros(finalMult);
 
 
       //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
@@ -340,7 +488,7 @@ public class BrobInt {
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to compare a BrobInt passed as argument to this BrobInt
    *  @param  bint  BrobInt to compare to this
    *  @return int   that is one of neg/0/pos if this BrobInt precedes/equals/follows the argument
@@ -348,64 +496,65 @@ public class BrobInt {
    *        It takes into account the length of the two numbers, and if that isn't enough it does a
    *        character by character comparison to determine
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public int compareTo( BrobInt bint ) {
+  public int compareTo( BrobInt bint ) {
 
-     // handle the signs here
-      if( 1 == sign && 0 == bint.sign ) {
-         return -1;
-      } else if( 0 == sign && 1 == bint.sign ) {
-         return 1;
-      }
+   // remove any leading zeros because we will compare lengths
+    String me  = removeLeadingZeros( this ).toString();
+    String arg = removeLeadingZeros( bint ).toString();
 
-     // the signs are the same at this point
-     // remove any leading zeros because we will compare lengths
-     // String me  = removeLeadingZeros( this ).toString();
-      String me  = removeLeadingZeros( new BrobInt( internalValue ) ).toString();
-      String arg = removeLeadingZeros( bint ).toString();
+   // handle the signs here
+    if( 1 == sign && 0 == bint.sign ) {
+       return -1;
+    } else if( 0 == sign && 1 == bint.sign ) {
+       return 1;
+    } else if( 0 == sign && 0 == bint.sign ) {
+      // the signs are the same at this point ~ both positive
+      // check the length and return the appropriate value
+      //   1 means this is longer than bint, hence larger positive
+      //  -1 means bint is longer than this, hence larger positive
+       if( me.length() != arg.length() ) {
+          return (me.length() > arg.length()) ? 1 : -1;
+       }
+    } else {
+      // the signs are the same at this point ~ both negative
+       if( me.length() != arg.length() ) {
+          return (me.length() > arg.length()) ? -1 : 1;
+       }
+    }
 
-     // check the length and return the appropriate value
-     //   1 means this is longer than bint, hence larger
-     //  -1 means bint is longer than this, hence larger
-      if( me.length() > arg.length() ) {
-         return 1;
-      } else if( me.length() < arg.length() ) {
-         return (-1);
+   // otherwise, they are the same length, so compare absolute values
+    for( int i = 0; i < me.length(); i++ ) {
+       Character a = Character.valueOf( me.charAt(i) );
+       Character b = Character.valueOf( arg.charAt(i) );
+       if( Character.valueOf(a).compareTo( Character.valueOf(b) ) > 0 ) {
+          return 1;
+       } else if( Character.valueOf(a).compareTo( Character.valueOf(b) ) < 0 ) {
+          return (-1);
+       }
+    }
+    return 0;
+ }
 
-     // otherwise, they are the same length, so compare absolute values
-      } else {
-         for( int i = 0; i < me.length(); i++ ) {
-            Character a = Character.valueOf( me.charAt(i) );
-            Character b = Character.valueOf( arg.charAt(i) );
-            if( Character.valueOf(a).compareTo( Character.valueOf(b) ) > 0 ) {
-               return 1;
-            } else if( Character.valueOf(a).compareTo( Character.valueOf(b) ) < 0 ) {
-               return (-1);
-            }
-         }
-      }
-      return 0;
-   }
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  Method to check if a BrobInt passed as argument is equal to this BrobInt
+ *  @param  bint     BrobInt to compare to this
+ *  @return boolean  that is true if they are equal and false otherwise
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+ public boolean equals( BrobInt bint ) {
+    return ( (sign == bint.sign) && (this.toString().equals( bint.toString() )) );
+ }
 
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to check if a BrobInt passed as argument is equal to this BrobInt
-   *  @param  bint     BrobInt to compare to this
-   *  @return boolean  that is true if they are equal and false otherwise
-   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public boolean equals( BrobInt bint ) {
-      return (internalValue.equals( bint.toString() ));
-   }
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to return a BrobInt given a long value passed as argument
-   *  @param  value    long type number to make into a BrobInt
-   *  @return BrobInt  which is the BrobInt representation of the long
-   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public static BrobInt valueOf( long value ) throws NumberFormatException {
-      BrobInt bi = null;
-      try { bi = new BrobInt( Long.valueOf( value ).toString() ); }
-      catch( NumberFormatException nfe ) { throw new NumberFormatException( "\n  Sorry, the value must be numeric of type long." ); }
-      return bi;
-   }
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  Method to return a BrobInt given a long value passed as argument
+ *  @param  value    long type number to make into a BrobInt
+ *  @return BrobInt  which is the BrobInt representation of the long
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+ public static BrobInt valueOf( long value ) throws NumberFormatException {
+    BrobInt bi = null;
+    try { bi = new BrobInt( Long.valueOf( value ).toString() ); }
+    catch( NumberFormatException nfe ) { throw new NumberFormatException( "\n  Sorry, the value must be numeric of type long." ); }
+    return bi;
+ }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to return a String representation of this BrobInt
