@@ -113,8 +113,25 @@ public class BrobInt {
    *  note that there is no return false, because of throwing the exception
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public boolean validateDigits() throws IllegalArgumentException {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+   public boolean validateArgs(){
+      boolean valid = true;
+      for (int i = 0; i < this.chunksArr.length; i++){
+         for (int j = 0; j < 9; j++) {
+            if (internalValue.length() == 0) {
+               valid = false;
+               throw new IllegalArgumentException("Input a number");
+            }else if ((i != 0) && (!Character.isDigit( internalValue.charAt(i)))){
+               valid = false;
+               throw new IllegalArgumentException( "Number not valid" );
+            }else if (i != this.chunksArr.length - 1) {
+               if (j != 0 && (this.internalValue.charAt(j) == '-' || this.internalValue.charAt(j) == '+' )) {
+                  valid = false;
+                  throw new IllegalArgumentException( "Numbers not valid" );
+               }
+            }
+         }
+      }
+      return valid;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -428,8 +445,6 @@ public class BrobInt {
                carry = 0;
             }
 
-
-            
             k++;
          }
          if (carry != 0){
@@ -437,10 +452,6 @@ public class BrobInt {
             carry = 0;
          }
     
-       
-         
-
-         
       }
 
       for(int i= result.length -1; i >= 0; i--){ 
@@ -479,7 +490,6 @@ public class BrobInt {
 
       BrobInt quotient = new BrobInt("0");
       BrobInt remainBrob = new BrobInt("0");
-      BrobInt special = new BrobInt("0");
      
 
       if(bint.equals(BrobInt.ZERO)){
@@ -561,7 +571,8 @@ public class BrobInt {
       //BrobInt finalDivide = new BrobInt(extract);
       //return finalDivide;
       //return quotient;
-      return this.removeLeadingZeros(quotient).add(special);
+      //return this.removeLeadingZeros(quotient).add(special);
+      return this.removeLeadingZeros(quotient);
 
 
 
@@ -748,6 +759,7 @@ public class BrobInt {
    public static void main( String[] args ) {
       System.out.println( "\n  Hello, world, from the BrobInt program!!\n" );
       System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
+    
 
       System.exit( 0 );
 
