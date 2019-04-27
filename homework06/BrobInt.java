@@ -158,9 +158,6 @@ public class BrobInt {
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt bint ) {
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-      //throw new UnsupportedOperationException( "bleeeeeerg " + bint.chunksArr.length );
-      //BrobInt addedBrob = new BrobInt("0");
       int carry = 0; 
       String brobStr = "";
       DecimalFormat df = new DecimalFormat("000000000");
@@ -168,12 +165,10 @@ public class BrobInt {
       int [] addedBrobs = new int[Math.max(this.chunksArr.length,bint.chunksArr.length) + 1];
      
       int j = 0;
-      //int smallLength = Math.min(this.chunksArr.length,bint.chunksArr.length);
-      //int bigLength =  Math.max(this.chunksArr.length,bint.chunksArr.length);
+      
 
       for(int i=0; i < (Math.min(this.chunksArr.length,bint.chunksArr.length)); i++){
          addedBrobs[i] = this.chunksArr[i] + bint.chunksArr[i] + carry;
-         //toArray(addedBrobs);
          if( addedBrobs[i] > 999999999){
              addedBrobs[i] -= 1000000000;
             carry = 1;
@@ -186,7 +181,6 @@ public class BrobInt {
       for(int i = j; i < Math.max(this.chunksArr.length,bint.chunksArr.length); i++){
          if(this.chunksArr.length > bint.chunksArr.length){
             addedBrobs[i] = this.chunksArr[i] + carry;
-            //toArray(addedBrobs);
             if( addedBrobs[i] > 999999999){
                 addedBrobs[i] -= 1000000000;
                carry = 1;
@@ -208,13 +202,12 @@ public class BrobInt {
       }
 
       for(int i= addedBrobs.length -1; i >= 0; i--){ 
-         //brobStr += " " + df.format((double)addedBrobs[i]);
          if(i < addedBrobs.length - 2){
             brobStr += df.format((double)addedBrobs[i]);
          }else{
             brobStr += addedBrobs[i];
          }
-         //System.out.println("THE BROB STR ISSSS: " + brobStr);
+        
       }
 
       for(int i = 0; i < brobStr.length(); i++){
@@ -227,17 +220,9 @@ public class BrobInt {
       if(sign == 1 && brobStr.charAt(0) != '-'){
          brobStr = "-" + brobStr;
       } 
-      //ive been helping people and havent done amnything since u
+
 
       BrobInt finalAdd = new BrobInt(brobStr);
-
-      // if(this.sign != bint.sign){
-      //    if(this.internalValue.length() > bint.internalValue.length()){
-      //       finalAdd = this.subtract(bint);
-      //    }else{
-      //       finalAdd = bint.subtract(this);
-      //    }
-      // }
 
       return finalAdd.removeLeadingZeros(finalAdd);
    }
@@ -257,13 +242,12 @@ public class BrobInt {
       boolean negativeResult = false;
       int max = Math.max(this.chunksArr.length, bint.chunksArr.length);
       int min = Math.min(this.chunksArr.length, bint.chunksArr.length);
-      int k = 0;
       String brobStr = ""; 
+      int k = 0;
       BrobInt specialSub = new BrobInt("0");
       int[] longArray;
       int[] shortArray;
       int[] result = new int[ max + 2 ];
-      //DecimalFormat df = new DecimalFormat("000000000");
 
 
       if(this.sign == 0 && bint.sign == 0){
@@ -288,24 +272,19 @@ public class BrobInt {
          BrobInt posBrobInt = new BrobInt(becomeAdd);
          specialCondition = true;
          negativeResult = false;
-         //specialSub = new BrobInt(String.valueOf(this.add(posBrobInt)));
          specialSub = new BrobInt(String.valueOf(this.add(posBrobInt)));
   
       }
       else if ((differentSigns) && (this.compareTo(bint) < 0)) {
          String biggerNeg = this.internalValue.substring(1, this.internalValue.length());
          BrobInt negBrobInt = new BrobInt(biggerNeg);
-         //negBrobInt = negBrobInt.removeLeadingZeros(negBrobInt); //but doesnt fix it!
          String negAnswer = "-" + bint.add(negBrobInt).toString();
          specialCondition = true;
          specialSub = new BrobInt(negAnswer);
       }
-      else if ((bothNegative) && (this.compareTo(bint) > 0)) { //allows 37 to work 
+      else if ((bothNegative) && (this.compareTo(bint) > 0)) { //allows test 37 to work 
          negativeResult = true;
       }
-      // else if ((bothNegative) && (this.compareTo(bint) < 0)) { 
-      //    negativeResult = false;
-      // }
 
       longArray = new int[max];
       shortArray = new int[min];
@@ -329,10 +308,7 @@ public class BrobInt {
       
       for (int i = 0; i < min; i++) {
          if (longArray[i] < shortArray[i]) {
-            //longArray[i] += 0; //longArray[i] +=10
-            //longArray[i + 1]--;
             if (i != shortArray.length - 1) {
-               //longArray[i] += 20;
                longArray[i + 1]--;
             }
          }
@@ -341,19 +317,15 @@ public class BrobInt {
       }
 
       for(int i= result.length -1; i >= 0; i--){ 
-         //brobStr += result[i];
-         //brobStr += " " + df.format((double)addedBrobs[i]);
          if(i < result.length - 3){
             brobStr += df.format((double)result[i]);
          }else{
             brobStr += result[i];
          }
-         //System.out.println("THE BROB STR ISSSS: " + brobStr);
       }
 
       for(int i = 0; i < brobStr.length(); i++){
          if(i != 0 && brobStr.charAt(i) == '-'){
-            //System.out.println(brobStr);
             brobStr = brobStr.substring(i, brobStr.length());
             if(!negativeResult){
                brobStr = brobStr.substring(1, brobStr.length());
@@ -377,7 +349,7 @@ public class BrobInt {
 
       return finalSub;
 
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -392,14 +364,12 @@ public class BrobInt {
      
       
       int multSign = 0;
-      String multStr = "";
       int[] arrA;
       int[] arrB;
       long[] result;
       long carry = 0;
       int k = 0;
-      int carryLength = 0;
-      String carryString = "";
+     
    
       if(bint.sign != this.sign){
          multSign = 1; 
@@ -435,7 +405,6 @@ public class BrobInt {
       for(int i = 0; i < arrB.length; i++){
          k = i;
          for(int j = 0; j < arrA.length; j++){
-            //System.out.println("THIS IS THE CARRY " + carry);
             result[k] = ((long) arrA[j] * (long) arrB[i]) + carry;
 
             if(result[k] > 999999999){
@@ -455,14 +424,13 @@ public class BrobInt {
       }
 
       for(int i= result.length -1; i >= 0; i--){ 
-         //brobStr += " " + df.format((double)addedBrobs[i]);
-         //toArrayLong(result);
+         
          if(i < result.length - 2){
             brobStr += df.format(result[i]);
          }else{
             brobStr += result[i];
          }
-         //System.out.println("THE BROB STR ISSSS: " + brobStr);
+         
       }
 
       if(multSign == 1){
@@ -473,8 +441,6 @@ public class BrobInt {
 
       return finalMult.removeLeadingZeros(finalMult);
 
-
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -527,29 +493,8 @@ public class BrobInt {
             quotient = quotient.add(BrobInt.ONE); 
          }
 
-         // if( bint.equals(BrobInt.TWO)){
-         //    if(this.divide(bint).remainder(BrobInt.TWO) != BrobInt.ZERO){
-         //       special = special.add(BrobInt.ONE);
-         //    }
-         // }
-
-         // if(((this.internalValue.charAt(this.internalValue.length() - 1)) == '0') && bint.equals(BrobInt.TWO)){
-         //       special = special.add(BrobInt.ONE);
-         // }
-
-      //    if(this.remainder(bint).equals(BrobInt.ZERO) && bint.equals(BrobInt.TWO)){
-      //       special = special.add(BrobInt.ONE);
-      // }
-
-         // if (this.divide(bint).remainder(BrobInt.TWO) == BrobInt.ZERO){
-         //    if (this.divide(bint).subtract(BrobInt.ONE).remainder(BrobInt.TWO)){
-         //       special = special.add(BrobInt.ONE);
-         //    }
-
-         // }
-
          lengthCount++;
-         if(lengthCount > this.toString().length()){ //kez had it as greater
+         if(lengthCount > this.toString().length()){ 
             break; 
          }
          
@@ -557,26 +502,11 @@ public class BrobInt {
          quotient = quotient.multiply(BrobInt.TEN);
 
          remainBrob = remainBrob.add(new BrobInt(this.toString().substring(lengthCount - 1, lengthCount)));
-         // extract = quotient.toString() + bint.internalValue.substring(lengthCount - 1, lengthCount);
-         // bleh = bleh.add(new BrobInt(extract));
-
-         // extract = (this.internalValue.substring(lengthCount - 1, lengthCount)); 
-         // extract = extract + quotient.toString();
+       
       }
 
       }
-
-      
-
-      //BrobInt finalDivide = new BrobInt(extract);
-      //return finalDivide;
-      //return quotient;
-      //return this.removeLeadingZeros(quotient).add(special);
       return this.removeLeadingZeros(quotient);
-
-
-
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -759,8 +689,6 @@ public class BrobInt {
    public static void main( String[] args ) {
       System.out.println( "\n  Hello, world, from the BrobInt program!!\n" );
       System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
-    
-
       System.exit( 0 );
 
    }
