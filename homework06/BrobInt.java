@@ -369,8 +369,10 @@ public class BrobInt {
    *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt bint ) {
+
+      
       String brobStr = "";
-      //DecimalFormat df = new DecimalFormat("000000000");
+     
       
       int multSign = 0;
       String multStr = "";
@@ -427,54 +429,14 @@ public class BrobInt {
             }
 
 
-            // if(result[k] > 999999999){
-            //    long placeholder = result[k];
-            //    result[k] = result[k] % 1000000000;
-            //    carry = placeholder - result[k];
-            // }else{
-            //    carry = 0;
-            // }
-
-            // System.out.println("THIFE BE IT RIGHT AWAY " + result[k]);
-            // multStr = String.valueOf(result[k]);
-          
-         // System.out.println( "grihgiqrghioqrhg'poop " + multStr + " pir");
-         // toArrayLong(result);
-         // if(multStr.length() <= 9 ){ //multStr.length() <= 9 
-         //   carry = 0;
-         // }else{
-         //   carryLength = multStr.length() - 9;
-         //   carryString = multStr.substring(0, carryLength);
-         //   carry = Long.parseLong(carryString);
-         //   System.out.println("THIS IS THE CARRY " + carry);
-           
-         // }
-        
-
-
-            // if(result[k] > 9){
-            //    carry = 1;
-            // }else{
-            //    carry = 0;
-            // }
+            
             k++;
          }
          if (carry != 0){
             result[k - 1] += carry;
             carry = 0;
          }
-         // multStr = String.valueOf(result[k]);
-         // System.out.println( "grihgiqrghioqrhg'poop " + multStr + " pir");
-         // toArrayLong(result);
-         // if(multStr.length() <= 9 ){
-         //    carry = 0;
-         // }else{
-         //    carryLength = multStr.length() - 10;
-         //    carryString = multStr.substring(0, carryLength);
-         //    carry = Long.parseLong(carryString);
-         //    System.out.println("FUEIUFIWEFIWE" + carry);
-            //result[result.length - 3] += carry; 
-         //}
+    
        
          
 
@@ -510,7 +472,100 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      //int lengthCount = 0;
+      int currentDiv = 0;
+      String remainStr = "";
+      String extract = "";
+
+      BrobInt quotient = new BrobInt("0");
+      BrobInt remainBrob = new BrobInt("0");
+      BrobInt special = new BrobInt("0");
+     
+
+      if(bint.equals(BrobInt.ZERO)){
+         throw new IllegalArgumentException("ERROR!: Cannot divide by zero");
+      
+      }else if(bint.equals(this)){
+         return BrobInt.ONE;
+
+      }else if(this.compareTo(bint) < 0){
+         return BrobInt.ZERO;
+
+      }else{
+         int lengthCount = bint.internalValue.length();
+         //remainStr = this.toString().substring(0, lengthCount); 
+         remainBrob = new BrobInt(this.toString().substring(0, lengthCount));
+      
+
+      if(this.compareTo(remainBrob) < 0){
+         lengthCount++;
+         remainBrob = new BrobInt(this.toString().substring(0, lengthCount)); 
+      }
+
+      while(lengthCount <= this.toString().length()){
+         while(remainBrob.compareTo(bint) > 0){ //flipped operator
+            if( allZeroDetect( remainBrob ) ) { //fixes problem when all 0's are twos when divide by 2
+               break;
+            }
+            remainBrob = remainBrob.subtract(bint);
+            quotient = quotient.add(BrobInt.ONE);
+            //break;
+         }
+
+         if(remainBrob.equals(bint)){ //remain fix!!!!
+            remainBrob = BrobInt.ZERO;
+            quotient = quotient.add(BrobInt.ONE); 
+         }
+
+         // if( bint.equals(BrobInt.TWO)){
+         //    if(this.divide(bint).remainder(BrobInt.TWO) != BrobInt.ZERO){
+         //       special = special.add(BrobInt.ONE);
+         //    }
+         // }
+
+         // if(((this.internalValue.charAt(this.internalValue.length() - 1)) == '0') && bint.equals(BrobInt.TWO)){
+         //       special = special.add(BrobInt.ONE);
+         // }
+
+      //    if(this.remainder(bint).equals(BrobInt.ZERO) && bint.equals(BrobInt.TWO)){
+      //       special = special.add(BrobInt.ONE);
+      // }
+
+         // if (this.divide(bint).remainder(BrobInt.TWO) == BrobInt.ZERO){
+         //    if (this.divide(bint).subtract(BrobInt.ONE).remainder(BrobInt.TWO)){
+         //       special = special.add(BrobInt.ONE);
+         //    }
+
+         // }
+
+         lengthCount++;
+         if(lengthCount > this.toString().length()){ //kez had it as greater
+            break; 
+         }
+         
+         remainBrob = remainBrob.multiply(BrobInt.TEN);
+         quotient = quotient.multiply(BrobInt.TEN);
+
+         remainBrob = remainBrob.add(new BrobInt(this.toString().substring(lengthCount - 1, lengthCount)));
+         // extract = quotient.toString() + bint.internalValue.substring(lengthCount - 1, lengthCount);
+         // bleh = bleh.add(new BrobInt(extract));
+
+         // extract = (this.internalValue.substring(lengthCount - 1, lengthCount)); 
+         // extract = extract + quotient.toString();
+      }
+
+      }
+
+      
+
+      //BrobInt finalDivide = new BrobInt(extract);
+      //return finalDivide;
+      //return quotient;
+      return this.removeLeadingZeros(quotient).add(special);
+
+
+
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -521,8 +576,8 @@ public class BrobInt {
    public BrobInt remainder( BrobInt bint ) {
       //b1.divide(b2).multiply(b2) take this number and subtract frm b1. Then you get a brob int that
       //is the remainder 
-      //return b1.subtract(b1.divide(b2).multiply(b2));
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      return this.subtract(this.divide(bint).multiply(bint));
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -619,6 +674,7 @@ public class BrobInt {
       if( allZeroDetect( bint ) ) {
          return bint;
       }
+
       if( ('-' == returnString.charAt( index )) || ('+' == returnString.charAt( index )) ) {
          sign = returnString.charAt( index );
          index++;
