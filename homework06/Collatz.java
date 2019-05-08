@@ -7,7 +7,6 @@
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Collatz{
-    
 
     BrobInt bint;
     String internalValue;
@@ -54,31 +53,27 @@ public class Collatz{
 
     public void sequence(){
         int steps = 0;
+        int parityNum=0;
         BrobInt answer = new BrobInt(this.bint.internalValue);
-        boolean equal = false;
-        int parityNum = Integer.parseInt(answer.toString().substring(answer.toString().length() - 2, answer.toString().length() - 1 ));
-    
+        parityNum = Integer.parseInt(answer.toString().substring(answer.toString().length() - 2, answer.toString().length() - 1));
         System.out.println( "\n Hello, world, from the Collatz program!!\n");
         System.out.println("\n ==================================");
     
         result += this.bint.toString() + " \n";
     
         while (!answer.equals(BrobInt.ONE)){ 
-            if (( answer.toString().charAt(answer.toString().length() - 1) == '2' || //I tried to account for if it is even through my parity things but didn't work, had KEziah help
-            answer.toString().charAt(answer.toString().length() - 1) == '4' || 
-            answer.toString().charAt(answer.toString().length() - 1) == '6' || 
-            answer.toString().charAt(answer.toString().length() - 1) == '8' || 
-            answer.toString().charAt(answer.toString().length() - 1) == '0'   )){
-                answer = answer.divide(BrobInt.TWO);
-                //parityNum = Integer.parseInt(answer.toString().substring(answer.toString().length() - 2, answer.toString().length() -1 ));
+        	
+            if ((parityNum %2 != 0)){
+            	answer = answer.multiply(BrobInt.THREE).add(BrobInt.ONE);
                 steps++;
                 result += answer.toString() + " \n";
+                
             }else{
-                answer = answer.multiply(BrobInt.THREE).add(BrobInt.ONE);
-                //parityNum = Integer.parseInt(answer.toString().substring(answer.toString().length() - 2, answer.toString().length() -1 ));
+            	answer = answer.divide(BrobInt.TWO);
                 steps++;
                 result += answer.toString() + " \n";
         } 
+        parityNum = Integer.valueOf(answer.toString());
     }
 
 

@@ -1,10 +1,10 @@
-// // ** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// //  * File name  :  DynamicChangeMaker.java
-// //  * Purpose    :  Takes in a large brobint and generate its collatz sequence
-// //  * @author    :  Salem Tesfu 
-// //  * Date       :  2019-04-12
-// //  *
-// //  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * File name  :  DynamicChangeMaker.java
+ * Purpose    :  Makes the optimal amount of change with any coin denomination
+ * @author    :  Salem Tesfu 
+ * Date       :  2019-04-12
+ *
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class DynamicChangeMaker {
     static int [] denoms = null;
@@ -13,6 +13,8 @@ public class DynamicChangeMaker {
     static int rows = 0;
     static int colums = 0;
     static Tuple[][] table = new Tuple[rows][colums];
+
+public DynamicChangeMaker(){}
 
 
 
@@ -59,17 +61,60 @@ public  static void validateArgs(String args[]){
    *  @param   int  target value of coins
    *  NOTE: may be changed to int[] or some other type based on requirements in code above
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-public static Tuple makeChangeWithDynamicProgramming (int[] denom, int target){
-    colums = target + 1;
-    rows = denom.length; 
-    table = new Tuple[rows][colums];
+  public static Tuple makeChangeWithDynamicProgramming( int[] denom, int target ) {
+    int rows = denom.length;
+    int columns = target + 1;
+    Tuple[][] table = new Tuple[rows][columns];
     Tuple answer = Tuple.IMPOSSIBLE;
-    //table[row][column - currentDom]
-    //table[row - 1][column] when not in zero
+    
 
-
-
-    return answer;
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < columns; j++){
+            if (j == 0) {
+                table[i][j] = new Tuple(i);
+            }else{
+                if (j < denom[i]){
+                    table[i][j] = new Tuple (0);
+                    if (j - denom[i] >= 0){
+                        if (!(table[i][j - denom[i]].isImpossible())) { 
+                            //table[i][j].add(new Tuple (table[i][j].getElement(j) - denom[j]));
+                            table[i][j].add(table[i][j - denom[i]]);
+                        }
+                    }
+                    if ( i != 0 ){
+                        if (!(table[i-1][j].isImpossible())) {
+                            if ((table[i-1][j].total() < table[i][j].total()) || (table[i][j].isImpossible())) {
+                                table[i][j] = table[i-1][j];
+                             }
+                        }
+                    }
+                }else{
+                    table[i][j] = new Tuple(denom.length);
+                    table[i][j].setElement(i, 1);
+    
+                    if (j - denom[i] >= 0){
+                        if (table[i][j - denom[i]].isImpossible()) {
+                            table[i][j] = new Tuple (0);
+                        }else {
+                            table[i][j] = table[i][j].add(table[i][j-denom[i]]);
+                        }
+                    }
+    
+                    if (i != 0){
+                        if ( !(table[i][j-1].isImpossible()) ) {
+                            if ((table[i-1][j].total() < table[i][j].total()) || (table[i][j].isImpossible())) {
+                                table[i][j] = table[i-1][j];
+                            }
+                        }
+                    }
+                }
+           
+            }
+            System.out.println(table[i-1][j-1]);
+            answer = table[i-1][j-1];
+        }     
+    }    
+    return answer; 
 }
 
 

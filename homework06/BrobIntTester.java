@@ -416,8 +416,8 @@ public class BrobIntTester {
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
-      System.out.println( "\n\n    TESTING SUBTRACTBYTE() METHOD:\n" +
-                          "    ==============================" );
+      System.out.println( "\n\n    TESTING SUBTRACT() METHOD:\n" +
+                          "    ==========================" );
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g13 take away g11 [234567 - 10] using bytes: " );
       try {
          System.out.println( "      expecting: 234557\n" +
@@ -550,6 +550,27 @@ public class BrobIntTester {
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g04 by 3: " );
+      try {
+         System.out.println( "      expecting: 43238372915913199204527729450732254954851885232694621\n" +
+                             "        and got: " + g4.multiply( new BrobInt( "3" ) ) );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying 82832833 by 3: " );
+      try {
+         System.out.println( "      expecting: 248498499\n" +
+                             "        and got: " + new BrobInt("82832833").multiply( new BrobInt( "3" ) ) );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying 82832833 by 3 and adding 1: " );
+      try {
+         System.out.println( "      expecting: 248498500\n" +
+                             "        and got: " + new BrobInt("82832833").multiply( new BrobInt( "3" ) ).add( BrobInt.ONE ) );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
       System.out.println( "\n\n    TESTING ALLZERODETECT() METHOD:\n" +
                           "    ===============================" );
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": allZeroDetect(0000000): " );
@@ -567,6 +588,39 @@ public class BrobIntTester {
                              "        and got: " + g19.divide( g20 ) );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": DIVIDING BY ZERO: " );
+      BrobInt zerooo = new BrobInt( "0" );
+      try {
+         System.out.println( "      expecting: error\n" +
+                             "        and got: " + g4.divide( zerooo ) );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": DIVIDING BY SAME: " );
+      try {
+         System.out.println( "      expecting: 1\n" +
+                             "        and got: " + g4.divide( g4 ) );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": DIVIDING BY LARGER: " );
+      try {
+         System.out.println( "      expecting: 0\n" +
+                             "        and got: " + BrobInt.ONE.divide( g4 ) );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": DIVIDING 10 BY 2: " );
+      try {
+         System.out.println( "      expecting: 5\n" +
+                             "        and got: " + BrobInt.TEN.divide( BrobInt.TWO ) );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
+
+      
+
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Dividing 52 by 2: " );
       BrobInt fiftytwo = new BrobInt( "52" );
@@ -606,6 +660,7 @@ public class BrobIntTester {
                              "        and got: " + g19.remainder( g20 ) );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+
 
       System.exit( 0 );
 

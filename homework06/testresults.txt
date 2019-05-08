@@ -1,0 +1,634 @@
+"running BrobInt test harness for evaluation....." 
+
+  Hello, world, from the BrobInt program!!
+
+    TESTING CONSTRUCTOR AND CONSTANTS:
+    ==================================
+    Test 001: Making a new BrobInt: 
+      expecting: 144127909719710664015092431502440849849506284148982076191826176553
+        and got: 144127909719710664015092431502440849849506284148982076191826176553
+
+    Test 002: Making a second new BrobInt [same as first]: 
+      expecting: 144127909719710664015092431502440849849506284148982076191826176553
+        and got: 144127909719710664015092431502440849849506284148982076191826176553
+    Test 003: Comparing equality of g1 and g2 with 'equals()': 
+      expecting: true
+        and got: true
+
+    Test 004: Making a third new BrobInt [differs at position 47    |]: 
+           [position indicated by down arrow]                  v   
+      expecting: 144127909719710664015092431502440849849506284108982076191826176553
+        and got: 144127909719710664015092431502440849849506284108982076191826176553
+          g1 is: 144127909719710664015092431502440849849506284148982076191826176553
+    Test 005: Comparing equality of g1 and g3 [detect different digit]: 
+      expecting: false
+        and got: false
+
+    Test 006: Making a fourth new BrobInt [same as g3 but truncated]: 
+      expecting: 14412790971971066401509243150244084984950628410898207
+        and got: 14412790971971066401509243150244084984950628410898207
+    Test 007: Comparing equality of g3 and g4 [detect different length prior to detecting different digit]: 
+      expecting: false
+        and got: false
+
+    Test 008: Making a fifth new BrobInt, checking BrobInt.ZERO: 
+      expecting: 0
+        and got: 0
+
+    Test 009: Making a sixth new BrobInt, checking BrobInt.ONE: 
+      expecting: 1
+        and got: 1
+
+    Test 010: Making a seventh new BrobInt, checking BrobInt.TEN: 
+      expecting: 10
+        and got: 10
+
+
+    TESTING VALUEOF( LONG ) METHOD:
+    ===============================
+
+    Test 011: Creating several long type values to check the 'valueOf()' method: 
+      expecting: 9223372036854775807
+        and got: 9223372036854775807
+      expecting: -9223372036854775808
+        and got: -9223372036854775808
+      expecting: 1234567890
+        and got: 1234567890
+    Test 012: Now testing 'valueOf()' method: 
+      expecting: 9223372036854775807
+        and got: 9223372036854775807
+      expecting: -9223372036854775808
+        and got: -9223372036854775808
+      expecting: 1234567890
+        and got: 1234567890
+
+
+    TESTING ADD() METHODS:
+    ==========================
+
+    Test 013: Making an eleventh and twelfth new BrobInt, calling add method: 
+      expecting: 10
+        and got: 10
+      expecting: 20
+        and got: 20
+    Test 014: Adding g11 and g12: 
+      expecting: 30 and got 30
+
+    Test 015: Making a thirteenth new BrobInt, calling add methods: 
+      expecting: 234567
+        and got: 234567
+    Test 016: Adding g11 and g13 [10 + 234567] using bytes: 
+      expecting: 234577 and got 234577
+    Test 017: Adding g13 and g11 [234567 + 10] using bytes: 
+      expecting: 234577 and got 234577
+
+    Test 018: Making a fourteenth new BrobInt, calling add methods: 
+      expecting: -234567
+        and got: -234567
+
+    Test 019: Making a fifteenth new BrobInt, calling add methods: 
+      expecting: -10
+        and got: -10
+    Test 020: Adding g14 and g15 [-234567 + -10] using bytes: 
+      expecting: -234577 and got -234577
+    Test 021: Adding g15 and g14 [-10 + -234567] using bytes: 
+      expecting: -234577 and got -234577
+
+    Test 022: Making a sixteenth new BrobInt, calling add methods: 
+      expecting: -999999
+        and got: -999999
+    Test 023: Adding g14 and g16 [-234567 + -999999] using bytes: 
+      expecting: -1234566 and got -1234566
+    Test 024: Adding g16 and g14 [-999999 + -234567] using bytes: 
+      expecting: -1234566 and got -1234566
+
+    Test 025: Adding g1 and g4 using bytes: 
+      expecting: 144127909719725076806064402568842359092656528233967026820237074760
+        and got: 144127909719725076806064402568842359092656528233967026820237074760
+
+
+    TESTING COMPARETO() METHOD:
+    ===========================
+    NOTE: this.compareTo(that) returns: -1 if this < that
+                               returns: +1 if this > that
+                               returns:  0 if this = that
+
+    Test 026: Checking compareTo() method on g1.compareTo g2: 
+      expecting: 0 and got: 0
+
+    Test 027: Checking compareTo() method on g2.compareTo g1: 
+      expecting: 0 and got: 0
+
+    Test 028: Checking compareTo() method on g1.compareTo g3: 
+      expecting: positive value and got: 1
+
+    Test 029: Checking compareTo() method on g3.compareTo g1: 
+      expecting: negative value and got: -1
+
+    Test 030: Checking compareTo() method on g3.compareTo g4: 
+      expecting: positive value and got: 1
+
+    Test 030a: Checking compareTo() method on 123456789.compareTo 234: 
+      expecting: positive value and got: 1
+
+    Test 030b: Checking compareTo() method on 123.compareTo 123456789: 
+      expecting: ngative value and got: -1
+
+    Test 030c: Checking compareTo() method on g3.compareTo 999: 
+      expecting: positive value and got: 1
+
+    Test 030d: Checking compareTo() method on 1234.compareTo -999: 
+      expecting: positive value and got: 1
+
+    Test 030e: Checking compareTo() method on -999.compareTo G3: 
+      expecting: negative value and got: -1
+
+    Test 031f: Checking compareTo() method on 00234.compareTo 234: 
+      expecting: zero value and got: 0
+
+
+    TESTING SUBTRACT() METHOD:
+    ==========================
+
+    Test 032: Subtracting g13 take away g11 [234567 - 10] using bytes: 
+      expecting: 234557
+        and got: 234557
+
+    Test 033: Subtracting g11 take away g13 [10 - 234567] using bytes: 
+      expecting: -234557
+        and got: -234557
+
+    Test 034: Subtracting g13 take away g15 [234567 - (-10)] using bytes: 
+      expecting: 234577
+        and got: 234577
+
+    Test 035: Subtracting g15 take away g13 [(-10) - 234567] using bytes: 
+      expecting: -234577
+        and got: -234577
+
+    Test 036: Subtracting g14 take away g16 [(-234567) - (-999999)] using bytes: 
+      expecting: 765432
+        and got: 765432
+
+    Test 037: Subtracting g16 take away g14 [(-999999) - (-234567)] using bytes: 
+      expecting: -765432
+        and got: -765432
+
+    Test 038: Subtracting g1 take away g1 [too long to list] using bytes: 
+      expecting: 000000000000000000000000000000000000000000000000000000000000000000
+        and got: 000000000000000000000000000000000000000000000000000000000000000000
+
+
+    TESTING MULTIPLY() METHOD:
+    ==========================
+
+    Test 039: Multiplying g7 by g12 [10 * 20]: 
+      expecting: 200
+        and got: 200
+
+    Test 040: Making a seventeenth new BrobInt: 
+      expecting: 765
+        and got: 765
+
+    Test 041: Making a eightteenth new BrobInt: 
+      expecting: 23
+        and got: 23
+
+    Test 042: Making a nineteenth new BrobInt: 
+      expecting: 56789
+        and got: 56789
+
+    Test 043: Making a twentieth new BrobInt: 
+      expecting: 37
+        and got: 37
+
+    Test 044: Multiplying g17 by g18 [765 * 23]: 
+      expecting: 17595
+        and got: 17595
+
+    Test 045: Multiplying g18 by g20 [23 * 37]: 
+      expecting: 851
+        and got: 851
+
+    Test 046: Multiplying g19 by g20 [56789 * 37]: 
+      expecting: 2101193
+        and got: 2101193
+
+    Test 047: Multiplying g18 by g17 [23 * 765]: 
+      expecting: 17595
+        and got: 17595
+
+    Test 048: Multiplying g17 by g19 [765 * 56789]: 
+      expecting: 43443585
+        and got: 43443585
+
+    Test 049: Multiplying g20 by g19 [37 * 56789]: 
+      expecting: 2101193
+        and got: 2101193
+
+    Test 050: Multiplying g04 by 3: 
+      expecting: 43238372915913199204527729450732254954851885232694621
+        and got: 43238372915913199204527729450732254954851885232694621
+
+    Test 051: Multiplying 82832833 by 3: 
+      expecting: 248498499
+        and got: 248498499
+
+    Test 052: Multiplying 82832833 by 3 and adding 1: 
+      expecting: 248498500
+        and got: 248498500
+
+
+    TESTING ALLZERODETECT() METHOD:
+    ===============================
+
+    Test 053: allZeroDetect(0000000): 
+      expecting: true
+        and got: true
+
+
+    TESTING DIVIDE() METHOD:
+    ========================
+
+    Test 054: Dividing g19 by g20 [56789 / 37]: 
+      expecting: 1534
+        and got: 1534
+
+    Test 055: DIVIDING BY ZERO: 
+        Exception thrown:  java.lang.IllegalArgumentException: ERROR!: Cannot divide by zero
+
+    Test 056: DIVIDING BY SAME: 
+      expecting: 1
+        and got: 1
+
+    Test 057: DIVIDING BY LARGER: 
+      expecting: 0
+        and got: 0
+
+    Test 058: DIVIDING 10 BY 2: 
+      expecting: 5
+        and got: 5
+
+    Test 059: Dividing 52 by 2: 
+      expecting: 26
+        and got: 26
+
+    Test 060: Dividing g17 by g20 [765 / 37]: 
+      expecting: 20
+        and got: 20
+
+    Test 061: Dividing 10000 by 2: 
+      expecting: 5000
+        and got: 5000
+
+
+    TESTING REMAINDER() METHOD:
+    ===========================
+
+    Test 062: Modding g17 by g18 [765 % 23]: 
+      expecting: 6
+        and got: 6
+
+    Test 063: Modding g19 by g20 [56789 % 37]: 
+      expecting: 31
+        and got: 31
+. 
+. 
+. 
+Running Collatz with 3691578348615318 
+Expecting 326 steps 
+
+ Hello, world, from the Collatz program!!
+
+
+ ==================================
+Running Collatz with 147258369 
+Expecting 216 steps 
+
+ Hello, world, from the Collatz program!!
+
+
+ ==================================
+
+ The string sequence is:       
+
+ 147258369 
+73629184 
+36814592 
+18407296 
+9203648 
+4601824 
+2300912 
+1150456 
+575228 
+287614 
+143807 
+431422 
+215711 
+647134 
+323567 
+970702 
+485351 
+1456054 
+728027 
+2184082 
+1092041 
+3276124 
+1638062 
+819031 
+2457094 
+1228547 
+3685642 
+1842821 
+5528464 
+2764232 
+1382116 
+691058 
+345529 
+1036588 
+518294 
+259147 
+777442 
+388721 
+1166164 
+583082 
+291541 
+874624 
+437312 
+218656 
+109328 
+54664 
+27332 
+13666 
+6833 
+20500 
+10250 
+5125 
+15376 
+7688 
+3844 
+1922 
+961 
+2884 
+1442 
+721 
+2164 
+1082 
+541 
+1624 
+812 
+406 
+203 
+610 
+305 
+916 
+458 
+229 
+688 
+344 
+172 
+86 
+43 
+130 
+65 
+196 
+98 
+49 
+148 
+74 
+37 
+112 
+56 
+28 
+14 
+7 
+22 
+11 
+34 
+17 
+52 
+26 
+13 
+40 
+20 
+10 
+5 
+16 
+8 
+4 
+2 
+1 
+
+105 steps for sequence to converge.
+
+Running Collatz with 159482673357869421789456123 
+Expecting 405 steps 
+
+ Hello, world, from the Collatz program!!
+
+
+ ==================================
+
+ The string sequence is:       
+
+ 159482673357869421789456123 
+653404108 
+326702054 
+163351027 
+490053082 
+245026541 
+735079624 
+367539812 
+183769906 
+91884953 
+275654860 
+137827430 
+68913715 
+206741146 
+103370573 
+310111720 
+155055860 
+77527930 
+38763965 
+116291896 
+58145948 
+29072974 
+14536487 
+43609462 
+21804731 
+65414194 
+32707097 
+98121292 
+49060646 
+24530323 
+73590970 
+36795485 
+110386456 
+55193228 
+27596614 
+13798307 
+41394922 
+20697461 
+62092384 
+31046192 
+15523096 
+7761548 
+3880774 
+1940387 
+5821162 
+2910581 
+8731744 
+4365872 
+2182936 
+1091468 
+545734 
+272867 
+818602 
+409301 
+1227904 
+613952 
+306976 
+153488 
+76744 
+38372 
+19186 
+9593 
+28780 
+14390 
+7195 
+21586 
+10793 
+32380 
+16190 
+8095 
+24286 
+12143 
+36430 
+18215 
+54646 
+27323 
+81970 
+40985 
+122956 
+61478 
+30739 
+92218 
+46109 
+138328 
+69164 
+34582 
+17291 
+51874 
+25937 
+77812 
+38906 
+19453 
+58360 
+29180 
+14590 
+7295 
+21886 
+10943 
+32830 
+16415 
+49246 
+24623 
+73870 
+36935 
+110806 
+55403 
+166210 
+83105 
+249316 
+124658 
+62329 
+186988 
+93494 
+46747 
+140242 
+70121 
+210364 
+105182 
+52591 
+157774 
+78887 
+236662 
+118331 
+354994 
+177497 
+532492 
+266246 
+133123 
+399370 
+199685 
+599056 
+299528 
+149764 
+74882 
+37441 
+112324 
+56162 
+28081 
+84244 
+42122 
+21061 
+63184 
+31592 
+15796 
+7898 
+3949 
+11848 
+5924 
+2962 
+1481 
+4444 
+2222 
+1111 
+3334 
+1667 
+5002 
+2501 
+7504 
+3752 
+1876 
+938 
+469 
+1408 
+704 
+352 
+176 
+88 
+44 
+22 
+11 
+34 
+17 
+52 
+26 
+13 
+40 
+20 
+10 
+5 
+16 
+8 
+4 
+2 
+1 
+
+183 steps for sequence to converge.
+
+Running Collatz with 75942615348675395174185296348152659 
+Expecting 478 steps 
+
+ Hello, world, from the Collatz program!!
+
+
+ ==================================
+Running Collatz with 7594261534867539517418529634815265910200201075476883366222929291818181823413747890 
+Expecting 567 steps 
+
+ Hello, world, from the Collatz program!!
+
+
+ ==================================
