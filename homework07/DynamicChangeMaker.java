@@ -65,58 +65,33 @@ public  static void validateArgs(String args[]){
     int rows = denom.length;
     int columns = target + 1;
     Tuple[][] table = new Tuple[rows][columns];
-    Tuple answer = Tuple.IMPOSSIBLE;
-    
 
-    for (int i = 0; i < rows; i++){
-        for (int j = 0; j < columns; j++){
-            if (j == 0) {
-                table[i][j] = new Tuple(i);
+
+    for ( int i = 0; i < denom.length; i++ ) {
+        table[i][0] = new Tuple(rows);
+    }
+
+    for ( int i = 0; i < rows; i++ ) {
+        for ( int j = 1; j < columns; j++) {
+            if ( j < denom[i] ) {
+                table[i][j] = Tuple.IMPOSSIBLE; 
             }else{
-                if (j < denom[i]){
-                    table[i][j] = new Tuple (0);
-                    if (j - denom[i] >= 0){
-                        if (!(table[i][j - denom[i]].isImpossible())) { 
-                            //table[i][j].add(new Tuple (table[i][j].getElement(j) - denom[j]));
-                            table[i][j].add(table[i][j - denom[i]]);
-                        }
-                    }
-                    if ( i != 0 ){
-                        if (!(table[i-1][j].isImpossible())) {
-                            if ((table[i-1][j].total() < table[i][j].total()) || (table[i][j].isImpossible())) {
-                                table[i][j] = table[i-1][j];
-                             }
-                        }
-                    }
+                table[i][j] = new Tuple(rows);
+                table[i][j].setElement(i,1); 
+
+                if( table[i][j - denom[i]].isImpossible()){
+                    table[i][j] = Tuple.IMPOSSIBLE;
                 }else{
-                    table[i][j] = new Tuple(denom.length);
-                    table[i][j].setElement(i, 1);
-    
-                    if (j - denom[i] >= 0){
-                        if (table[i][j - denom[i]].isImpossible()) {
-                            table[i][j] = new Tuple (0);
-                        }else {
-                            table[i][j] = table[i][j].add(table[i][j-denom[i]]);
-                        }
-                    }
-    
-                    if (i != 0){
-                        if ( !(table[i][j-1].isImpossible()) ) {
-                            if ((table[i-1][j].total() < table[i][j].total()) || (table[i][j].isImpossible())) {
-                                table[i][j] = table[i-1][j];
-                            }
-                        }
-                    }
+                    table[i][j] = table[i][j].add(table[i][j - denom[i]]);
                 }
-           
             }
-            System.out.println(table[i-1][j-1]);
-            answer = table[i-1][j-1];
+            if(i > 0 && (table[i][j].isImpossible() || (!(table[i - 1][j].isImpossible()) && table[i][j].total() > table[i-1][j].total()))){
+                table[i][j] = table[i -1][j];
+            } 
         }     
     }    
-    return answer; 
+    return table[rows - 1][target];
 }
-
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  the main method redirects the user to the test class
